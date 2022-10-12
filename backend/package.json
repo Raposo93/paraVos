@@ -1,0 +1,27 @@
+{
+  "name": "e-commerce-s1-g4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hunteando/ecommerce-s1-g4.git"
+  },
+  "author": "Grupo 4",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hunteando/ecommerce-s1-g4/issues"
+  },
+  "homepage": "https://github.com/Hunteando/ecommerce-s1-g4#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20"
+  }
+}
