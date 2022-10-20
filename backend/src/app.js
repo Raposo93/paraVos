@@ -7,14 +7,9 @@ const comprasRouter = require("./routes/compras");
 const checkoutRouter = require("./routes/chekout");
 const dashboardRouter = require("./routes/dashboard");
 
-
-
-
-
-
 // ************ express() - (don't touch) ************
 const app = express();
-const port = 3000;
+// const port = 3000;
 
 //************Rutas******* **/
 //Inicio ( / )
@@ -26,15 +21,15 @@ const port = 3000;
 //Registro (/registrar)
 //Dashboard (/dashboard/cliente)
 //Dashboard (/dashboard/admin)
-app.use("/",indexRouter);
-app.use("/",authRouter);
+app.use("/", indexRouter);
+app.use("/", authRouter);
 app.use("/productos", productRouter);
 app.use("/compras", comprasRouter);
 app.use("/checkout", checkoutRouter);
-app.use("/dashboard", dashboardRouter)
-
+app.use("/dashboard", dashboardRouter);
 
 //A través del método listen levantamos el servidor
-app.listen(port, () => {
-  console.log("Estoy ejecutando en http://localhost:3000 ");
+
+app.listen(app.set("port", 3001), () => {
+  console.log("Estoy ejecutando en http://localhost:3001 ");
 });
