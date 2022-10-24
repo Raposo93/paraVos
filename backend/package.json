@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "dev":"nodemon src/app.js",
+    "dev": "nodemon src/app.js",
     "start": "node src/app.js"
   },
   "repository": {
@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Hunteando/ecommerce-s1-g4#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "mysql2": "^2.3.3"
   },

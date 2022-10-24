@@ -7,7 +7,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.STRING(50)
+        type: Sequelize.INT(11)
       },
       porcentaje: {
         type: Sequelize.INTEGER(11),
