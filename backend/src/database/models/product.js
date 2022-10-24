@@ -27,21 +27,33 @@ module.exports = (sequelize, dataTypes) => {
       type:dataTypes.INTEGER(11),
       allowNull: false
     },
-    descuentoId: {
-      type:dataTypes.STRING(100),
-      allowNull: false
-    },
     caregoryId: {
       type:dataTypes.STRING(100),
       allowNull: false
     },
 
-  };//faltaaaa
-  let configurations = { tableName: "products" }; //Lo utilizo cuando ponemos as
+  };
+  let configurations = { tableName: "products" }; 
 
   const Product = sequelize.define(alias, columns, configurations);
   
-  //TODO  => realizar asociaciones
+  Product.associate = function (models) {
+    //relacion productos categorias
+    Product.belongsToMany (models.Categories, {
+      as: "category",
+      foreignKey: "categoryId",
+    }),
+    //relacion productos descuento a traves de la tabla pivote descuentoProducts 
+    Product.associate = function (models) {
+      Product.belongsToMany(models.Descuentos, {
+        as: "descuentos",
+        through: "descuentoProducts",
+        foreignKey: "descuentoId",
+        otherKey: "productId",
+        timestamps: false,
+      });
+    };
+  }
   
   return Product;
 };

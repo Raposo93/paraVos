@@ -25,11 +25,25 @@ module.exports = (sequelize, dataTypes) => {
     },
 
   };
-  let configurations = { tableName: "descuentoproducts" }; //Lo utilizo cuando ponemos as
+  let configurations = { tableName: "descuentoproducts" }; 
 
   const DescuentoProduct = sequelize.define(alias, columns, configurations);
-  
-  //TODO  => realizar asociaciones
+   //relacion descuento - Producto muchos  a muchos 
+   DescuentoProduct.associate = function(models){
+    DescuentoProduct.belongsTo(models.Products, {
+      as: "product",
+      foreignKey: "productId",
+    });
+    models.Products.hasMany(DescuentoProduct);
+    DescuentoProduct.belongsTo(models.Descuentos, {
+      as: "descuento",
+      foreignKey: "descuentoId",
+    });
+    models.Descuentos.hasMany(DescuentoProduct, { as: "descuentoProducts" });
+  };
+
+     
+
   
   return DescuentoProduct;
 };

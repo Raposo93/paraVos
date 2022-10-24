@@ -25,7 +25,15 @@ module.exports = (sequelize, dataTypes) => {
 
   const Descuento = sequelize.define(alias, columns, configurations);
   
-  //TODO  => realizar asociaciones
+  Descuento.associate = function (models) {
+    //relación descuento / descuentoProduct
+   Descuento.belongsToMany(models.Products, {
+      as: "productos",
+      through: "descuentoProducts",
+      foreignKey: "productId",
+      otherKey: "descuentoId",
+    });
+  };
   
   return Descuento;
 };

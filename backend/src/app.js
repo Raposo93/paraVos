@@ -39,7 +39,8 @@ app.use(function (err, req, res, next) {
 });
 
 
-//A través del método listen levantamos el servidor
+//A través del método listen levantamos el servidor. Utilizamos variables de entorno
+
 
 app.listen(app.set(process.env.PORT || 3000), () => {
   console.log("Servidor funcionando ");

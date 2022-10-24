@@ -11,21 +11,19 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.STRING(11),
       allowNull: false,
     },
-    estado: {
-      type: dataTypes.BOOLEAN,
-      allowNull: false,
-    },
-    descripcion: {
-      type: dataTypes.STRING(100),
-      allowNull: false,
-    },
  
   };
-  let configurations = { tableName: "descuentos" }; 
+  let configurations = { tableName: "categories" }; 
 
-  const Descuento = sequelize.define(alias, columns, configurations);
+  const Category = sequelize.define(alias, columns, configurations);
+    //relacion categoria producto muchos  a uno ( una categoria tiene muchos productos)
+    Category.associate = function(models){
+      Category.hasMany(models.Products, {
+        as: "products",
+        foreignKey: "categoryId"
+     })
+       
+   }
   
-  //TODO  => realizar asociaciones
-  
-  return Descuento;
+  return Category;
 };
