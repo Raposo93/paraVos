@@ -7,7 +7,7 @@ module.exports = {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INT(11)
+        type: Sequelize.INTEGER(11)
       },
       name: {
         type: Sequelize.STRING(50),
@@ -29,17 +29,8 @@ module.exports = {
         type: Sequelize.INTEGER(11),
         allowNull: false
       },
-      descuentoId: {
-        type: Sequelize.STRING(100),
-        allowNull:true,
-        onDelete: "CASCADE" ,
-        references: {
-          tableName: 'ProductDescuentos',
-          key: "id"
-        }
-      },
       categoryId: {
-        type: Sequelize.STRING(100),
+        type: Sequelize.INTEGER(11),
         allowNull: false,
         onDelete: "CASCADE",
         references: {

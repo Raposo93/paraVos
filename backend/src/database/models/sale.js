@@ -1,0 +1,43 @@
+module.exports = (sequelize, dataTypes) => {
+  let alias = "Sales";
+  let columns = {
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: dataTypes.INTEGER(11),
+    },
+    userId: {
+      type: dataTypes.INTEGER(11),
+      allowNull: false,
+    },
+    fecha: {
+      type: dataTypes.DATE,
+      allowNull: false,
+    },
+    total: {
+      type: dataTypes.float(50),
+      allowNull: false,
+    },
+    cobrado: {
+      type:dataTypes.DATE,
+      allowNull: false
+    },
+  };
+  let configurations = { tableName: "sales" }; 
+
+  const Sale = sequelize.define(alias, columns, configurations);
+  
+  Sale.associate = function (models) {
+  
+   //Relacion venta usuario
+   Sale.belongsTo(models.Users,
+    {
+      as: "user",
+      foreignKey: "userId",
+    });
+ }
+
+  
+  return Sale;
+};
