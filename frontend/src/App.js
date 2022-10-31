@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'  
-import { NavBar } from "./components/";
+import { NavBar, WhatsAppPopUp } from "./components/";
 import { Categoria, Login, Main, Producto, Registro } from "./components/Pages";
 
 
@@ -10,6 +10,7 @@ export const App = () => {
     <div>     
         <Router>
         <NavBar/>
+        <WhatsAppPopUp />
           <Routes>
             <Route path="/" exact element={<Main />}></Route>
             <Route path="/categoria" element={<Categoria/>}></Route>
