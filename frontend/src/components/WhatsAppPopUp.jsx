@@ -4,6 +4,6 @@ import {BsWhatsapp}  from 'react-icons/bs'
 
 export const WhatsAppPopUp = () => {
   return (
-           <a href="https://wa.me/5211234567890?text=Quisiera%20Contactar%20Contigo" class="whatsapp scale-up-center" target="_blank"> <BsWhatsapp className='whatsapp-icon'/> </a>
+           <a href="https://wa.me/5211234567890?text=Quisiera%20Contactar%20Contigo" class="whatsapp" target="_blank"> <BsWhatsapp className='whatsapp-icon'/> </a>
     )
 }
