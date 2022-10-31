@@ -28,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false
     },
     caregoryId: {
-      type:dataTypes.STRING(100),
+      type:dataTypes.INTEGER(11),
       allowNull: false
     },
 
