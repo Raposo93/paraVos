@@ -1,5 +1,5 @@
 const db = require("../database/models");
-const productsApiController = require("./apiController");
+
 
 const controller = {
     //Lista de productos
@@ -46,7 +46,7 @@ const controller = {
       })
     },
     //Edición del Producto
-    update: async (req, res) => {
+    update:  (req, res) => {
        db.Products
        .findByPk(req.params.prod)
        .update({

@@ -12,7 +12,7 @@ require("dotenv").config();
 // ************ express() - (don't touch) ************
 const app = express();
 
-app.use(express.urlencoded({ extended: false }));
+//app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 //************Rutas******* **/
@@ -43,6 +43,6 @@ app.use(function (err, req, res, next) {
 //A través del método listen levantamos el servidor. Utilizamos variables de entorno
 
 
-app.listen(app.set(process.env.PORT || 3000), () => {
+app.listen(3001, () => {
   console.log("Servidor funcionando ");
-});
+})
