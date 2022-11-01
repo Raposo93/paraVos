@@ -6,17 +6,18 @@ const productRouter = require("./routes/products");
 const comprasRouter = require("./routes/compras");
 const checkoutRouter = require("./routes/chekout");
 const dashboardRouter = require("./routes/dashboard");
+
+
 require("dotenv").config();
 // ************ express() - (don't touch) ************
 const app = express();
 
+//app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 
 //************Rutas******* **/
-//Inicio ( / )
-//Productos (/productos)
-//Detalle del Producto (/productos/detalle)
+/* RUTAS QUE FALTAN */
 //Carrito de compras (/compras)
-//Checkout (/checkout)
 //niciar Sesión (/login)
 //Registro (/registrar)
 //Dashboard (/dashboard/cliente)
@@ -42,6 +43,6 @@ app.use(function (err, req, res, next) {
 //A través del método listen levantamos el servidor. Utilizamos variables de entorno
 
 
-app.listen(app.set(process.env.PORT || 3000), () => {
+app.listen(3001, () => {
   console.log("Servidor funcionando ");
-});
+})

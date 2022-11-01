@@ -16,7 +16,7 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     total: {
-      type: dataTypes.float(50),
+      type: dataTypes.FLOAT(50),
       allowNull: false,
     },
     cobrado: {
@@ -28,15 +28,16 @@ module.exports = (sequelize, dataTypes) => {
 
   const Sale = sequelize.define(alias, columns, configurations);
   
-  Sale.associate = function (models) {
+  //Sale.associate = function (models) {
   
    //Relacion venta usuario
-   Sale.belongsTo(models.Users,
-    {
-      as: "user",
-      foreignKey: "userId",
-    });
- }
+   //Sale.belongsTo(models.Users,
+   // {
+   //   as: "user",
+   //   foreignKey: "userId",
+   // });
+   // models.Users.hasMany(Sale, { as: "recuperados" });
+  //}
 
   
   return Sale;

@@ -27,9 +27,9 @@ module.exports = (sequelize, dataTypes) => {
       type:dataTypes.INTEGER(11),
       allowNull: false
     },
-    caregoryId: {
-      type:dataTypes.STRING(100),
-      allowNull: false
+    categoryId: {
+      type:dataTypes.INTEGER(11),
+      allowNull: true //por el momento
     },
 
   };
