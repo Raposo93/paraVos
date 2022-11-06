@@ -13,7 +13,7 @@ module.exports = (sequelize, dataTypes) => {
     },
     image: {
       type: dataTypes.STRING(50),
-      allowNull: false,
+      allowNull: true,
     },
     description: {
       type: dataTypes.TEXT(200),
@@ -21,7 +21,7 @@ module.exports = (sequelize, dataTypes) => {
     },
     stock: {
       type: dataTypes.INTEGER(11),
-      allowNull: false,
+      allowNull: true,
     },
     price: {
       type:dataTypes.INTEGER(11),

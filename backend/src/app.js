@@ -6,6 +6,7 @@ const productRouter = require("./routes/products");
 const comprasRouter = require("./routes/compras");
 const checkoutRouter = require("./routes/chekout");
 const dashboardRouter = require("./routes/dashboard");
+const categoriesRouter = require("./routes/categories");
 
 
 require("dotenv").config();
@@ -28,6 +29,7 @@ app.use("/productos", productRouter);
 app.use("/compras", comprasRouter);
 app.use("/checkout", checkoutRouter);
 app.use("/dashboard", dashboardRouter);
+app.use("/categorias", categoriesRouter);
 
 /* Vista no encontrada */
 app.use(function (err, req, res, next) {

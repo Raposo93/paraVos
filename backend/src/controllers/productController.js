@@ -11,7 +11,7 @@ const controller = {
           meta: {
             total: products.length,
             status: 200, 
-            url: "/products",
+            url: "/productos",
           },
           data: products, //listado de productos
         };
@@ -48,7 +48,7 @@ const controller = {
     //Edición del Producto
     update:  (req, res) => {
        db.Products
-       .findByPk(req.params.prod)
+       .findByPk(req.params)
        .update({
         name: req.body.name,
         image: req.body.image,
@@ -83,11 +83,12 @@ const controller = {
     destroy: async (req, res) => {
       await db.Products.destroy({
         where: {
-          id: req.params.prod,
+          id: req.params,
         },
       });
       return res.json({ mensaje: "Se borró el producto" });
     },
+      
 
 } 
 
