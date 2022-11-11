@@ -1,19 +1,19 @@
 .card-container_tittle {
-    padding: 15px 0;
-    display: block;
-    text-align: center;
-    text-transform: uppercase;
     background-color: #d9d9d946;
     color: #7E9480;
 }
 
 .card-container_list {
     display: flex;
-    padding: 50px;
-    height: auto;
-    overflow-x: scroll;
-    overscroll-behavior-x: contain;
-    scroll-snap-type: x proximity;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 95%;
+    margin: 0 30px 30px 30px ;
+}
+
+.card-container {
+    cursor: grab;    
 }
 
 
@@ -44,6 +44,7 @@
     margin: 50px 15px 0 15px;
     width: 150px;
     height: 150px;
+    pointer-events: none;
 }
 
 .card:hover > .main-card-img {
@@ -68,6 +69,17 @@
     font-weight: 600;
     text-transform: uppercase;
     color: #000;    
+}
+
+.category-card_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: #d8d8d86c;
+    width: auto;
+    height: 50px;
+    top: -20px;
 }
 
 .card-price {
