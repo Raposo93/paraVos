@@ -35,15 +35,6 @@ app.use("/checkout", checkoutRouter);
 app.use("/dashboard", dashboardRouter);
 app.use("/categorias", categoriesRouter);
 
-/* Vista no encontrada */
-app.use(function (err, req, res, next) {
-  console.log(err);
-  if (err["view"] != null) {
-    console.error("errorView", err.message);
-    return res.render("errors/500");
-  }
-  return next();
-});
 
 
 //A través del método listen levantamos el servidor. Utilizamos variables de entorno
