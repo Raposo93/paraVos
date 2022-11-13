@@ -5,8 +5,9 @@ const controller = {
     //Lista de productos
     list: (req, res) => {
       db.Products
-      .findAll()
-      .then((products) => {
+      .findAll({
+       include: [{ association: "category"}]  
+      }).then((products) => {
         let respuesta = {
           meta: {
             total: products.length,
@@ -21,7 +22,9 @@ const controller = {
     //consulto un producto en particular
     show: (req, res) => {
       db.Products
-      .findByPk(req.params.id)
+      .findByPk(req.params.id, {
+         include: [{ association: "category"}],
+       })
       .then((product) => {
         let respuesta = {
           meta: {
@@ -34,8 +37,8 @@ const controller = {
       });
     },
     //Creo al producto
-    store:(req, res) => {
-       db.Products
+    store:async (req, res) => {
+       await db.Products
        .create({ ...req.body })
        .then(product => { 
       return res.json({ 
@@ -46,17 +49,14 @@ const controller = {
       })
     },
     //Edición del Producto
-    update:  (req, res) => {
-       db.Products
-       .findByPk(req.params)
-       .update({
-        name: req.body.name,
-        image: req.body.image,
-        description: req.body.description,
-        stock: req.body.stock,
-        price: req.body.price,
-        categoryId:req.body.category
-      })
+    update: async (req, res) => {
+      await db.Products
+      .update({ ...req.body },
+        {
+          where: {
+            id: req.params.id
+          }
+        })
       .then(product => {
         return res.json({
          data:product,
@@ -83,7 +83,7 @@ const controller = {
     destroy: async (req, res) => {
       await db.Products.destroy({
         where: {
-          id: req.params,
+          id: req.params.id,
         },
       });
       return res.json({ mensaje: "Se borró el producto" });

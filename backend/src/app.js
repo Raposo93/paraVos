@@ -9,12 +9,16 @@ const dashboardRouter = require("./routes/dashboard");
 const categoriesRouter = require("./routes/categories");
 
 
-require("dotenv").config();
+
 // ************ express() - (don't touch) ************
 const app = express();
-
-//app.use(express.urlencoded({ extended: false }));
+require("dotenv").config();
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
+
+// ************ Middlewares - (don't touch) ************
+app.use(express.static(__dirname + "../public"));
 
 //************Rutas******* **/
 /* RUTAS QUE FALTAN */
