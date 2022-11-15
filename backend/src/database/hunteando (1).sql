@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-11-2022 a las 00:47:59
+-- Tiempo de generación: 15-11-2022 a las 22:10:02
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -97,7 +97,13 @@ INSERT INTO `products` (`id`, `name`, `image`, `description`, `stock`, `price`, 
 (1, 'Delantal con repasador de Microfibra', 'Producto1.png', 'Delantal de cocina realizado en gabardina estampada ,con bolsillo delantero y repasador de toalla mi', NULL, 2000, 1, '2022-11-12 22:51:11', '2022-11-12 22:51:11'),
 (2, 'Set matero \"hojitas\"', 'Producto2.png', 'Set matero completo,realizado en gabardina y forrado con plástico anti hongos. Prácticos y cómodos.L', NULL, 1750, 1, '2022-11-12 22:51:12', '2022-11-12 22:51:12'),
 (3, 'Bolso matero-lona', 'Producto3.png', ' Bolso matero transformable en lona o mantel,con bolsillo exterior.Realizado en gabardina y sarga, p', NULL, 3500, 3, '2022-11-12 22:51:12', '2022-11-12 22:51:12'),
-(4, 'Set bebé', 'Producto4.png', 'Contiene :organizador rectangular,mantita de piqué y Polar y muñeco de apego.', NULL, 3500, 2, '2022-11-12 22:51:12', '2022-11-12 22:51:12');
+(4, 'Set bebé', 'Producto4.png', 'Contiene :organizador rectangular,mantita de piqué y Polar y muñeco de apego.', NULL, 3500, 2, '2022-11-12 22:51:12', '2022-11-12 22:51:12'),
+(5, ' Botinero', 'Producto5.png', ' Botinero amplio,con bolsillo exterior e interior. Realizado en cordura y forrado en gabardina.', NULL, 2400, 3, '2022-11-15 21:19:24', '2022-11-15 21:19:24'),
+(6, 'Set neceser', 'Producto6.png', ' Compuesto por 2 necesers y contenedor para cepillo de dientes,forrado en plástico.', NULL, 1850, 3, '2022-11-15 21:20:25', '2022-11-15 21:20:25'),
+(7, 'Cortinas', 'Producto7.png', 'Cortinas largas,realizadas en tropical mecánico y faldón de gabardina estampada. 1,90 x 1,50m cada p', NULL, 4200, 1, '2022-11-15 21:22:32', '2022-11-15 21:22:32'),
+(8, ' Mochila', 'Producto8.png', 'Realizada en gabardina combinada con bolsillo frontal y dos bolsillos laterales.\r\nCategoría: Accesor', NULL, 3800, 3, '2022-11-15 21:24:34', '2022-11-15 21:24:34'),
+(9, 'Mochila', 'Producto9.png', 'Realizada en gabardina, con bolsillo frontal. ¡Súper amplia y resistente!\r\nCategoría: Accesorio\r\n', NULL, 3800, 3, '2022-11-15 21:30:33', '2022-11-15 21:30:33'),
+(10, 'Porta papel higiénico', 'Producto10.png', 'Porta papel higiénico. Realizado en provenzal.', NULL, 500, 1, '2022-11-15 21:34:27', '2022-11-15 21:34:27');
 
 -- --------------------------------------------------------
 
@@ -181,7 +187,7 @@ ALTER TABLE `descuentos`
 -- AUTO_INCREMENT de la tabla `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- Restricciones para tablas volcadas
