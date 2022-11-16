@@ -8,7 +8,7 @@ export const Cards = ({ users }) => {
 
         <>
             {users.map((user) => (
-                <motion.div className="maincard rounded position-relative d-flex flex-column align-items-center text-center m-2" key={user.id} >
+                <motion.div className="maincard rounded position-relative d-flex flex-column align-items-center text-center m-4" key={user.id} >
                     <img className="card-img-top maincard-img mt-4 p-2" src={user.image} alt="Card image cap" />
                     <motion.div className="maincard-body m-0 p-0 w-100">
                         <p className="text-dark m-0 p-0 fw-bold text-uppercase mt-2 ">{user.name}</p>

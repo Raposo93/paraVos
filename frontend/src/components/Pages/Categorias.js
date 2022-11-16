@@ -48,7 +48,7 @@ const ShowProducts = () => {
       <div className='d-flex w-100 flex-column justify-content-center aling-items-center'>
         
       <div className='buttons d-flex justify-content-around my-3 flex-wrap'>
-        <button className='btn btn-outline-dark me-2 text-uppercase m-2' onclick={() => filterProduct(1)}>Linea Bebe</button> {/* Cambiar n° por la categoria */}
+        <button className='btn btn-outline-dark me-2 text-uppercase m-2' onClick={() => filterProduct(1)}>Linea Bebe</button> 
         <button className='btn btn-outline-dark me-2 text-uppercase m-2' onClick={() => filterProduct(2)}>Linea Hogar</button>
         <button className='btn btn-outline-dark me-2 text-uppercase m-2' onClick={() => filterProduct(3)}>Accesorios</button>
         <button className='btn btn-outline-dark me-2 text-uppercase m-2' onClick={() => setFilter(users)}>Todos los Productos</button>
