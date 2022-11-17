@@ -8,18 +8,18 @@ import { Loading } from "./"
 
 export const MainCard = () => {
 
-  const [users, setUsers] = useState([]);
+  const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const URL = "https://jsonplaceholder.typicode.com/users";
+  const URL = "https://localhost:3001/hunteando/productos";
 
   const showData = async () => {
-    setLoading(true)
-    const response = await fetch(URL)
-    const data = await response.json()
+    setLoading(true);
+    const response = await fetch(URL);
+    const data = await response.json();
     console.log(data);
-    setLoading(false)
-    setUsers(data)
+    setProducts(data);
+    setLoading(false);
   }
 
   useEffect(() => {
@@ -36,7 +36,7 @@ export const MainCard = () => {
           
           <motion.div className='maincard-container_list d-flex mt-3' drag="x" dragConstraints={{ right: 1050, left: -1050 }}>
             
-          { loading ? <Loading/> : <Cards users={users}/> }
+          { loading ? <Loading/> : <Cards products={products}/> }
           
           </motion.div>
         
@@ -46,7 +46,7 @@ export const MainCard = () => {
 
         <div className='main-category_list flex-wrap d-flex justify-content-center align-items-center mt-3'>
           
-          { loading ? <Loading/> : users.slice(0, 4).map((user) => (
+          { loading ? <Loading/> : products.slice(0, 4).map((user) => (
             
             <div className="maincard main-category-card rounded position-relative d-flex flex-column align-items-center text-center m-2" key={user.id}>
               
@@ -59,7 +59,7 @@ export const MainCard = () => {
               </div>
             
             </div>
-          ))}
+          ))} {/* la categoria TODOS, va por fuera del .map */}
 
         </div>
       </div>
