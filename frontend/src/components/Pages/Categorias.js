@@ -51,7 +51,7 @@ const ShowProducts = () => {
         <button className='btn btn-outline-dark me-2 text-uppercase m-2' onClick={() => filterProduct(1)}>Linea Bebe</button> 
         <button className='btn btn-outline-dark me-2 text-uppercase m-2' onClick={() => filterProduct(2)}>Linea Hogar</button>
         <button className='btn btn-outline-dark me-2 text-uppercase m-2' onClick={() => filterProduct(3)}>Accesorios</button>
-        <button className='btn btn-outline-dark me-2 text-uppercase m-2' onClick={() => setFilter(users)}>Todos los Productos</button>
+        <button className='btn btn-outline-dark me-2 text-uppercase m-2' onClick={() => setFilter(users)}>Todos los Productos</button> {/* Este va por fuera del .map de categorias.*/}
       </div>
       
         <div className='flex-wrap d-flex justify-content-center align-items-center my-3' >
