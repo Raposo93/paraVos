@@ -6,10 +6,15 @@ import './Style/navbar.css'
 import { FaUserAlt } from 'react-icons/fa'
 import { FaShoppingCart } from 'react-icons/fa'
 import { BsSearch } from 'react-icons/bs'
+import { useState } from 'react'
 
 
 
 export const NavBar = () => {
+
+  const [user, setUser] = useState("");
+  const [category, setCategory] = useState("")
+
   return (
     <>
       <nav className="navbar px-4 navbar-expand-lg text-uppercase " >
