@@ -23,13 +23,12 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.DATE,
       allowNull: false,
     },
-
   };
-  let configurations = { tableName: "descuentoproducts" }; 
+  let configurations = { tableName: "descuentoproducts" };
 
   const DescuentoProduct = sequelize.define(alias, columns, configurations);
-   //relacion descuento - Producto muchos  a muchos 
-   DescuentoProduct.associate = function(models){
+  //relacion descuento - Producto muchos  a muchos
+  DescuentoProduct.associate = function (models) {
     DescuentoProduct.belongsTo(models.Products, {
       as: "product",
       foreignKey: "productId",
@@ -42,8 +41,5 @@ module.exports = (sequelize, dataTypes) => {
     models.Descuentos.hasMany(DescuentoProduct, { as: "descuentoProducts" });
   };
 
-     
-
-  
   return DescuentoProduct;
 };

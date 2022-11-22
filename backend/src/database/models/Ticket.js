@@ -20,39 +20,37 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     quantity: {
-      type:dataTypes.INTEGER(11),
-      allowNull: false
+      type: dataTypes.INTEGER(11),
+      allowNull: false,
     },
     name: {
-      type:dataTypes.STRING(100),
-      allowNull: false
+      type: dataTypes.STRING(100),
+      allowNull: false,
     },
     nameCategoy: {
-    type:dataTypes.STRING(50)
-    }
+      type: dataTypes.STRING(50),
+    },
   };
-  let configurations = { tableName: "tickets" }; 
+  let configurations = { tableName: "tickets" };
 
   const Ticket = sequelize.define(alias, columns, configurations);
-  
+
   Ticket.associate = function (models) {
-  
-    //relacion tickets productos 
+    //relacion tickets productos
     Ticket.associate = function (models) {
       Ticket.hasMany(models.Products, {
         as: "products",
-        foreignKey: "productId"
-     }),
-     //relacion tickets ventas
-    Ticket.associate = function (models) {
-      Ticket.belongsTo(models.Sales, {
-        as: "sale",
-        foreignKey: "salesId"
-     })
-     }
-   }
- }
+        foreignKey: "productId",
+      }),
+        //relacion tickets ventas
+        (Ticket.associate = function (models) {
+          Ticket.belongsTo(models.Sales, {
+            as: "sale",
+            foreignKey: "salesId",
+          });
+        });
+    };
+  };
 
-  
   return Ticket;
 };
