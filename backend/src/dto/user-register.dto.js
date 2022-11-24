@@ -1,15 +1,14 @@
 const { Type } = require("@sinclair/typebox");
 const Ajv = require("ajv");
-const addFormats = require("ajv-errors");
-const addErrors = require("ajv-formats");
-
+const addFormats = require("ajv-formats");
+const addErrors = require("ajv-errors");
 const {
   idDTOSchema,
   firstnameDTOSchema,
   lastnameDTOSchema,
   address_mailDTOSchema,
   passwordDTOSchema,
-} = require("../libs/dto-types");
+} = require("./dto-types");
 
 const RegisterDTOSchema = Type.Object(
   {
@@ -34,6 +33,7 @@ const RegisterDTOSchema = Type.Object(
 const ajv = new Ajv({ allErrors: true })
   .addKeyword("kind")
   .addKeyword("modifier");
+
 ajv.addFormat("password", /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/);
 
 addFormats(ajv, ["email", "uuid"]);
@@ -45,9 +45,9 @@ const userRegisterDTO = (req, res, next) => {
   const isDTOValid = validateSchema(req.body);
 
   if (!isDTOValid)
-    return res.status(400).send({
-      errors: validateSchema.errors.map((error) => error.message),
-    });
+    return res
+      .status(400)
+      .send({ errors: validateSchema.errors.map((error) => error.message) });
 
   next();
 };

@@ -1,7 +1,7 @@
 // ************ Require's ************
 const express = require("express");
 const indexRouter = require("./routes/index");
-const authRouter = require("./routes/auth");
+const authRouter = require("./routes/auth.routes");
 const productRouter = require("./routes/products");
 const comprasRouter = require("./routes/compras");
 const checkoutRouter = require("./routes/chekout");
@@ -26,7 +26,7 @@ app.use(express.static(__dirname + "../public"));
 //Dashboard (/dashboard/cliente)
 //Dashboard (/dashboard/admin)
 // app.use("/", indexRouter);
-// app.use("/", authRouter);
+app.use("/auth", authRouter);
 app.use("/user", userRouter);
 app.use("/productos", productRouter);
 app.use("/compras", comprasRouter);

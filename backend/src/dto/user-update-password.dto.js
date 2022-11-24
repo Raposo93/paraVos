@@ -1,13 +1,12 @@
 const { Type } = require("@sinclair/typebox");
 const Ajv = require("ajv");
-const addFormats = require("ajv-errors");
-const addErrors = require("ajv-formats");
-const { address_mailDTOSchema, passwordDTOSchema } = require("./dto-types");
+const addErrors = require("ajv-errors");
+const { passwordDTOSchema } = require("./dto-types");
 
-const LoginDTOSchema = Type.Object(
+const UpdatePasswordDTOSchema = Type.Object(
   {
-    address_mail: address_mailDTOSchema,
-    password: passwordDTOSchema,
+    oldPassword: passwordDTOSchema,
+    newPassword: passwordDTOSchema,
   },
   {
     additionalProperties: false,
@@ -22,13 +21,11 @@ const ajv = new Ajv({ allErrors: true })
   .addKeyword("modifier");
 
 ajv.addFormat("password", /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).*$/);
-
-addFormats(ajv, ["email"]);
 addErrors(ajv);
 
-const validateSchema = ajv.compile(LoginDTOSchema);
+const validateSchema = ajv.compile(UpdatePasswordDTOSchema);
 
-const userLoginDTO = (req, res, next) => {
+const userUpdatePasswordDTO = (req, res, next) => {
   const isDTOValid = validateSchema(req.body);
 
   if (!isDTOValid)
@@ -39,4 +36,4 @@ const userLoginDTO = (req, res, next) => {
   next();
 };
 
-module.exports = userLoginDTO;
+module.exports = userUpdatePasswordDTO;
