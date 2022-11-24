@@ -38,15 +38,15 @@ const controller = {
     },
     //Creo al producto
     store:async (req, res) => {
-       await db.Products
-       .create({ ...req.body })
-       .then(product => { 
-      return res.json({ 
-        data: product,
-        status: 200,
-        created: 'OK!!'
-       });
-      })
+      try { 
+        const { name,image, description, stock, price } = req.body;
+        const resDetail = await Products.create({
+          name, image, description, stock, price
+        })
+       res.send({ data: resDetail})
+     } catch (e) {
+      httpError(res, e)
+     }
     },
     //Edición del Producto
     update: async (req, res) => {
