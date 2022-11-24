@@ -3,7 +3,7 @@ const router = express.Router();
 const productController = require("../controllers/productController");
 //const path = require("path");
 //const multer = require("multer");
-const { body } = require("express-validator");
+const { check } = require("express-validator");
 const { validateResult } = require("../helpers/validateHelper");
 
 // const storage = multer.diskStorage({
@@ -19,22 +19,23 @@ const { validateResult } = require("../helpers/validateHelper");
 
 const validations = [
     //los campos no tienen q estar vacios y tienen q tener como minimo una cierta cantidad de caracteres
-    body("name")
+    check("name")
+      .exists()
       .notEmpty()
       .withMessage("Tienes que ponerle un nombre")
       .isLength({ min: 5 })
       .withMessage("Tiene que tener 5 caracteres como minimo"),
-    body("image")
+    check("image")
       .notEmpty()
       .withMessage("Tienes que ponerle un precio"),
-    body("description")
+    check("description")
       .notEmpty()
       .withMessage("Tienes que ponerle una descripción")
       .isLength({ min: 5 })
       .withMessage("Tiene que tener 3 caracteres como minimo"),
-    body("stock")
+    check("stock")
     .isNumeric(),
-    body("price")
+    check("price")
       .notEmpty()
       .withMessage("Tienes que ponerle un precio"),
     (req, res, next) => {
