@@ -7,6 +7,8 @@ const comprasRouter = require("./routes/compras");
 const checkoutRouter = require("./routes/chekout");
 const dashboardRouter = require("./routes/dashboard");
 const categoriesRouter = require("./routes/categories");
+const cors = require('cors');
+const corsOptions = require('./database/config/corsOptions');
 
 
 
@@ -19,6 +21,12 @@ app.use(express.json());
 
 // ************ Middlewares - (don't touch) ************
 app.use(express.static(__dirname + "../public"));
+app.use(cors(corsOptions));
+app.use(cors({
+  origin: ["http://localhost:3001"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 //************Rutas******* **/
 /* RUTAS QUE FALTAN */

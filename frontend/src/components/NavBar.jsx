@@ -6,10 +6,15 @@ import './Style/navbar.css'
 import { FaUserAlt } from 'react-icons/fa'
 import { FaShoppingCart } from 'react-icons/fa'
 import { BsSearch } from 'react-icons/bs'
+import { useState } from 'react'
 
 
 
 export const NavBar = () => {
+
+  const [user, setUser] = useState("");
+  const [category, setCategory] = useState("")
+
   return (
     <>
       <nav className="navbar px-4 navbar-expand-lg text-uppercase " >
@@ -28,31 +33,53 @@ export const NavBar = () => {
               <Link className="nav-link flex-fill  mx-4 dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Categorias
               </Link>
-              <ul className="dropdown-menu mt-4">
-                <li><Link className="dropdown-item " to={"/categoria"}>LINEA BEBÉ</Link></li> {/*Filtrar*/}
-                <li><Link className="dropdown-item " to={"/categoria"}>LINEA HOGAR</Link></li>
-                <li><Link className="dropdown-item " to={"/categoria"}>ACCESORIOS</Link></li>
-                <li><Link className="dropdown-item " to={"/categoria"}>PRODUCTOS A PEDIDO</Link></li>
-                <li><Link className="dropdown-item " to={"/categoria"}>VER TODOS</Link></li>
+              <ul className="dropdown-menu navbar-box">
+                <li><Link className="dropdown-item " to={"/categorias"}>LINEA BEBÉ</Link></li> {/*Filtrar*/}
+                <li><Link className="dropdown-item " to={"/categorias"}>LINEA HOGAR</Link></li>
+                <li><Link className="dropdown-item " to={"/categorias"}>ACCESORIOS</Link></li>
+                <li><Link className="dropdown-item " to={"/categorias"}>PRODUCTOS A PEDIDO</Link></li>
+                <li><Link className="dropdown-item " to={"/categorias"}>VER TODOS</Link></li>
               </ul>
             </li>
           </ul>
 
-          <form className="d-flex container-fluid p-2 " role="search">
-            <input className="form-control " type="search" placeholder="Buscar" />
+          <form className="d-flex container-fluid p-2" role="search">
+            <input className="form-control navbar-search position-absolute mt-1 " type="search" placeholder="Buscar" />
             <button className="btn lupa" type="submit"><BsSearch size={'1.3em'} />{/*Busqueda*/}</button>
           </form>
 
-          <div className='w-25 d-flex justify-content-center'>
+          <div className='d-flex justify-content-center icon-container'>
 
-            <FaUserAlt className='btn' size={'3.3em'} 
-            onClick={() => console.log("usuario")}
-            />{/*Usuario*/}
 
-            <FaShoppingCart className='btn' size={'3.3em'} 
-             onClick={() => console.log("cart")}
-            />{/*carrito*/}
-          
+            <ul className="navbar-nav me-auto  mb-lg-0">
+              <li className="nav-item dropdown">
+                <Link className="nav-link flex-fill" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <FaUserAlt className='btn nav-btn' size={'3.5em'}
+                    onClick={() => console.log("usuario")}
+                  />{/*Usuario*/}
+                </Link>
+                <ul className="dropdown-menu navbar-box icon-box">
+                  <li><Link className="dropdown-item " to={"/login"}>INICIAR SESIÓN</Link></li> {/*inicio de sesión*/}
+                  <li><Link className="dropdown-item " to={"/registro"}>CREAR CUENTA</Link></li>
+                </ul>
+              </li>
+
+              <li className="nav-item dropdown">
+                <Link className="nav-link flex-fill" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <FaShoppingCart className='btn nav-btn' size={'3.5em'}
+                    onClick={() => console.log("cart")}
+                  />{/*carrito*/}
+                </Link>
+                <ul className="dropdown-menu navbar-box icon-box">
+                  <li><Link className="dropdown-item " to={"/registro"}>carrito</Link></li> {/*carrito*/}
+                  
+                </ul>
+                </li>
+
+
+
+            </ul>
+
           </div>
 
         </div>
@@ -61,3 +88,4 @@ export const NavBar = () => {
     </>
   )
 }
+
