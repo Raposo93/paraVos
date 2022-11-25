@@ -1,0 +1,21 @@
+.btn-volver {
+    
+    color: rgb(125, 170, 125);
+}
+
+.btn-volver:hover {
+    color: white;
+}
+
+.btn-outline-success {
+    border-color: rgb(125, 170, 125);
+    border-radius: 10px;
+}
+
+.btn-outline-success:hover {
+    border-color: white;
+    background-color: #BFE393;
+    color: white;
+}
+
+

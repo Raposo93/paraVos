@@ -1,0 +1,27 @@
+.recuperar-texts {
+ color: rgb(109, 129, 121);
+}
+
+.recuperar-enviado {
+    width: 60%;
+    background-color: #f2f2f2;
+    border-radius: 20px;    
+}
+
+.recuperar-mail {  
+ border: 1px solid rgb(109, 129, 121);
+ border-radius: 5px;
+}
+
+.recuperar-btn {
+    color: rgb(66, 80, 74);
+    background: #BFE393;
+    border-radius: 10px;
+    border-style: none;
+}
+
+.recuperar-btn:hover {
+    background-color: rgb(109, 129, 121);
+    color: white;
+}
+
