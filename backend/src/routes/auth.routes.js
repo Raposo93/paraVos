@@ -1,6 +1,9 @@
 const express = require("express");
-const router = express.Router();
+const authGoogleLoginController = require("../controllers/auth-google-login.controller");
 
+const authRouter = express.Router();
+
+authRouter.post("/google/login", authGoogleLoginController);
 //const controller = require("../controllers/authController");
 //const redirectIfAutenticated = require("../middlewares/redirectIfAutenticated");
 
@@ -9,4 +12,4 @@ const router = express.Router();
 
 //router.post("/logout", controller.logout);
 
-module.exports = router;
+module.exports = authRouter;

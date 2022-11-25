@@ -49,10 +49,10 @@ const validations = [
 router.get("/", productController.list);
 
 //Ruta para buscar un producto
-router.get("/", productController.search)
+router.get("/", productController.search);
 
 //Ruta para mostrar un producto en particular
-router.get("/:id", productController.show)
+router.get("/:id", productController.show);
 
 //Ruta para crear un producto
 router.post("/store",upload.single(), validations, productController.store);
@@ -62,10 +62,5 @@ router.put("/:id/update", productController.update);
 
 //Ruta para eliminar un producto
 router.delete("/:id/destroy", productController.destroy);
-
-
-
-
-
 
 module.exports = router;
