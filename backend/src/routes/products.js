@@ -1,20 +1,20 @@
 const express = require("express");
 const router = express.Router();
 const productController = require("../controllers/productController");
-//const path = require("path");
-//const multer = require("multer");
+const path = require("path");
+const multer = require("multer");
 const { check } = require("express-validator");
 const { validateResult } = require("../helpers/validateHelper");
 
-// const storage = multer.diskStorage({
-//     destination: (req, file, cb) => {
-//       cb(null, path.join(__dirname, "../../public/images"));
-//     },
-//     filename: (req, file, cb) => {
-//       cb(null, Date.now() + path.extname(file.originalname));
-//     },
-//   });
-//   const upload = multer({ storage });
+const storage = multer.diskStorage({
+    destination: (req, file, cb) => {
+      cb(null, path.join(__dirname, "../../public/images "));
+    },
+    filename: (req, file, cb) => {
+      cb(null, Date.now() + path.extname(file.originalname));
+    },
+  });
+   const upload = multer({ storage });
    
 
 const validations = [
@@ -27,7 +27,7 @@ const validations = [
       .withMessage("Tiene que tener 5 caracteres como minimo"),
     check("image")
       .notEmpty()
-      .withMessage("Tienes que ponerle un precio"),
+      .withMessage("Tienes que subir una imagen"),
     check("description")
       .notEmpty()
       .withMessage("Tienes que ponerle una descripción")
@@ -55,7 +55,7 @@ router.get("/", productController.search)
 router.get("/:id", productController.show)
 
 //Ruta para crear un producto
-router.post("/store", validations, productController.store);
+router.post("/store",upload.single(), validations, productController.store);
 
 //Ruta para editar parcialmente un producto
 router.put("/:id/update", productController.update);
