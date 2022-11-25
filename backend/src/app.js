@@ -48,6 +48,6 @@ app.use("/categorias", categoriesRouter);
 //A través del método listen levantamos el servidor. Utilizamos variables de entorno
 
 
-app.listen(3001, () => {
+app.listen(process.env.PORT || "3001", () => {
   console.log("Servidor funcionando ");
 })
