@@ -10,17 +10,14 @@ const userUpdateDataController = async (req, res) => {
   existingUserById.firstname = firstname;
   existingUserById.lastname = lastname;
 
-  await db.User.update({ firstname, lastname }, { where: { id } }).then(
-    (us) => {
-      return res.json({
-        data: us,
-        status: 200,
-        created: "OK!!",
-      });
-    }
-  );
+  await db.User.update({ firstname, lastname }, { where: { _id: id } });
 
-  // return res.send("Datos de Usuario actualizados correctamente");
+  return res
+    .status(200)
+    .send({
+      code: 200,
+      Message: "Datos del usuario actualizados correctamente",
+    });
 };
 
 module.exports = userUpdateDataController;

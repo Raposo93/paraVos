@@ -16,14 +16,14 @@ const userUpdateEmailController = async (req, res) => {
 
   existingUserById.address_mail = address_mail;
 
-  console.log(existingUserById.address_mail);
-  await db.User.update({ address_mail }, { where: { id } }).then((us) => {
-    return res.json({
-      data: us,
-      status: 200,
-      created: "OK!!",
+  await db.User.update({ address_mail }, { where: { _id: id } });
+
+  return res
+    .status(200)
+    .send({
+      code: 200,
+      Message: "Correo del usuario actualizado correctamente",
     });
-  });
 };
 
 module.exports = userUpdateEmailController;

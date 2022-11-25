@@ -14,16 +14,14 @@ const userUpdatePasswordController = async (req, res) => {
   if (!checkPassword)
     return res.status(401).send({ errors: ["Credenciales incorrectas"] });
 
-  const hashedPassword = hash(newPassword, 12);
+  const hashedPassword = await hash(newPassword, 12);
   existingUserById.password = hashedPassword;
 
-  await db.User.update({ password }, { where: { id } }).then((us) => {
-    return res.json({
-      data: us,
-      status: 200,
-      created: "OK!!",
-    });
-  });
+  await db.User.update({ password: hashedPassword }, { where: { _id: id } });
+
+  return res
+    .status(200)
+    .send({ code: 200, Message: "Cantraseña actualizada correctamente" });
 };
 
 module.exports = userUpdatePasswordController;
