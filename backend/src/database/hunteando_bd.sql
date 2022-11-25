@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-11-2022 a las 00:42:59
+-- Tiempo de generación: 26-11-2022 a las 00:25:04
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -150,11 +150,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`_id`, `firstname`, `lastname`, `address_mail`, `password`, `google_id`, `rol_user`, `photo_perfil`, `phone_number`, `createdAt`, `updatedAt`) VALUES
-('0', 'ivan', 'Torrez', 'itorrez1506@gmail.com', '$2b$12$/cAcUfNw3UuHnpDg2SN5b.rPcVPSIxti8piLCRugdBshTbfcroJ1K', 'jsldkjflsdfhs', 'cliente', 'sdhkfsh.jpg', '646547848', '2022-11-22 01:26:49', '2022-11-22 01:26:49'),
-('0', 'Raul', 'Jimenez', 'test1506@gmail.com', '$2b$12$fjvvqTdwCV5Hb1ME6.RsEeF3zQSFMlv1DfOceE3OfT3VbDUFQuqb6', 'jsldkjflsdfhs', 'cliente', 'sdhkfsh.jpg', '646547848', '2022-11-22 01:37:05', '2022-11-22 01:37:05'),
-('f4f2a76e-6e93-4fb7-9eb3-efaa5e3611ef', 'Gabriela', 'Martinez', 'gabi14@gmail.com', '$2b$12$NQzszDUOARq0uGE9jlvp5OrBaN/GoE2LzWa6q9QOnwm/YrXtmz5eK', 'jsldkjflsdfhs', 'cliente', 'sdhkfsh.jpg', '646547848', '2022-11-22 02:12:22', '2022-11-22 02:12:22'),
 ('7f3b4815-25d6-45b2-bc61-af3201e48906', 'Gabriela', 'Martinez', 'gabi15@gmail.com', '$2b$12$99oEn/eKz7d6.c7LK9vfk.CewPTV21d5o0TDUmAiXgCYb9avhGt6O', 'jsldkjflsdfhs', 'cliente', 'sdhkfsh.jpg', '646547848', '2022-11-22 02:17:48', '2022-11-22 02:17:48'),
-('efa7c81a-e8b7-4f1c-a8a9-de4ae0c7ea16', 'Beatriz', 'Avillo Martinez', 'beatriz@gmail.com', '$2b$12$Sa9hgcbGjhGJPyfXSukfL.l1bHWYezlZ/cuy4FXk.WqALIX48I6sa', 'jsldkjflsdfhs', 'cliente', 'sdhkfsh.jpg', '646547848', '2022-11-22 03:53:25', '2022-11-22 03:53:25');
+('a187cca8-c2f6-472e-84e3-c38673eaf0ea', 'Juanito', 'Perez', 'juanito@gmail.com', '$2b$12$HpG7jFDawAoS665o/.4ZIeHzpxr0vfxUodbVhjMxM3QUhqnSoDQMa', 'jsldkjflsdfhs', 'cliente', 'sdhkfsh.jpg', '646547848', '2022-11-25 22:02:59', '2022-11-25 22:22:55');
 
 --
 -- Índices para tablas volcadas
