@@ -16,6 +16,7 @@ const userUpdateEmailController = async (req, res) => {
 
   existingUserById.address_mail = address_mail;
 
+  console.log(existingUserById.address_mail);
   await db.User.update({ address_mail }, { where: { id } }).then((us) => {
     return res.json({
       data: us,
