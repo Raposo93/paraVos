@@ -138,4 +138,9 @@
         margin-left: 0;
     }
 
+    .main-img{
+        position: relative;
+        left: 35vw;
+    }
+
 }
