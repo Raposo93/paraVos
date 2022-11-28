@@ -19,7 +19,7 @@ export const NavBar = () => {
     <>
       <nav className="navbar px-4 navbar-expand-lg text-uppercase " >
 
-        <Link to="/"  >
+        <Link className='main-img' to="/"  >
           <img className='m-1' src={Logo} alt="Logo" width="auto" height="70"></img>
         </Link>
 
@@ -34,11 +34,10 @@ export const NavBar = () => {
                 Categorias
               </Link>
               <ul className="dropdown-menu navbar-box">
-                <li><Link className="dropdown-item " to={"/categorias"}>LINEA BEBÉ</Link></li> {/*Filtrar*/}
-                <li><Link className="dropdown-item " to={"/categorias"}>LINEA HOGAR</Link></li>
-                <li><Link className="dropdown-item " to={"/categorias"}>ACCESORIOS</Link></li>
-                <li><Link className="dropdown-item " to={"/categorias"}>PRODUCTOS A PEDIDO</Link></li>
-                <li><Link className="dropdown-item " to={"/categorias"}>VER TODOS</Link></li>
+                <li><Link className="dropdown-item px-2" to={"/categorias"}>LINEA BEBÉ</Link></li> {/*Filtrar*/}
+                <li><Link className="dropdown-item px-2" to={"/categorias"}>LINEA HOGAR</Link></li>
+                <li><Link className="dropdown-item px-2" to={"/categorias"}>ACCESORIOS</Link></li>
+                <li><Link className="dropdown-item px-2" to={"/categorias"}>TODOS LOS PRODUCTOS</Link></li>
               </ul>
             </li>
           </ul>

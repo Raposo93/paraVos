@@ -14,7 +14,7 @@
 
 
 .maincard {        
-    min-width: 14rem;  
+    width: 14rem;
     max-height: 250px;  
     background: rgb(244,244,244);
     background: linear-gradient(0deg, rgba(244,244,244,1) 41%, rgba(237,237,237,1) 49%, rgba(224,224,224,1) 49%, rgba(215,215,215,1) 100%);
@@ -23,10 +23,12 @@
     box-shadow: 10px 10px 5px -10px rgb(184, 183, 183);    
 }
 
-.maincard-img {    
+.maincard-img {  
+    position: relative;
+    top: -10px;  
     width: 150px;
     height: 150px;
-    pointer-events: none;
+    pointer-events: none;    
 }
 
 .maincard:hover > .maincard-img {    
@@ -49,6 +51,11 @@
 .maincard-price {
     margin-top: -4px;
     color: rgb(110, 110, 110);
+}
+
+.product-link{ 
+    text-decoration-line: none;
+    color: white;    
 }
 
 .main-category_list {
@@ -80,12 +87,15 @@
 }
 
 .main-category_title {
-    position: relative;
+    position: absolute;
     width: 225px;
-    top: -37px;
-    height: 50px;
+    top: 115px;
+    height: 60px;
     background-color: #7e948075;
     pointer-events: none;
+    color: white;    
+    border-end-start-radius: 5px;
+    border-end-end-radius: 5px; 
 }
 
 .main-btn_comprar:hover {
@@ -95,6 +105,15 @@
 .main-category-card {
     max-height: 190px;
     background: linear-gradient(0deg, rgba(60, 94, 80, 0.397) 1.5%, rgba(237,237,237,1) 1.5%, rgba(237,237,237,1) 49%, rgba(224,224,224,1) 49%, rgba(215,215,215,1) 100%);
+}
+
+.category-link {
+    text-align: center;
+    text-decoration-line: none;
+}
+
+.maincard:hover > .main-category_title {
+    background-color: #bfe3939f;
 }
 
 @keyframes scale-up-center {
