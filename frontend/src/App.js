@@ -3,8 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { NavBar, WhatsAppPopUp } from "./components/";
 import { Categorias, Login, Main, Producto, Registro, PagError, RecuperarContraseña } from "./components/Pages";
 
-
-
 export const App = () => {
   return (
     <div>     
