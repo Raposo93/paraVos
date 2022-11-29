@@ -17,7 +17,7 @@ export const Footer = () => {
 
                     <div className="part-one">
                         <div className="texto-primer-columna">
-                            <h2 className="enunciados">Preguntas Frecuentes</h2>
+                            <h4 className="enunciados">Preguntas Frecuentes</h4>
                             <ol>
                             <li className="lista_footer">Quienes Somos?</li>
                             <li className="lista_footer">Cuales son los medios de pago?</li>
@@ -30,7 +30,7 @@ export const Footer = () => {
                     </div>
 
                     <div className="part-two">
-                        <h2 className="enunciados">Nuestra Tienda</h2>
+                        <h4 className="enunciados">Nuestra Tienda</h4>
                         <p className="p_ubi-tienda"><img className="ubi-tienda" src={ubicacion} />Lorem Ipsum</p>
                         <div>
 
@@ -38,7 +38,7 @@ export const Footer = () => {
                     </div>
 
                     <div className="part-three">
-                        <h2 className="enunciados">CONTACTO</h2>
+                        <h4 className="enunciados">CONTACTO</h4>
                         <div>
                             <Formik
                                 initialValues={{
@@ -161,7 +161,7 @@ export const Footer = () => {
 
 
                     <div className="part-four">
-                        <h2 className="enunciados">Seguinos</h2>
+                        <h4 className="enunciados">Seguinos</h4>
                         <a href="https://www.instagram.com/lautarolmds27/" >
                             <img className="insta-logo" src={logoInstagram} />
                         </a>
