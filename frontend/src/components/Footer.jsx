@@ -29,7 +29,7 @@ export const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="part-two">
+                    <div id="enunciado_tienda" className="part-two">
                         <h2 className="enunciados">Nuestra Tienda</h2>
                         <p className="p_ubi-tienda"><img className="ubi-tienda" src={ubicacion} />Lorem Ipsum</p>
                         <div>
@@ -38,7 +38,7 @@ export const Footer = () => {
                     </div>
 
                     <div className="part-three">
-                        <h2 className="enunciados">CONTACTO</h2>
+                        <h2 id="enunciado_contacto" className="enunciados">CONTACTO</h2>
                         <div>
                             <Formik
                                 initialValues={{
