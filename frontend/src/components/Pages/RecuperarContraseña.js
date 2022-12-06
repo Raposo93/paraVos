@@ -10,7 +10,7 @@ export const RecuperarContraseña = () => {
 
   return (
     <div className='w-100 container d-flex flex-column justify-content-center align-items-center my-5'>
-        <h2 className='recuperar-texts text-uppercase text-center'>¿olvicaste tu contraseña?</h2>
+        <h2 className='recuperar-texts text-uppercase text-center'>¿olvidaste tu contraseña?</h2>
 
         {display?
             <div className='recuperar-enviado h-25 d-flex justify-content-around align-items-center flex-wrap m-5'>

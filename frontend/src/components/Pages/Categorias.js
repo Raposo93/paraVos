@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-
 import { Cards } from '../'
 import { Loading } from "../"
 import '../Style/categorias.css'

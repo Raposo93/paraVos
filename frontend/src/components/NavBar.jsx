@@ -42,8 +42,8 @@ export const NavBar = () => {
             </li>
           </ul>
 
-          <form className="d-flex container-fluid p-2" role="search">
-            <input className="form-control navbar-search position-absolute mt-1 " type="search" placeholder="Buscar" />
+          <form className="d-flex container-fluid p-2" role="text">
+            <input className="form-control navbar-search position-absolute mt-1 " type="text" placeholder="Buscar" />
             <button className="btn lupa" type="submit"><BsSearch size={'1.3em'} />{/*Busqueda*/}</button>
           </form>
 
