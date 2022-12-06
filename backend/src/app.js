@@ -5,6 +5,7 @@ const authRouter = require("./routes/auth.routes");
 const productRouter = require("./routes/products");
 const comprasRouter = require("./routes/compras");
 const checkoutRouter = require("./routes/chekout");
+
 const dashboardRouter = require("./routes/dashboard");
 const categoriesRouter = require("./routes/categories");
 const userRouter = require("./routes/user.routes");
