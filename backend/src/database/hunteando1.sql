@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-12-2022 a las 20:34:09
+-- Tiempo de generación: 08-12-2022 a las 22:18:05
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -40,9 +40,9 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `nameCategory`, `createdAt`, `updatedAt`, `image`) VALUES
-(1, 'Hogar', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'https://i.ibb.co/mT26mq0/categoria-Hogar.png'),
-(2, 'Linea Bebe', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'https://i.ibb.co/7VLPNr8/categoria-Bebe.jpg'),
-(3, 'Accesorio', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'https://i.ibb.co/vH9fBp0/categoria-Accesorios.png');
+(1, 'Hogar', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'https://i.ibb.co/ZcVGP0N/producto-1-y-categoria-ho'),
+(2, 'Linea Bebe', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'https://i.ibb.co/zJsVn7z/categoria-bebe-y-producto'),
+(3, 'Accesorio', '0000-00-00 00:00:00', '0000-00-00 00:00:00', 'https://i.ibb.co/WyPh11T/categoria-accesorios.png');
 
 -- --------------------------------------------------------
 
@@ -94,16 +94,16 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `image`, `description`, `stock`, `price`, `categoryId`, `createdAt`, `updatedAt`) VALUES
-(1, 'Delantal con repasador de Microfibra', 'https://i.ibb.co/9wbpTNN/Producto1.png', 'Delantal de cocina realizado en gabardina estampada ,con bolsillo delantero y repasador de toalla mi', NULL, 2000, 1, '2022-11-12 22:51:11', '2022-11-12 22:51:11'),
-(2, 'Set matero \"hojitas\"', 'https://i.ibb.co/F8TvqSM/Producto2.png', 'Set matero completo,realizado en gabardina y forrado con plástico anti hongos. Prácticos y cómodos.L', NULL, 1750, 1, '2022-11-12 22:51:12', '2022-11-12 22:51:12'),
-(3, 'Bolso matero-lona', 'https://i.ibb.co/7VLPNr8/categoria-Bebe.jpg', ' Bolso matero transformable en lona o mantel,con bolsillo exterior.Realizado en gabardina y sarga, p', NULL, 3500, 3, '2022-11-12 22:51:12', '2022-11-12 22:51:12'),
-(4, 'Set bebé', 'https://i.ibb.co/Nm7SBx6/Producto4.png', 'Contiene :organizador rectangular,mantita de piqué y Polar y muñeco de apego.', NULL, 3500, 2, '2022-11-12 22:51:12', '2022-11-12 22:51:12'),
-(5, ' Botinero', 'https://i.ibb.co/jRPSL5Q/Producto5.png', ' Botinero amplio,con bolsillo exterior e interior. Realizado en cordura y forrado en gabardina.', NULL, 2400, 3, '2022-11-15 21:19:24', '2022-11-15 21:19:24'),
-(6, 'Set neceser', 'https://i.ibb.co/hZk25gs/Producto6.png', ' Compuesto por 2 necesers y contenedor para cepillo de dientes,forrado en plástico.', NULL, 1850, 3, '2022-11-15 21:20:25', '2022-11-15 21:20:25'),
-(7, 'Cortinas', 'https://i.ibb.co/K2cS0Xh/Producto7.png', 'Cortinas largas,realizadas en tropical mecánico y faldón de gabardina estampada. 1,90 x 1,50m cada p', NULL, 4200, 1, '2022-11-15 21:22:32', '2022-11-15 21:22:32'),
-(8, ' Mochila', 'https://i.ibb.co/cYY0KBZ/Producto8.png', 'Realizada en gabardina combinada con bolsillo frontal y dos bolsillos laterales.\r\nCategoría: Accesor', NULL, 3800, 3, '2022-11-15 21:24:34', '2022-11-15 21:24:34'),
+(1, 'Delantal con repasador de Microfibra', 'https://i.ibb.co/ZcVGP0N/producto-1-y-categoria-ho', 'Delantal de cocina realizado en gabardina estampada ,con bolsillo delantero y repasador de toalla mi', NULL, 2000, 1, '2022-11-12 22:51:11', '2022-11-12 22:51:11'),
+(2, 'Set matero \"hojitas\"', 'https://i.ibb.co/rmBdvyC/producto-2.png', 'Set matero completo,realizado en gabardina y forrado con plástico anti hongos. Prácticos y cómodos.L', NULL, 1750, 1, '2022-11-12 22:51:12', '2022-11-12 22:51:12'),
+(3, 'Bolso matero-lona', 'https://i.ibb.co/zJsVn7z/categoria-bebe-y-producto', ' Bolso matero transformable en lona o mantel,con bolsillo exterior.Realizado en gabardina y sarga, p', NULL, 3500, 3, '2022-11-12 22:51:12', '2022-11-12 22:51:12'),
+(4, 'Set bebé', 'https://i.ibb.co/tX4HzLs/producto-4.png', 'Contiene :organizador rectangular,mantita de piqué y Polar y muñeco de apego.', NULL, 3500, 2, '2022-11-12 22:51:12', '2022-11-12 22:51:12'),
+(5, ' Botinero', 'https://i.ibb.co/LCKBFst/producto-5.png', ' Botinero amplio,con bolsillo exterior e interior. Realizado en cordura y forrado en gabardina.', NULL, 2400, 3, '2022-11-15 21:19:24', '2022-11-15 21:19:24'),
+(6, 'Set neceser', 'https://i.ibb.co/ZXMYHMx/producto-6.png', ' Compuesto por 2 necesers y contenedor para cepillo de dientes,forrado en plástico.', NULL, 1850, 3, '2022-11-15 21:20:25', '2022-11-15 21:20:25'),
+(7, 'Cortinas', 'https://i.ibb.co/hKbMKH9/producto-7.png', 'Cortinas largas,realizadas en tropical mecánico y faldón de gabardina estampada. 1,90 x 1,50m cada p', NULL, 4200, 1, '2022-11-15 21:22:32', '2022-11-15 21:22:32'),
+(8, ' Mochila', 'https://i.ibb.co/Y0J0vGk/producto-8.png', 'Realizada en gabardina combinada con bolsillo frontal y dos bolsillos laterales.\r\nCategoría: Accesor', NULL, 3800, 3, '2022-11-15 21:24:34', '2022-11-15 21:24:34'),
 (9, 'Mochila', 'https://i.ibb.co/mJhVbfy/Producto9.png', 'Realizada en gabardina, con bolsillo frontal. ¡Súper amplia y resistente!\r\nCategoría: Accesorio\r\n', NULL, 3800, 3, '2022-11-15 21:30:33', '2022-11-15 21:30:33'),
-(10, 'Porta papel higiénico', 'https://i.ibb.co/M1JqChN/Producto10.png', 'Porta papel higiénico. Realizado en provenzal.', NULL, 500, 1, '2022-11-15 21:34:27', '2022-11-15 21:34:27');
+(10, 'Porta papel higiénico', 'https://i.ibb.co/2YCJpYW/producto-10.png', 'Porta papel higiénico. Realizado en provenzal.', NULL, 500, 1, '2022-11-15 21:34:27', '2022-11-15 21:34:27');
 
 -- --------------------------------------------------------
 
