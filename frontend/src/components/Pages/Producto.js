@@ -9,8 +9,7 @@ export const Producto = () => {
 
   const getProduct = useSelector(state => state.product);
   const showProduct = getProduct[0];
-  console.log(showProduct)
-
+  
   return (
     <div>
       <div className='w-100 h-100 d-flex product-container'>
