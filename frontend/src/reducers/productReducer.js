@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [{name: "trola", miembro: "pija"}];
+const initialState = [];
 
 export const productReducer = createSlice({
 
