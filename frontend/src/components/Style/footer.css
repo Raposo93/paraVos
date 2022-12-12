@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400&display=swap');
 
-*{
+*{	
     padding: 0%;
     margin: 0%;
     box-sizing: border-box;
@@ -67,7 +67,7 @@ background-color: #F2F2F2;
 .div-barra{
 	width: 2px;
 	border: 0.5px solid #6A6A6A;
-	height: 250px;
+	height: 200px;
 	margin-top: 50px;
 }
 
@@ -108,7 +108,7 @@ body {
 }
 
 .footer1 {
-    background-color: #ADD082;
+    background-color: #BFE393;
 	color: #6A6A6A;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
@@ -196,7 +196,7 @@ body {
 }
 .email {
 	width: 105%;
-	height: 22px;
+	height: 24px;
 	border-radius: 5px;
 	border-style: none;
 	margin-top: 12px;
@@ -205,7 +205,7 @@ body {
 }
 .nombre {
 	width: 105%;
-	height: 22px;
+	height: 24px;
 	border-radius: 5px;
 	border-style: none;
 	padding-left: 9px ;

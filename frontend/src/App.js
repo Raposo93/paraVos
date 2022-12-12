@@ -23,6 +23,7 @@ export const App = () => {
           </Routes>
           <Footer />
         </Router>  
+        <Registro/>
     </div>
   );
 };

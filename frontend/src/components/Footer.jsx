@@ -4,6 +4,7 @@ import logoInstagram from './../img/Icono instagram normal.png'
 import ubicacion from './../img/ubi.png'
 import datarandom from './../img/datafiscal.png'
 import { Formik } from "formik";
+import emailjs from 'emailjs-com';
 // -------------- SOLUCIONAR CSS --------------
 import './Style/footer.css'
 
@@ -39,8 +40,13 @@ export const Footer = () => {
 
                     <div className="part-three">
                         <h2 id="enunciado_contacto" className="enunciados">CONTACTO</h2>
+                       
                         <div>
                             <Formik
+                            
+
+                                // -------------- Valores iniciales del formulario --------------
+
                                 initialValues={{
                                     nombre: '',
                                     email: '',
@@ -88,7 +94,7 @@ export const Footer = () => {
 
 
                                 {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
-                                    <form target="_blank" action="https://formsubmit.co/lautarolarrue@gmail.com" method="POST"  className="formulario" >
+                                    <form   className="formulario" >
                                         <div>
 
                                             <input className="nombre"
@@ -140,7 +146,7 @@ export const Footer = () => {
                                         <button type="submit" className="btn-envio"> Enviar </button>
                                         {formularioEnviado && <p className="exito">Formulario enviado con exito!</p>}
                                         
-                                        <input  type="hidden" name="_captcha" value="false"></input>
+                                       
                                     </form>
                                 )}
 
@@ -162,7 +168,7 @@ export const Footer = () => {
 
                     <div className="part-four">
                         <h2 className="enunciados">Seguinos</h2>
-                        <a href="https://www.instagram.com/lautarolmds27/" >
+                        <a target="_blank" href="https://www.instagram.com/para_vos_creaciones/" >
                             <img className="insta-logo" src={logoInstagram} />
                         </a>
                         <div>
