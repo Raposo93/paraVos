@@ -1,5 +1,10 @@
-import { createStore } from 'redux';
+import { configureStore } from '@reduxjs/toolkit';
+import categoryReducer from '../reducers/categoryReducer'
+import productReducer from '../reducers/productReducer';
 
-export const store = createStore(reducer);
-
-store.suscribe(() => console.log("cambio el estado:", store))
+export const store = configureStore({
+    reducer: {
+        change: categoryReducer,
+        product: productReducer,
+    }
+});
