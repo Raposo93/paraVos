@@ -1,12 +1,16 @@
 import React, { useState } from "react";
 import { Formik } from "formik";
-
+import { useDispatch } from "react-redux";
+import userReducer from "../../reducers/userReducer";
 
 
 
 
 export const Registro = () => {
   const [formularioEnviado, cambiarFormularioEnviado] = useState(false)
+
+  const dispatch = useDispatch();
+  
   return (
     <main>
       <div className="grid-containter">
@@ -56,7 +60,18 @@ export const Registro = () => {
             }}
             //-------------- Mensaje exitoso de formulario enviado --------------
             onSubmit={(valores, { resetForm }) => {
-              resetForm();
+              //-------------- Back --------------
+              dispatch(userReducer(
+                {firstname: nombre,
+                lastname: apellido,
+                address_mail: email,
+                password: contraseña,
+                google_id: "",
+                rol_user: "cliente",
+                photo_perfil:"",
+                phone_number:""},))
+              
+                resetForm();
               console.log("Formulario Enviado")
               cambiarFormularioEnviado(true);
               setTimeout(() => {
@@ -67,7 +82,7 @@ export const Registro = () => {
           >
 
 
-            {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
+            {({ values, errors, touched, handleChange, handleBlur }) => (
               <form className="formulario" >
                 <div>
                   <h1>CREAR CUENTA</h1>

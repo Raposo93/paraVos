@@ -25,8 +25,6 @@ export const MainCard = () => {
 
     setProducts(productos.data);
     setCategories(categorias.data)
-    console.log(productos);
-    console.log(categorias);
     setLoading(false);
   }
 

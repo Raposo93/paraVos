@@ -1,7 +1,7 @@
 import React from "react";
-import imgCamion from './../../img/Ilustracion Camion.png'
-import imgTarjetas from './../../img/Ilustracion tarjetas.png'
-import imgTienda from './../../img/Ilustracion Tienda.png'
+import imgCamion from './../img/Ilustracion Camion.png'
+import imgTarjetas from './../img/Ilustracion tarjetas.png'
+import imgTienda from './../img/Ilustracion Tienda.png'
 
 // -------------- Style Components -----------------
 import styled from 'styled-components'

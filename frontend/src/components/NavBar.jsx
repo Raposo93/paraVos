@@ -7,13 +7,16 @@ import { FaUserAlt } from 'react-icons/fa'
 import { FaShoppingCart } from 'react-icons/fa'
 import { BsSearch } from 'react-icons/bs'
 import { useState } from 'react'
-
+import { useDispatch } from 'react-redux'
+import { changeCategory } from '../reducers/categoryReducer'
 
 
 export const NavBar = () => {
 
   const [user, setUser] = useState("");
   const [category, setCategory] = useState("")
+
+  const dispatch = useDispatch()
 
   return (
     <>
@@ -34,16 +37,24 @@ export const NavBar = () => {
                 Categorias
               </Link>
               <ul className="dropdown-menu navbar-box">
-                <li><Link className="dropdown-item px-2" to={"/categorias"}>LINEA BEBÉ</Link></li> {/*Filtrar*/}
-                <li><Link className="dropdown-item px-2" to={"/categorias"}>LINEA HOGAR</Link></li>
-                <li><Link className="dropdown-item px-2" to={"/categorias"}>ACCESORIOS</Link></li>
-                <li><Link className="dropdown-item px-2" to={"/categorias"}>TODOS LOS PRODUCTOS</Link></li>
+                <li><Link
+                  onClick={()=> {dispatch(changeCategory("Hogar"))}}
+                 className="dropdown-item px-2" to={"/categorias"}>LINEA HOGAR</Link></li>
+                 <li><Link
+                  onClick={()=> {dispatch(changeCategory("Linea Bebe"))}}
+                 className="dropdown-item px-2" to={"/categorias"}>LINEA BEBÉ</Link></li> {/*Filtrar*/}
+                <li><Link 
+                  onClick={()=> {dispatch(changeCategory("Accesorio"))}}
+                className="dropdown-item px-2" to={"/categorias"}>ACCESORIOS</Link></li>
+                <li><Link 
+                  onClick={()=> {dispatch(changeCategory("Todos"))}}
+                className="dropdown-item px-2" to={"/categorias"}>TODOS LOS PRODUCTOS</Link></li>
               </ul>
             </li>
           </ul>
 
-          <form className="d-flex container-fluid p-2" role="search">
-            <input className="form-control navbar-search position-absolute mt-1 " type="search" placeholder="Buscar" />
+          <form className="d-flex container-fluid p-2" role="text">
+            <input className="form-control navbar-search position-absolute mt-1 " type="text" placeholder="Buscar" />
             <button className="btn lupa" type="submit"><BsSearch size={'1.3em'} />{/*Busqueda*/}</button>
           </form>
 

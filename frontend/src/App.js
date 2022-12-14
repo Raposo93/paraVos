@@ -1,16 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'  
 import { NavBar, WhatsAppPopUp, Footer } from "./components/";
-import { Categorias, Login, Main, Producto, Registro, PagError, RecuperarContraseña, Slideshow, BarraInformativa } from "./components/Pages";
-
-
+import { Categorias, Login, Main, Producto, Registro, PagError, RecuperarContraseña, } from "./components/Pages";
 
 export const App = () => {
   return (
     <div>     
         <Router>
-        <NavBar/>
-        <Slideshow />
+        <NavBar/>        
         <WhatsAppPopUp />
           <Routes>
             <Route path="/" exact element={<Main/>}></Route>
@@ -23,7 +20,7 @@ export const App = () => {
           </Routes>
           <Footer />
         </Router>  
-        <Registro/>
+      
     </div>
   );
 };

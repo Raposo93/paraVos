@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react'
-
 import { Cards } from '../'
 import { Loading } from "../"
 import '../Style/categorias.css'
 import '../Style/MainCard.css'
+import { useSelector, useDispatch } from 'react-redux'
 
 export const Categorias = () => {
 
   const [products, setProducts] = useState([]);
   const [filter, setFilter] = useState(products);
   const [loading, setLoading ] = useState(false);
+  const [firstLoad, setFirstLoad ] = useState(false)
   const [selected, setSelected ] = useState("bebe");
+
+    const categoryState = useSelector(state => state.change);
+    const thisCategory = categoryState[0];
+ 
+  const dispatch = useDispatch();
+
 
   let componentMounted = true;
   const showSelected = "category-selected"
@@ -22,13 +29,13 @@ useEffect(() => {
   const getProduct = async () => {
     setLoading(true);
     const response = await fetch(URL+"productos");
-    const asd = await response.clone().json();
-    const dsa = await response.json()
+    const jsonClone = await response.clone().json();
+    const jsonData = await response.json()
     
     if(componentMounted){
-      setProducts(asd.data);
-      setFilter(dsa.data);
-      setLoading(false);    
+      setProducts(jsonClone.data);
+      setFilter(jsonData.data);
+      setLoading(false);         
     }
     
     return () => {
@@ -38,33 +45,51 @@ useEffect(() => {
   }
 
     getProduct();
-
+   
+        
 },[]);
 
-const filterProduct = (cat) => {
-  const updatedList = products.filter((x)=> x.categoryId === cat); {/* Cambiar id por category */}
+const filterProduct = async (newCat) => {
+  const updatedList = products.filter((product)=> product.category.nameCategory == newCat); {/* Cambiar id por category */}
   setFilter(updatedList)
 }
 
+const changeView = (newCat) => {
+  newCat === "Todos" ? 
+  (setFilter(products), setSelected("Todos")) : 
+  filterProduct(newCat).then(setSelected(newCat))
+}
+
+const firstLoading = ( showSelectedCat ) => {
+  changeView( showSelectedCat ); 
+  setFirstLoad(true);
+}
 
 const ShowProducts = () => {
+ 
   return(
-    <>
-      <div className='d-flex w-100 flex-column justify-content-center aling-items-center'>
+    <>      
+      <div 
+      onLoad={() => !firstLoad ? firstLoading(thisCategory) : setFirstLoad(true) }
+      className='d-flex w-100 flex-column justify-content-center aling-items-center'>
         
       <div className='buttons d-flex justify-content-around my-3 flex-wrap'>
-        <button className={`${selected === "Bebe"? showSelected : ""} btn btn-outline-dark me-2 text-uppercase m-2`} 
-        onClick={() => {filterProduct(2), setSelected("Bebe")}}
-        >Linea Bebe</button> 
+        
         <button className={`${selected === "Hogar"? showSelected : ""} btn btn-outline-dark me-2 text-uppercase m-2`} 
-        onClick={() => {filterProduct(1), setSelected("Hogar")}}
-        >Linea Hogar</button>
+          onClick={() => {changeView("Hogar")}}       
+          >Linea Hogar</button>
+        
+        <button className={`${selected === "Linea Bebe"? showSelected : ""} btn btn-outline-dark me-2 text-uppercase m-2`} 
+          onClick={() => {changeView("Linea Bebe")}}
+          >Linea Bebe</button> 
+
         <button className={`${selected === "Accesorio"? showSelected : ""} btn btn-outline-dark me-2 text-uppercase m-2`} 
-        onClick={() => {filterProduct(3), setSelected("Accesorio")}}
-        >Accesorios</button>
-        <button className={`${selected === "Todos"? showSelected : ""} btn btn-outline-dark me-2 text-uppercase m-2`} 
-        onClick={() => {setFilter(products), setSelected("Todos")}}
-        >Todos los Productos</button>
+          onClick={() => {changeView("Accesorio")}}
+          >Accesorios</button>
+
+        <button className={`${selected === "Todos" ? showSelected : ""} btn btn-outline-dark me-2 text-uppercase m-2`} 
+          onClick={() => {changeView("Todos")}}
+          >Todos los Productos</button>
       </div>
       
         <div className='flex-wrap d-flex justify-content-center align-items-center my-3 mx-1' >
@@ -74,6 +99,8 @@ const ShowProducts = () => {
     </>
   );
 };
+
+
 
   return (
     <>

@@ -1,11 +1,9 @@
 import React, { useRef, useEffect } from "react";
-import bolso from './../../img/fondo 3.png'
-import img2 from './../../img/Eren Levi.jpg'
-import img3 from './../../img/Goku Sheng Long.jpg'
-import img4 from './../../img/Fondo 4.png'
-import imgCamion from './../../img/Ilustracion Camion.png'
-import imgTarjetas from './../../img/Ilustracion tarjetas.png'
-import imgTienda from './../../img/Ilustracion Tienda.png'
+import bolso from './../img/fondo 3.png'
+import img4 from './../img/Fondo 4.png'
+import imgCamion from './../img/Ilustracion Camion.png'
+import imgTarjetas from './../img/Ilustracion tarjetas.png'
+import imgTienda from './../img/Ilustracion Tienda.png'
 
 // ------- Por si es necesario usar fotos en los botones ------
 //import MoveDerecha from './../img/move-rigth.png'
@@ -15,8 +13,8 @@ import imgTienda from './../../img/Ilustracion Tienda.png'
 
 
 
-import { ReactComponent as FlechaDerecha } from "./../../img/flecha-2.svg";
-import { ReactComponent as FlechaIzquierda } from "./../../img/Flecha-1.svg";
+import { ReactComponent as FlechaDerecha } from "./../img/flecha-2.svg";
+import { ReactComponent as FlechaIzquierda } from "./../img/Flecha-1.svg";
 
 // -------------- Style Components -----------------
 import styled from 'styled-components'
@@ -105,22 +103,22 @@ export const Slideshow = () => {
             <ContenedorPrincipal className="main_carousel">
                 <ContenedorCarousel ref={carousel}>
                     <Slide>
-                        <a href="https://google.com.ar">
+                        <a href="http://localhost:3000/error404">
                             <img className="img-slide" src={img4} alt="" />
                         </a>
                     </Slide>
                     <Slide>
-                        <a href="https://www.instagram.com/lautarolmds27/">
+                        <a href="http://localhost:3000/error404">
                             <img className="img-slide" src={bolso} alt="" />
                         </a>
                     </Slide>
                     <Slide>
-                        <a href="https://www.instagram.com/lautarolmds27/">
+                        <a href="http://localhost:3000/error404">
                             <img className="img-slide" src={img4} alt="" />
                         </a>
                     </Slide>
                     <Slide>
-                        <a href="https://www.instagram.com/lautarolmds27/">
+                        <a href="http://localhost:3000/error404">
                             <img className="img-slide" src={bolso} alt="" />
                         </a>
                     </Slide>
