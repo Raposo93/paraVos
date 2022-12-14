@@ -103,22 +103,22 @@ export const Slideshow = () => {
             <ContenedorPrincipal className="main_carousel">
                 <ContenedorCarousel ref={carousel}>
                     <Slide>
-                        <a href="https://google.com.ar">
+                        <a href="http://localhost:3000/error404">
                             <img className="img-slide" src={img4} alt="" />
                         </a>
                     </Slide>
                     <Slide>
-                        <a href="https://www.instagram.com/lautarolmds27/">
+                        <a href="http://localhost:3000/error404">
                             <img className="img-slide" src={bolso} alt="" />
                         </a>
                     </Slide>
                     <Slide>
-                        <a href="https://www.instagram.com/lautarolmds27/">
+                        <a href="http://localhost:3000/error404">
                             <img className="img-slide" src={img4} alt="" />
                         </a>
                     </Slide>
                     <Slide>
-                        <a href="https://www.instagram.com/lautarolmds27/">
+                        <a href="http://localhost:3000/error404">
                             <img className="img-slide" src={bolso} alt="" />
                         </a>
                     </Slide>

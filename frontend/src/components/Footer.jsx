@@ -4,6 +4,8 @@ import logoInstagram from './../img/Icono instagram normal.png'
 import ubicacion from './../img/ubi.png'
 import datarandom from './../img/datafiscal.png'
 import { Formik } from "formik";
+import emailjs from 'emailjs-com';
+// -------------- SOLUCIONAR CSS --------------
 import './Style/footer.css'
 
 export const Footer = () => {
@@ -28,8 +30,8 @@ export const Footer = () => {
                         </div>
                     </div>
 
-                    <div className="part-two">
-                        <h4 className="enunciados">Nuestra Tienda</h4>
+                    <div id="enunciado_tienda" className="part-two">
+                        <h2 className="enunciados">Nuestra Tienda</h2>
                         <p className="p_ubi-tienda"><img className="ubi-tienda" src={ubicacion} />Lorem Ipsum</p>
                         <div>
 
@@ -37,9 +39,13 @@ export const Footer = () => {
                     </div>
 
                     <div className="part-three">
-                        <h4 className="enunciados">CONTACTO</h4>
+                        <h2 className="enunciados">CONTACTO</h2>
                         <div>
                             <Formik
+                            
+
+                                // -------------- Valores iniciales del formulario --------------
+
                                 initialValues={{
                                     nombre: '',
                                     email: '',
@@ -87,7 +93,7 @@ export const Footer = () => {
 
 
                                 {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
-                                    <form target="_blank" action="https://formsubmit.co/lautarolarrue@gmail.com" method="POST"  className="formulario" >
+                                    <form   className="formulario" >
                                         <div>
 
                                             <input className="nombre"
@@ -139,7 +145,7 @@ export const Footer = () => {
                                         <button type="submit" className="btn-envio"> Enviar </button>
                                         {formularioEnviado && <p className="exito">Formulario enviado con exito!</p>}
                                         
-                                        <input  type="hidden" name="_captcha" value="false"></input>
+                                       
                                     </form>
                                 )}
 
@@ -160,7 +166,7 @@ export const Footer = () => {
 
 
                     <div className="part-four">
-                        <h4 className="enunciados">Seguinos</h4>
+                        <h2 className="enunciados">Seguinos</h2>
                         <a href="https://www.instagram.com/lautarolmds27/" >
                             <img className="insta-logo" src={logoInstagram} />
                         </a>
