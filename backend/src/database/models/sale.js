@@ -19,10 +19,6 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.FLOAT(50),
       allowNull: false,
     },
-    cobrado: {
-      type:dataTypes.DATE,
-      allowNull: false
-    },
   };
   let configurations = { tableName: "sales" }; 
 

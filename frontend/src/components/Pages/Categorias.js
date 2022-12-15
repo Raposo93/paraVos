@@ -50,7 +50,7 @@ useEffect(() => {
 },[]);
 
 const filterProduct = async (newCat) => {
-  const updatedList = products.filter((product)=> product.category.nameCategory == newCat); {/* Cambiar id por category */}
+  const updatedList = products.filter((product)=> product.category.nameCategory == newCat);
   setFilter(updatedList)
 }
 

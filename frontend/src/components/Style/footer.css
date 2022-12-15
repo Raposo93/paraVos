@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400&display=swap');
 
+*{	
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+/*body{
+    
+    background-color: #ADD082;
+    font-family: 'Poppins', sans-serif;
+    
+}*/
 /* --------------- Tamaño del Carousel ----------------- */
 .main_carousel {
     max-width: 100%;
@@ -55,7 +67,7 @@ background-color: #F2F2F2;
 .div-barra{
 	width: 2px;
 	border: 0.5px solid #6A6A6A;
-	height: 250px;
+	height: 200px;
 	margin-top: 50px;
 }
 
@@ -93,11 +105,11 @@ button {
 
 
 .footer1 {
-    background-color: #ADD082;
+    background-color: #BFE393;
 	color: #6A6A6A;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 400;
-	
+	height: 430px;
 	
 	
 }
@@ -109,6 +121,12 @@ button {
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
 	text-transform: uppercase;
+}
+#enunciado_contacto {
+	margin-bottom: 7%;
+}
+#enunciado_tienda {
+	margin-right: 15%;
 }
 /* ------------- Con esta aplicacion en el texto, se rompe al achicarlo ------------- */
 .texto-primer-columna{
@@ -123,7 +141,7 @@ button {
 .grid-containter {
 	margin-bottom: 25px;
 	display: grid;
-	grid-template-columns: auto auto auto auto;
+	grid-template-columns: auto 23% auto auto;
 	text-align: center;
 	width: 100%;
 /* ---------- Dejar un AUTO cuando @media y 400px/480px normal --------*/	
@@ -160,33 +178,34 @@ button {
 	margin-right: 50px;
 }
 .data-random{
-	margin-bottom: 15px ;
+	margin-bottom: 10px ;
 }
 
 /* --------------------------- Diseño Formulario --------------------------- */
 
 .textarea {
-	width: 100%;
+	width: 105%;
 	height: 100px;
-	border-radius: 9px;
+	border-radius: 5px;
 	border-style: none;
 	margin-top: 12px;
 	padding-left: 9px ;
 	font-family: 'Roboto', sans-serif;
+	
 }
 .email {
-	width: 100%;
-	height: 25px;
-	border-radius: 9px;
+	width: 105%;
+	height: 24px;
+	border-radius: 5px;
 	border-style: none;
 	margin-top: 12px;
 	padding-left: 9px ;
 	font-family: 'Roboto', sans-serif;
 }
 .nombre {
-	width: 100%;
-	height: 25px;
-	border-radius: 9px;
+	width: 105%;
+	height: 24px;
+	border-radius: 5px;
 	border-style: none;
 	padding-left: 9px ;
 	font-family: 'Roboto', sans-serif;

@@ -1,21 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = [
-    {  
-        id: 1,
-        name: "producto 1",        
-        image: "not found",
-        price: 500,
-        stock: 5,
-    },
-    {  
-        id: 2,
-        name: "producto 2",
-        image: "not found",
-        price: 500,
-        stock: 5,
-    },
-];
+const initialState = [];
 
 export const cartReducer = createSlice({
 
@@ -23,7 +8,17 @@ export const cartReducer = createSlice({
     initialState,
     reducers: {
         addItems: (state, action) => {
-            state.push(action.payload)
+           
+
+            state.reduce((state, action)=>{
+                if(!state.includes(action.payload)){
+                  state.push(action.payload);
+                }
+                return state;
+              },[])
+
+
+
         },
         deleteItems: (state, action) => {
             state.filter(() => action.payload)
