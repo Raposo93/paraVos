@@ -3,14 +3,23 @@ import { Formik } from "formik";
 import { useDispatch } from "react-redux";
 import userReducer from "../../reducers/userReducer";
 
-
+URL = "http://localhost:3001/user/register"
 
 
 export const Registro = () => {
   const [formularioEnviado, cambiarFormularioEnviado] = useState(false)
-
+  
   const dispatch = useDispatch();
   
+  const usuarioRegitrado = async () => {
+    const data = new FormData (document.getElementById('formulario_data'))
+    const usuarioDatos = await fetch(URL, {method: "POST", body: data});
+    const DataUser = await usuarioDatos.json();
+  } 
+
+  usuarioRegitrado()
+  console.log("usuarioRegitrado")
+
   return (
     <main>
       <div className="grid-containter">
@@ -60,7 +69,9 @@ export const Registro = () => {
             }}
             //-------------- Mensaje exitoso de formulario enviado --------------
             onSubmit={(valores, { resetForm }) => {
-              //-------------- Back --------------
+              
+              
+            //-------------- Back --------------
               dispatch(userReducer(
                 {firstname: nombre,
                 lastname: apellido,
@@ -72,7 +83,7 @@ export const Registro = () => {
                 phone_number:""},))
               
                 resetForm();
-              console.log("Formulario Enviado")
+              console.log("Usuario Registrado")
               cambiarFormularioEnviado(true);
               setTimeout(() => {
                 cambiarFormularioEnviado(false)
@@ -83,7 +94,7 @@ export const Registro = () => {
 
 
             {({ values, errors, touched, handleChange, handleBlur }) => (
-              <form className="formulario" >
+              <form id="formulario_data" className="formulario" >
                 <div>
                   <h1>CREAR CUENTA</h1>
                   <label/> Nombre <br></br>
@@ -132,7 +143,7 @@ export const Registro = () => {
                 <div>
                 <label> Contraseña </label> <br/>
                   <input className="Register_password"
-                    type="text"
+                    type="password"
                     id="contraseña"
                     name="contraseña"
                     placeholder="Contraseña"
