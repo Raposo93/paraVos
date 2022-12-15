@@ -3,6 +3,7 @@ const { compare } = require("bcrypt");
 const { SignJWT } = require("jose");
 
 const userLoginController = async (req, res) => {
+  
   const { address_mail, password } = req.body;
 
   const existingUserByEmail = await db.User.findOne({
@@ -29,6 +30,7 @@ const userLoginController = async (req, res) => {
     .sign(encoder.encode(process.env.JWT_PRIVATE_KEY));
 
   return res.send({ jwt });
+
 };
 
 module.exports = userLoginController;

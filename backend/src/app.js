@@ -1,6 +1,5 @@
 // ************ Require's ************
 const express = require("express");
-const indexRouter = require("./routes/index");
 const authRouter = require("./routes/auth.routes");
 const productRouter = require("./routes/products");
 const comprasRouter = require("./routes/compras");
@@ -31,9 +30,7 @@ app.use(cors({
 
 //************Rutas******* **/
 /* RUTAS QUE FALTAN */
-//Carrito de compras (/compras)
-//niciar Sesión (/login)
-//Registro (/registrar)
+//Carrito de compras (/compras)???
 //Dashboard (/dashboard/cliente)
 //Dashboard (/dashboard/admin)
 // app.use("/", indexRouter);
