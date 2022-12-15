@@ -1,0 +1,19 @@
+.category-tittle {
+    background-color: #d9d9d946;
+    color: #7E9480;
+}
+
+.btn-outline-dark {
+    background-color: #BFE393;
+    border: none;
+    font-weight: 600;
+}
+
+.btn-outline-dark:hover {
+    background-color: #7E9480;
+}
+
+.category-selected {
+    background-color: #7E9480;
+    color: white;
+}
