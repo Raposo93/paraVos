@@ -57,7 +57,7 @@ const filterProduct = async (newCat) => {
 const changeView = (newCat) => {
   newCat === "Todos" ? 
   (setFilter(products), setSelected("Todos")) : 
-  filterProduct(newCat).then(setSelected(newCat))
+  filterProduct(newCat).then(setSelected(newCat));
 }
 
 const firstLoading = ( showSelectedCat ) => {

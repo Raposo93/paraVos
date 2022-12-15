@@ -20,7 +20,7 @@ export const Producto = () => {
               <img className='w-50 h-50 p-1' src={showProduct.image}></img>
             </div>
 
-            <div className='d-flex w-100'>
+            <div className='d-flex w-100'> {/* arreglar filtro de fotos */}
               <img className='product-img product-img_selected w-25 h-25 m-2 p-2' src={showProduct.image}></img> {/* map que filtra por imagenes*/}
               <img className='product-img w-25 h-25 m-2 p-2' src={showProduct.image}></img>
               <img className='product-img w-25 h-25 m-2 p-2' src={showProduct.image}></img>
@@ -32,15 +32,15 @@ export const Producto = () => {
         <div className=' h-100 d-flex flex-column justify-content-around align-items-start product-desc '>
           <div className='d-flex'>
             <h4 className='text-uppercase'> {showProduct.name} </h4>
-            <p className='product-tittle_discount px-1 mx-4 '> -{showProduct.descuento}%</p>
+            <p className='product-tittle_discount px-1 mx-4 '> -{0 /*showProduct.descuento*/}%</p>
           </div>
-
+                {/* ARREGLAR DESCUENTO (cuando se una a la bd, hacer que si el descuento es 0, no se muestre)*/}
           <div className='d-flex'>
-            <h5 className='product-price '>${showProduct.price - ((showProduct.price / 100) * showProduct.descuento)}</h5>
+            <h5 className='product-price '>${showProduct.price - ((showProduct.price / 100) * 0 /*showProduct.descuento*/)}</h5>
             <h5 className='product-discount text-inline mx-3'>${showProduct.price}</h5>
           </div>
 
-          <p className="m-1">{showProduct.desc}</p>
+          <p className="m-1">{showProduct.description}</p>
 
           <div className='w-50 d-flex flex-column'>
             <h5 className='product-quantity_tittle text-capitalize'>cantidad</h5>
@@ -50,14 +50,16 @@ export const Producto = () => {
               onClick={()=> quantity!== 0? setQuantity(quantity - 1): quantity }
               >-</button>                           
 
-              <input className='product-quantity_number' type="text" value={quantity} disabled></input>
+              <input className='product-quantity_number' type="text" 
+              value={ showProduct.stock === null || 0 ? "S/S" : quantity} 
+              disabled></input>
 
               <button className='btn'
               onClick={()=> quantity < showProduct.stock? setQuantity(quantity + 1) : quantity }
               >+</button>
-            </div>
-
+            </div>                        
           </div>
+          <p className={`w-100 m-1 text-capitalize product-ss ${showProduct.stock === null || 0 ? "" : "d-none" } `} >producto sin stock disponible, consulte por whatsapp para su encargo</p>
           <button className='btn-outline-dark w-100 w-50 text-uppercase rounded my-2 py-2'>agrega al carrito</button>
         </div>        
       </div>
