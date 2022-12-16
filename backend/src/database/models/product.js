@@ -12,7 +12,19 @@ module.exports = (sequelize, dataTypes) => {
       allowNull: false,
     },
     image: {
-      type: dataTypes.STRING(50),
+      type: dataTypes.STRING(100),
+      allowNull: false,
+    },
+    imageA: {
+      type: dataTypes.STRING(100),
+      allowNull: false,
+    },
+    imageB: {
+      type: dataTypes.STRING(100),
+      allowNull: false,
+    },
+    imageC: {
+      type: dataTypes.STRING(100),
       allowNull: false,
     },
     description: {
@@ -31,6 +43,15 @@ module.exports = (sequelize, dataTypes) => {
       type: dataTypes.INTEGER(11),
       allowNull: false,
     },
+    destacado: {
+      type: dataTypes.TINYINT(5),
+      allowNull: true,
+    },
+    descuento: {
+      type: dataTypes.STRING(50),
+      allowNull: false,
+    },
+
   };
   let configurations = { tableName: "products" };
 
@@ -41,18 +62,8 @@ module.exports = (sequelize, dataTypes) => {
     Product.belongsTo(models.Categories, {
       as: "category",
       foreignKey: "categoryId",
-    }),
-      //relacion productos descuento a traves de la tabla pivote descuentoProducts
-      (Product.associate = function (models) {
-        Product.belongsToMany(models.Descuentos, {
-          as: "descuentos",
-          through: "descuentoProducts",
-          foreignKey: "descuentoId",
-          otherKey: "productId",
-          timestamps: false,
-        });
-      });
-  };
+    })};
 
   return Product;
-};
+
+ };

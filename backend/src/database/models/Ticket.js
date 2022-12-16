@@ -30,6 +30,9 @@ module.exports = (sequelize, dataTypes) => {
     nameCategoy: {
       type: dataTypes.STRING(50),
     },
+    image: {
+      type: dataTypes.TEXT(200),
+    },
   };
   let configurations = { tableName: "tickets" };
 
