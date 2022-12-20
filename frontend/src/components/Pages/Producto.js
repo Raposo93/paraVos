@@ -20,15 +20,15 @@ export const Producto = () => {
         <div className='d-flex flex-column justify-content-center h-100 product-imgs'>
 
             <div className='product-img d-flex flex-column justify-content-center align-items-center w-100'>
-              <img className='w-50 h-50 p-1' src={showProduct.imageA}></img>
+              <img className='w-50 h-50 p-1' src={showProduct.image}></img>
             </div>
 
             <div className='d-flex w-100'> {/* arreglar filtro de fotos */}
               <img className='product-img product-img_selected w-25 h-25 m-2 p-2' 
               src={showProduct.imageA}></img> {/* map que filtra por imagenes*/}
+              <img className='product-img w-25 h-25 m-2 p-2' src={showProduct.imageA}></img>
               <img className='product-img w-25 h-25 m-2 p-2' src={showProduct.imageB}></img>
               <img className='product-img w-25 h-25 m-2 p-2' src={showProduct.imageC}></img>
-              <img className='product-img w-25 h-25 m-2 p-2' src={showProduct.imageD}></img>
             </div>
           
         </div>
@@ -65,6 +65,7 @@ export const Producto = () => {
             </div>                        
           </div>
           <p className={`w-100 m-1 text-capitalize product-ss ${showProduct.stock === null || 0 ? "" : "d-none" } `} >producto sin stock disponible, consulte por whatsapp para su encargo</p>
+          
           <button 
           onClick={() => dispatch(addItems({
             id: showProduct.id,
@@ -73,13 +74,14 @@ export const Producto = () => {
             price: showProduct.price,
             discount: showProduct.descuento != null ? showProduct.descuento : 0,
             image: {
-              uno: showProduct.imageA,
-              dos: showProduct.imageB != null ? showProduct.imageA : null,
-              tres: showProduct.imageC != null ? showProduct.imageB : null,
-              cuatro: showProduct.imageD != null ? showProduct.imageC : null,
+              uno: showProduct.image,
+              dos: showProduct.imageA != null ? showProduct.imageA : null,
+              tres: showProduct.imageB != null ? showProduct.imageB : null,
+              cuatro: showProduct.imageC != null ? showProduct.imageC : null,
             }
           })) }
-          className='btn-outline-dark w-100 w-50 text-uppercase rounded my-2 py-2'>agrega al carrito</button>
+          className={`${showProduct.stock === null || 0 ? "" : "" } btn-outline-dark w-100 w-50 text-uppercase rounded my-2 py-2 `}>
+            agrega al carrito</button> {/* ${showProduct.stock === null || 0 ? "d-none" : "" } cuando funcione */}
         </div>        
       </div>
     </div>

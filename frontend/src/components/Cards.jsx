@@ -15,7 +15,7 @@ export const Cards = ({ products }) => {
             {products.map((product) => (
                 <motion.div                 
                     className="maincard rounded position-relative d-flex flex-column align-items-center text-center m-4" key={product.id} >
-                    <img className="card-img-top maincard-img mt-4 p-2" src={product.imageA} alt="Card image cap" />
+                    <img className="card-img-top maincard-img mt-4 p-2" src={product.image} alt="Card image cap" />
                     <motion.div className="maincard-body m-0 p-0 w-100">
                         <p className="text-dark m-0 p-0 fw-bold text-uppercase px-1 mt-2" >{product.name.slice(0,19)} ...</p>
                         <p className="maincard-price pb-2">$ {product.price}</p>

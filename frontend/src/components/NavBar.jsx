@@ -77,9 +77,7 @@ export const NavBar = () => {
 
               <li className="nav-item dropdown">
                 <Link className="nav-link flex-fill" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <FaShoppingCart className='btn nav-btn' size={'3.5em'}
-                    onClick={() => console.log("cart")}
-                  />{/*carrito*/}
+                  <FaShoppingCart className='btn nav-btn' size={'3.5em'} />{/*carrito*/}
                 </Link>
                 <ul className="dropdown-menu navbar-box icon-box">
                   <li><Carrito/></li> {/*carrito*/}

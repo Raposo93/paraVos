@@ -8,17 +8,8 @@ export const cartReducer = createSlice({
     initialState,
     reducers: {
         addItems: (state, action) => {
-           
-
-            state.reduce((state, action)=>{
-                if(!state.includes(action.payload)){
-                  state.push(action.payload);
-                }
-                return state;
-              },[])
-
-
-
+            state.push(action.payload)
+            
         },
         deleteItems: (state, action) => {
             state.filter(() => action.payload)
