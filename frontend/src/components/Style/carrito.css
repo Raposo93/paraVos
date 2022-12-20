@@ -1,0 +1,25 @@
+.carrito-fondo {
+    position: fixed;
+    top: 0;
+    left: 0;    
+    background-color: #3b3b3b83;
+}
+
+.carrito-container {
+    position: fixed;
+    right: 0;
+    top: 0px;
+    height: 70vh;
+    width: 40vw;
+    background-color: white;
+    z-index: 10;
+}
+
+.carrito-title {
+    color: #3B3B3B;
+    background-color: #ADD082;
+}
+
+.carrito-buyData {
+    border-top: 2px solid #3b3b3b3a;
+}

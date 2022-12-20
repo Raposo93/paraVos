@@ -9,6 +9,7 @@ import { BsSearch } from 'react-icons/bs'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { changeCategory } from '../reducers/categoryReducer'
+import { Carrito } from '../components'
 
 
 export const NavBar = () => {
@@ -76,12 +77,10 @@ export const NavBar = () => {
 
               <li className="nav-item dropdown">
                 <Link className="nav-link flex-fill" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <FaShoppingCart className='btn nav-btn' size={'3.5em'}
-                    onClick={() => console.log("cart")}
-                  />{/*carrito*/}
+                  <FaShoppingCart className='btn nav-btn' size={'3.5em'} />{/*carrito*/}
                 </Link>
                 <ul className="dropdown-menu navbar-box icon-box">
-                  <li><Link className="dropdown-item " to={"/registro"}>carrito</Link></li> {/*carrito*/}
+                  <li><Carrito/></li> {/*carrito*/}
                   
                 </ul>
                 </li>
