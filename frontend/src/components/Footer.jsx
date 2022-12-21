@@ -167,7 +167,7 @@ export const Footer = () => {
 
                     <div className="part-four">
                         <h2 className="enunciados">Seguinos</h2>
-                        <a href="https://www.instagram.com/lautarolmds27/" >
+                        <a href="https://www.instagram.com/para_vos_creaciones/" >
                             <img className="insta-logo" src={logoInstagram} />
                         </a>
                         <div>
