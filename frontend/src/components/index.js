@@ -7,3 +7,4 @@ export { Loading } from "./Loading"
 export { Footer } from './Footer'
 export { Slideshow } from './Slideshow'
 export { BarraInformativa } from './BarraInformativa'
+export { Carrito } from './Carrito'

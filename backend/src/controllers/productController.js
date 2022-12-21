@@ -35,13 +35,19 @@ const controller = {
   //Creo al producto
   store: async (req, res) => {
     try {
-      const { name, image, description, stock, price } = req.body;
+      const { name, image, imageA, imageB, imageC, description, stock, price, destacado, descuento} = req.body;
       const resDetail = await Products.create({
         name,
         image,
+        imageA,
+        imageB,
+        imageC,
         description,
         stock,
         price,
+        destacado,
+        descuento
+
       });
       res.send({ data: resDetail });
     } catch (e) {

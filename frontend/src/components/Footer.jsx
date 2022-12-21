@@ -4,7 +4,7 @@ import logoInstagram from './../img/Icono instagram normal.png'
 import ubicacion from './../img/ubi.png'
 import datarandom from './../img/datafiscal.png'
 import { Formik } from "formik";
-import emailjs from 'emailjs-com';
+
 // -------------- SOLUCIONAR CSS --------------
 import './Style/footer.css'
 

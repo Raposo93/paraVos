@@ -50,14 +50,14 @@ useEffect(() => {
 },[]);
 
 const filterProduct = async (newCat) => {
-  const updatedList = products.filter((product)=> product.category.nameCategory == newCat); {/* Cambiar id por category */}
+  const updatedList = products.filter((product)=> product.category.nameCategory == newCat);
   setFilter(updatedList)
 }
 
 const changeView = (newCat) => {
   newCat === "Todos" ? 
   (setFilter(products), setSelected("Todos")) : 
-  filterProduct(newCat).then(setSelected(newCat))
+  filterProduct(newCat).then(setSelected(newCat));
 }
 
 const firstLoading = ( showSelectedCat ) => {
