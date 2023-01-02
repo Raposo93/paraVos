@@ -5,6 +5,7 @@ import { FaShoppingCart } from 'react-icons/fa'
 import { BsTrash } from 'react-icons/bs'
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteItems, addItems } from '../reducers/cartReducer'
+import { Link } from 'react-router-dom'
 
 
 export const Carrito = () => {
@@ -115,7 +116,10 @@ export const Carrito = () => {
                         <p className='mx-2'>Total sin envio:</p>
                         <p className='mx-2'>$ {total}</p>
                     </div>
-                    <button className='btn btn-outline-dark me-2 text-uppercase m-2'>realizar pedido</button>
+                    <Link className='w-100' to={"/detallecompra"}
+                    onClick={ () => dispatch(addItems(unicos))}>
+                        <button className='w-100 btn btn-outline-dark me-2 text-uppercase m-2'>realizar pedido</button>
+                    </Link>
                 </div>
             </div>
         
