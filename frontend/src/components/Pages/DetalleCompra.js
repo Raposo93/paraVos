@@ -76,8 +76,8 @@ export const DetalleCompra = () => {
     })
 
   return (
-    <div className='w-100 d-flex justify-content-center align-items-start'>
-        <div className='w-50 d-flex flex-column justify-content-center align-items-center'>
+    <div className='w-100 d-flex justify-content-center align-items-start  media-breakpoint-up(lg) { flex-column-reverse }'>
+        <div className='w-50 d-flex flex-column justify-content-center align-items-center media-breakpoint-up(lg) { w-100 }'>
             <div className='m-2 pt-2 detalle-data_container'>
                 <h3 onClick={() => setShowClient(!showClient)}>
                   <button className='detalle-number p-1'>1</button>IDENTIFICACION</h3>
@@ -387,7 +387,7 @@ export const DetalleCompra = () => {
                 </div>
             </div>
         </div>
-        <div className='w-50 d-flex'>
+        <div className='w-50 d-flex media-breakpoint-up(lg) { w-100 justify-content-center }'>
           <div className='m-2 pt-2 detalle-data_container'>
             <h3 className='mx-3'>RESUMEN DE COMPRA</h3>
             
