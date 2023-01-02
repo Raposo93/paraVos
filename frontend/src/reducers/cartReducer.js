@@ -20,6 +20,6 @@ export const cartReducer = createSlice({
 
 });
 
-export const { addItems, deleteItems, changeItemQuantity } = cartReducer.actions;
+export const { addItems, deleteItems } = cartReducer.actions;
 export const selectCart = (state) => state.cart.value;
 export default cartReducer.reducer;
