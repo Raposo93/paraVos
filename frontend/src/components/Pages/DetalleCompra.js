@@ -92,7 +92,6 @@ export const DetalleCompra = () => {
                   }}
                   validationSchema= {validation}
                   onSubmit={async (values) => {
-                    await new Promise((r) => setTimeout(r, 500));
                     console.log(JSON.stringify(values, null, 2));
                     setShowClient()
                     setShowSend(true)
@@ -217,7 +216,6 @@ export const DetalleCompra = () => {
                           }}
                           validationSchema= {validation2}
                           onSubmit={async (values) => {
-                            await new Promise((r) => setTimeout(r, 500));
                             console.log(JSON.stringify(values, null, 2));
                             setShowSend()
                             setShowPay(true)
@@ -396,9 +394,9 @@ export const DetalleCompra = () => {
 
                 <img className='w-25' src={item.image}></img>
 
-                <p className='w-50 item-text'>  {item.name} </p>
+                <p className='w-50 item-text'> {item.name} x{item.stock}</p>
                 
-                <p className='item-text'> $ {item.price}</p>                             
+                <p className='item-text'> $ {(item.price*item.stock)}</p>                             
 
               </div>
               ))}

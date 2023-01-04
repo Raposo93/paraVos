@@ -21,7 +21,9 @@ export const Carrito = () => {
 
     const unicos = [...newListMapArr.values()]; // Esto hay que mandar al back
 
-    unicos.sort((a, b) => {
+    const objectFilter = unicos.filter((item) => item.id) // Esto esta para que cuando se envien los productos a la pagina de detalle, no aparezca un objeto con error
+
+    objectFilter.sort((a, b) => {
         if (a.name > b.name) {
           return 1;
         }
@@ -44,7 +46,7 @@ export const Carrito = () => {
           }))
     }    
     
-    const prices = unicos.map(item => item.price * item.stock);
+    const prices = objectFilter.map(item => item.price * item.stock);
 
     const total = prices.reduce((a, b) => a + b, 0);
 
@@ -58,7 +60,7 @@ export const Carrito = () => {
                 <div className='h-100 overflow-auto'>
                     <div className='d-flex flex-column justify-content-around align-items-center'>
 
-                        {unicos.map((item) => (
+                        {objectFilter.map((item) => (
 
                             <div className="d-flex justify-content-around align-items-center w-100" key={item.id}>
 
