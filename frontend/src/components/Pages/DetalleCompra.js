@@ -76,8 +76,8 @@ export const DetalleCompra = () => {
     })
 
   return (
-    <div className='w-100 d-flex justify-content-center align-items-start  media-breakpoint-up(lg) { flex-column-reverse }'>
-        <div className='w-50 d-flex flex-column justify-content-center align-items-center media-breakpoint-up(lg) { w-100 }'>
+    <div className='w-100 d-flex justify-content-center align-items-start'>
+        <div className='w-50 d-flex flex-column justify-content-center align-items-center'>
             <div className='m-2 pt-2 detalle-data_container'>
                 <h3 onClick={() => setShowClient(!showClient)}>
                   <button className='detalle-number p-1'>1</button>IDENTIFICACION</h3>
@@ -92,7 +92,6 @@ export const DetalleCompra = () => {
                   }}
                   validationSchema= {validation}
                   onSubmit={async (values) => {
-                    await new Promise((r) => setTimeout(r, 500));
                     console.log(JSON.stringify(values, null, 2));
                     setShowClient()
                     setShowSend(true)
@@ -217,7 +216,6 @@ export const DetalleCompra = () => {
                           }}
                           validationSchema= {validation2}
                           onSubmit={async (values) => {
-                            await new Promise((r) => setTimeout(r, 500));
                             console.log(JSON.stringify(values, null, 2));
                             setShowSend()
                             setShowPay(true)
@@ -387,7 +385,7 @@ export const DetalleCompra = () => {
                 </div>
             </div>
         </div>
-        <div className='w-50 d-flex media-breakpoint-up(lg) { w-100 justify-content-center }'>
+        <div className='w-50 d-flex'>
           <div className='m-2 pt-2 detalle-data_container'>
             <h3 className='mx-3'>RESUMEN DE COMPRA</h3>
             
@@ -396,9 +394,9 @@ export const DetalleCompra = () => {
 
                 <img className='w-25' src={item.image}></img>
 
-                <p className='w-50 item-text'>  {item.name} </p>
+                <p className='w-50 item-text'> {item.name} x{item.stock}</p>
                 
-                <p className='item-text'> $ {item.price}</p>                             
+                <p className='item-text'> $ {(item.price*item.stock)}</p>                             
 
               </div>
               ))}
