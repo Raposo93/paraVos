@@ -12,6 +12,7 @@
     height: 45px;
     width: 100%;
     border-bottom: 1px solid #8d8d8d;
+    cursor: pointer;
 }
 
 .dashboar-text_item {
@@ -25,3 +26,6 @@
     background-color: #D5E5C2;
 }
 
+.dashboard-item_category:hover {
+    background-color: #d5e5c2a9;
+}

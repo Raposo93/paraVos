@@ -16,15 +16,20 @@ export const DetalleCompra = () => {
     const [showPay, setShowPay ] = useState();
     const [send, setSend] = useState(true);
     const [paid, setPaid] = useState(true);
+
+    const [sendUser, setSendUser] = useState({})
+    const [sendAdress, setSendAdress] = useState({adress: "retira en local"})
+    const [totalData, setTotalData ] = useState({})
+
     const [sendCost, setSendCost] = useState(0)
 
     const getList = useSelector(state => state.cart);
 
     const filterList = getList.filter( (item) => !item.id )
 
-    const showItems = filterList[0]   
+    const showItems = filterList[filterList.length - 1]   
 
-    const prices = filterList[0].map(item => item.price * item.stock);
+    const prices = filterList[filterList.length - 1].map(item => item.price * item.stock);
 
     const total = prices.reduce((a, b) => a + b, 0);
 
@@ -39,15 +44,15 @@ export const DetalleCompra = () => {
         .min(3, "El apellido debe ser mayor de 2 letras")
         .max(50, "el campo no puede superar los 50 caracteres")
         .matches(/^[aA-zZ]+$/, "Ingrese solo letras"),
-        email:  Yup.string()
-        .email("Introdusca un email valido")
+        address_mail:  Yup.string()
+        .email("Introdusca un mail valido")
         .required("campo requerido")
         .max(50, "el campo no puede superar los 50 caracteres"),
         dni:  Yup.number()
         .typeError("ingrese números")
         .required("campo requerido")
         .positive("el numero no puede ser negativo"),
-        phone:  Yup.number()
+        phone_number:  Yup.number()
         .typeError("ingrese números")
         .required("campo requerido")
         .positive("el numero no puede ser negativo"),
@@ -76,23 +81,25 @@ export const DetalleCompra = () => {
     })
 
   return (
-    <div className='w-100 d-flex justify-content-center align-items-start'>
+    <div
+         
+        className='w-100 d-flex justify-content-center align-items-start'>
         <div className='w-50 d-flex flex-column justify-content-center align-items-center'>
             <div className='m-2 pt-2 detalle-data_container'>
                 <h3 onClick={() => setShowClient(!showClient)}>
                   <button className='detalle-number p-1'>1</button>IDENTIFICACION</h3>
                 <div className={`${showClient? "" : "d-none"}`}> 
-                <Formik
+                <Formik 
                   initialValues={{
                     firstName: '',
                     lastName: '',
-                    email: '',
+                    address_mail: '',
                     dni: '',
-                    phone: '',
+                    phone_number: '',
                   }}
                   validationSchema= {validation}
                   onSubmit={async (values) => {
-                    console.log(JSON.stringify(values, null, 2));
+                    setSendUser(values);
                     setShowClient()
                     setShowSend(true)
                   }}
@@ -100,19 +107,19 @@ export const DetalleCompra = () => {
                   {({ touched, errors }) => (
                   <Form className='d-flex flex-column justify-content-center m-3 '>
 
-                    <label htmlFor="sell-email">Email</label>
+                    <label htmlFor="sell-address_mail">Email</label>
                     <Field                       
-                        id="sell-email"
-                        name="email"
+                        id="sell-address_mail"
+                        name="address_mail"
                         placeholder="Ingrese su Email"
-                        type="email"
+                        type="address_mail"
                         className={`w-100 px-2 detalle-data_field
-                        ${touched.email && errors.email ? "is-invalid" : ""}`}
+                        ${touched.address_mail && errors.address_mail ? "is-invalid" : ""}`}
                       />
 
                       <ErrorMessage
                         component="div"
-                        name="email"
+                        name="address_mail"
                         className="invalid-feedback"
                       />
 
@@ -146,19 +153,19 @@ export const DetalleCompra = () => {
                         className="invalid-feedback"
                       />
 
-                    <label htmlFor="sell-phone">Teléfono</label>
+                    <label htmlFor="sell-phone_number">Teléfono</label>
                     <Field
-                        id="sell-phone"
-                        name="phone"
+                        id="sell-phone_number"
+                        name="phone_number"
                         placeholder="Ingrese su Telefono"
                         type="text"
                         className={`w-100 px-2 detalle-data_field
-                        ${touched.phone && errors.phone ? "is-invalid" : ""}`}
+                        ${touched.phone_number && errors.phone_number ? "is-invalid" : ""}`}
                       />
 
                       <ErrorMessage
                         component="div"
-                        name="phone"
+                        name="phone_number"
                         className="invalid-feedback"
                       />
                     <label htmlFor="sell-dni">DNI</label>
@@ -216,7 +223,7 @@ export const DetalleCompra = () => {
                           }}
                           validationSchema= {validation2}
                           onSubmit={async (values) => {
-                            console.log(JSON.stringify(values, null, 2));
+                            setSendAdress(values);
                             setShowSend()
                             setShowPay(true)
                           }}
@@ -369,13 +376,19 @@ export const DetalleCompra = () => {
                 <div className={`${showPay? "" : "d-none"} d-flex flex-column justify-content-center align-items-center`}> 
                 
               
-                <button onClick={() => setPaid(true)}
+                <button onClick={() =>  setTotalData({
+                        user: sendUser,
+                        adress: sendAdress,
+                        products: showItems,
+                      })}     // estos son los items que el back necesita. 
                       className={`btn size-90 btn-sending d-flex justify-content-start m-2 align-items-center 
                       ${paid? `selected`: ""}`}> 
                       <img className='mx-4' src={mercadoPago}></img>
                 </button>
 
-                <button onClick={() => setPaid()}
+                <button onClick={() => (
+                     console.log(totalData) // cambiar para enviar al back.
+                )}
                       className={`btn mb-4 size-90 btn-sending d-flex justify-content-start m-2 align-items-center 
                       ${!paid? `selected`: ""}`}> 
                       <img className='mx-4' src={otrosMedios}></img>
@@ -385,6 +398,7 @@ export const DetalleCompra = () => {
                 </div>
             </div>
         </div>
+
         <div className='w-50 d-flex'>
           <div className='m-2 pt-2 detalle-data_container'>
             <h3 className='mx-3'>RESUMEN DE COMPRA</h3>
