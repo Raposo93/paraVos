@@ -52,12 +52,12 @@ export const Producto = () => {
         <div className=' h-100 d-flex flex-column justify-content-around align-items-start product-desc '>
           <div className='d-flex'>
             <h4 className='text-uppercase'> {showProduct.name} </h4>
-            <p className='product-tittle_discount px-1 mx-4 '> - {discount} %</p>
+            <p className={`product-tittle_discount px-1 mx-4 ${discount == 0 ? "d-none" : "" }`}> - {discount} %</p>
           </div>
                 
           <div className='d-flex'>
             <h5 className='product-price '>${showProduct.price - ((showProduct.price / 100) * discount)}</h5>
-            <h5 className='product-discount text-inline mx-3'>${showProduct.price}</h5>
+            <h5 className={`product-discount text-inline mx-3 ${discount == 0 ? "d-none" : "" }`}>${showProduct.price}</h5>
           </div>
 
           <p className="m-1">{showProduct.description}</p>
@@ -88,7 +88,7 @@ export const Producto = () => {
             initialStock: showProduct.stock,
             stock: quantity,
             price: showProduct.price,
-            discount: showProduct.descuento != null ? showProduct.descuento : 0,
+            descuento: showProduct.descuento != null ? showProduct.descuento : 0,
             image: showProduct.image,
             imageA: showProduct.imageA != null ? showProduct.imageA : null,
             imageB: showProduct.imageB != null ? showProduct.imageB : null,

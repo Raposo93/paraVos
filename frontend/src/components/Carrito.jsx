@@ -39,6 +39,7 @@ export const Carrito = () => {
             ...item, stock: item.stock < item.initialStock ? item.stock +1 : item.stock,
           }))
     }
+    
     const lessStock = (item) => {
         dispatch(deleteItems(item))
         dispatch(addItems({
@@ -100,9 +101,8 @@ export const Carrito = () => {
                                         </div>
 
                                         <div className='d-flex justify-content-end align-items-end w-50'>
-                                            <p>$ {item.price * item.stock}</p>
+                                            <p>$ {(item.price - ((item.price / 100) * item.descuento)) * item.stock}</p>
                                         </div>
-
 
                                     </div>
                                 </div>
@@ -118,8 +118,8 @@ export const Carrito = () => {
                         <p className='mx-2'>Total sin envio:</p>
                         <p className='mx-2'>$ {total}</p>
                     </div>
-                    <Link className='w-100' to={"/detallecompra"}
-                    onClick={ () => dispatch(addItems(unicos))}>
+                    <Link className={`${ objectFilter.length === 0? "d-none" : "" } w-100`} to={"/detallecompra"}
+                    onClick={ () => (dispatch(addItems(objectFilter)))}>
                         <button className='w-100 btn btn-outline-dark me-2 text-uppercase m-2'>realizar pedido</button>
                     </Link>
                 </div>
