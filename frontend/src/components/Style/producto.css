@@ -59,6 +59,11 @@
     font-weight: 600;
 }
 
+.product-sendToCard {
+    color: #4F7553;
+    font-weight: 600;
+}
+
 
 @media (max-width: 991px) {
     .product-container {
