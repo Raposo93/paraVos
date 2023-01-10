@@ -14,9 +14,9 @@ export const Producto = () => {
   console.log(showProduct)
   const dispatch = useDispatch()
   const [image, setImage] = useState(showProduct.image)
-  const discount = showProduct.descuento === null ? 0 : showProduct.descuento 
-  
-  
+  const discount = showProduct.descuento === null ? 0 : showProduct.descuento
+  const [productAgree, setProductAgree ] = useState()
+
   return (
     <div>
       <div className='w-100 h-100 d-flex product-container'>
@@ -82,7 +82,7 @@ export const Producto = () => {
           <p className={`w-100 m-1 text-capitalize product-ss ${showProduct.stock === null ? "" : "d-none" } `} >producto sin stock disponible, consulte por whatsapp para su encargo</p>
           
           <button 
-          onClick={() => dispatch(addItems({
+          onClick={() => (dispatch(addItems({
             id: showProduct.id,
             name: showProduct.name,
             initialStock: showProduct.stock,
@@ -93,10 +93,14 @@ export const Producto = () => {
             imageA: showProduct.imageA != null ? showProduct.imageA : null,
             imageB: showProduct.imageB != null ? showProduct.imageB : null,
             imageC: showProduct.imageC != null ? showProduct.imageC : null,            
-          })) }
+          })),
+            setProductAgree(true),
+            setTimeout(() => setProductAgree(), 1000) )}
           className={`${showProduct.stock === null || quantity === 0 ? "d-none" : "" } btn-outline-dark w-100 w-50 text-uppercase rounded my-2 py-2 `}>
             agrega al carrito</button>
+            <span className={`${productAgree ? "" :'d-none'} w-100 m-1 text-capitalize product-sendToCard`}> Producto agregado al carrito </span>
         </div>        
+        
       </div>
     </div>
   )
