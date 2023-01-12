@@ -36,7 +36,7 @@ strong {
 .De {
 	width: 30px;
     height: 30px;
-    margin-top: 50%;
+    margin-top: 48%;
 }
 .Iz{
 	width: 30px;
@@ -206,11 +206,15 @@ button {
 
 /* ------------------Imagenes Barra Debajo Slide BORDES-------------------------- */
 #conteiner-pagos, #conteiner-envios, #conteiner-tienda{
-    
+    text-align: center;
+	margin-top: 8px;
     background-color: #F2F2F2;
     
 }
 
+#conteiner-tienda {
+	margin-top: 14px;
+}
 
 #conteiner-pagos{
     
@@ -225,7 +229,7 @@ background-color: #F2F2F2;
 	width: 2px;
 	border: 0.5px solid #6A6A6A;
 	height: 200px;
-	margin-top: 50px;
+	margin-top: 25px;
 }
 
 
@@ -281,10 +285,7 @@ background-color: #F2F2F2;
 @media (max-width: 991px) {
 	.conteiner-metodos-info{
 		display: flex;
-		background-color: red;
 		
-	}
-	#tienda{
 		
 	}
 	.img-barra_info  { 
@@ -299,20 +300,39 @@ background-color: #F2F2F2;
 		margin-left: -12%;
 	}
 	.div-barra {
+		height: 120px;
+	}
+}
+
+  
+
+@media (max-width: 850px) {
+    .imagen-informativa 
+	{
+	
+		
+	}
+	.div-barra {
+		display: none;
+	}
+	.img-barra_info  { 
+		width: 95px;
+		height: 80px;
+	}
+	.imagen-informativa{
+		font-size:   14px ;
 		
 	}
 }
+
 
 @media (max-width: 600px) {
 	.conteiner-metodos-info{
 		
 		margin: 0;
-		background-color: blue;
 		
 		
-	}
-	#tienda{
-
+		
 	}
 	.img-barra_info  { 
 		width: 75px;
@@ -322,6 +342,7 @@ background-color: #F2F2F2;
 	}
 	.imagen-informativa{
 		font-size:   12px ;
+		
 		
 	}
 	.div-barra {
