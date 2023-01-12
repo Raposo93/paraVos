@@ -1,28 +1,45 @@
-'use strict';
-const {
-  Model
-} = require('sequelize');
-module.exports = (sequelize, DataTypes) => {
-  class DatosEnvio extends Model {
-    /**
-     * Helper method for defining associations.
-     * This method is not a part of Sequelize lifecycle.
-     * The `models/index` file will call this method automatically.
-     */
-    static associate(models) {
-      // define association here
+module.exports = (sequelize, dataTypes) => {
+  let alias = "Datosenvios";
+  let columns = {
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: dataTypes.INTEGER(11),
+    },
+    postalCode: {
+      type: dataTypes.STRING(150),
+      allowNull: false,
+    },
+    city: {
+      type: dataTypes.STRING(150),
+      allowNull: false
+    },
+    state: {
+      type: dataTypes.STRING(150),
+      allowNull: false
+    },
+    number: {
+      type: dataTypes.INTEGER(11),
+      allowNull: false
+    },
+    dept: {
+      type: dataTypes.STRING(150),
+      allowNull: false
     }
-  }
-  DatosEnvio.init({
-    provincia: DataTypes.STRING,
-    ciudad: DataTypes.STRING,
-    codigoPostal: DataTypes.STRING,
-    calle: DataTypes.STRING,
-    numero: DataTypes.INTEGER,
-    descripcion: DataTypes.STRING
-  }, {
-    sequelize,
-    modelName: 'DatosEnvio',
-  });
-  return DatosEnvio;
+ 
+  };
+  let configurations = { tableName: "datosenvios" }; 
+
+  const Category = sequelize.define(alias, columns, configurations);
+    //relacion categoria producto muchos  a uno ( una categoria tiene muchos productos)
+    Category.associate = function(models){
+      Category.hasMany(models.Products, {
+        as: "products",
+        foreignKey: "categoryId"
+     })
+       
+   }
+  
+  return Category;
 };

@@ -33,7 +33,7 @@ export const DetalleCompra = () => {
 
     const total = prices.reduce((a, b) => a + b, 0);
 
-    const validation = Yup.object().shape({     
+    const validation = Yup.object().shape({     // validaciones para usuario
         firstName: Yup.string()
         .required("campo requerido")
         .min(3, "El nombre debe ser mayor de 2 letras")
@@ -58,7 +58,7 @@ export const DetalleCompra = () => {
         .positive("el numero no puede ser negativo"),
     })
 
-    const validation2 = Yup.object().shape({
+    const validation2 = Yup.object().shape({    // validaciones para direccion
       postalCode: Yup.number()
       .typeError("ingrese números")
       .required("campo requerido")
@@ -72,19 +72,29 @@ export const DetalleCompra = () => {
       streat: Yup.string()
       .min(2, "Ingrese mas de 2 caracteres")
       .required("campo requerido"),
-      number: Yup.string()
-      .min(2, "Ingrese mas de 2 caracteres")
-      .required("campo requerido"),
+      number: Yup.number()
+      .typeError("ingrese números")
+      .required("campo requerido")
+      .positive("el numero no puede ser negativo"),
+      
       dept: Yup.string()
       .min(2, "Ingrese mas de 2 caracteres")
       .required("campo requerido"),
     })
 
+    const sendToBack = () => {
+      fetch('http://localhost:3001/checkout', {
+        method: 'POST',
+        body: JSON.stringify(totalData)
+        }).then((response) => {
+          console.log(response)
+          return response.json();
+          });
+    }
+
   return (
-    <div
-         
-        className='w-100 d-flex justify-content-center align-items-start'>
-        <div className='w-50 d-flex flex-column justify-content-center align-items-center'>
+    <div className='w-100 d-flex justify-content-center align-items-start detalle-container_all'>
+        <div className='d-flex flex-column justify-content-center align-items-center detalle-container_camp'>
             <div className='m-2 pt-2 detalle-data_container'>
                 <h3 onClick={() => setShowClient(!showClient)}>
                   <button className='detalle-number p-1'>1</button>IDENTIFICACION</h3>
@@ -376,22 +386,29 @@ export const DetalleCompra = () => {
                 <div className={`${showPay? "" : "d-none"} d-flex flex-column justify-content-center align-items-center`}> 
                 
               
-                <button onClick={() =>  setTotalData({
+                <button onClick={() =>  (setPaid(true),
+                  setTotalData({
                         user: sendUser,
                         adress: sendAdress,
                         products: showItems,
-                      })}     // estos son los items que el back necesita. 
+                      }),
+    sendToBack()
+                      )}     // estos son los items que el back necesita. 
                       className={`btn size-90 btn-sending d-flex justify-content-start m-2 align-items-center 
                       ${paid? `selected`: ""}`}> 
                       <img className='mx-4' src={mercadoPago}></img>
                 </button>
 
-                <button onClick={() => (
-                     console.log(totalData) // cambiar para enviar al back.
+                <button onClick={() => (( setPaid(),
+                     console.log(totalData)) // cambiar para enviar al back.
                 )}
                       className={`btn mb-4 size-90 btn-sending d-flex justify-content-start m-2 align-items-center 
                       ${!paid? `selected`: ""}`}> 
-                      <img className='mx-4' src={otrosMedios}></img>
+                      <img className='mx-4' src={otrosMedios}></img> 
+                      <div>
+                      <p>Otros medios de pago</p>
+                      <p>consultar por whatsapp</p>
+                      </div>
                 </button>
       
                 
@@ -399,7 +416,7 @@ export const DetalleCompra = () => {
             </div>
         </div>
 
-        <div className='w-50 d-flex'>
+        <div className='d-flex justify-content-center align-items-center detalle-container_camp'>
           <div className='m-2 pt-2 detalle-data_container'>
             <h3 className='mx-3'>RESUMEN DE COMPRA</h3>
             
@@ -435,3 +452,11 @@ export const DetalleCompra = () => {
     </div>
   )
 }
+
+/* 
+
+Este es un fetch para embiar datos al back, con una direccion sacada de ejemplo.
+
+
+
+*/
