@@ -9,7 +9,7 @@ import '../Style/dashboardAdmin.css'
 export const DashboardAdmin = () => {
 
    const [products, setProducts] = useState([]);
-   // const [categories, setCategories] = useState([]);
+   const [categories, setCategories] = useState([]);
    const [loading, setLoading] = useState(false);
    const [item, setItem] = useState(1)
    
@@ -21,8 +21,8 @@ export const DashboardAdmin = () => {
      const responseProductos = await fetch(URL + "productos");
      const productos = await responseProductos.json();
  
-     /* const responseCategorias = await fetch(URL + "categorias");
-     const categorias = await responseCategorias.json(); */
+     const responseCategorias = await fetch(URL + "categorias");
+     const categorias = await responseCategorias.json(); 
  
      setProducts(productos.data);
      setCategories(categorias.data)
@@ -76,7 +76,7 @@ export const DashboardAdmin = () => {
             </div>
 
             <div className={`${ item == 2 ? "" : "d-none"} w-100 h-100`}>
-                <DashboarCategorias /> 
+                <DashboarCategorias categories={categories} /> 
             </div>
 
             <div className={`${ item == 3 ? "" : "d-none"} w-100 h-100`}>
