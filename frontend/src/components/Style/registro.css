@@ -5,46 +5,25 @@
 }
 body{
     background-color: e5e5e5;
-    justify-content: center;
 }
 
-
-.formulario {
-    display: block;
-    justify-content: center;
+label {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
-.Register_name {
-    margin-top: 10px;
+.prueba {
+    border: 1px solid black;
+    border-radius: 9px;
     width: 500px;
-    border-radius: 5px;
-    height: 29px;
-}
-.Register_surname {
-    margin-top: 10px;
-    width: 500px;
-    border-radius: 5px;
-    height: 29px;
-}
-.Register_email {
-    margin-top: 10px;
-    width: 500px;
-    border-radius: 5px;
-    height: 29px;
-}
-.Register_password {
-    margin-top: 10px;
-    width: 500px;
-    border-radius: 5px;
-    height: 29px;
-}
-.Repeat_password {
-    margin-top: 10px;
-    width: 500px;
-    border-radius: 5px;
-    height: 29px;
+    height: 32px;
+   
 }
 
+.form_completo {
+    display: flex;
+}
+.form_N {
+    margin: auto;
+}
 .loadingSpinnerContainer {
     position: fixed;
     top: 0;

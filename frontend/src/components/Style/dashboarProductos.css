@@ -1,0 +1,31 @@
+.dashboard-products_container{
+    background-color: #a6a6a636;
+}
+
+.dashboard-products_tittle {
+    height: 6vh;
+}
+
+.dashboard-tittle_addProduct {
+    background-color: #D5E5C2;
+    border: none;
+    font-weight: 600;
+    color: #4F5F56;
+    font-size: large;
+}
+
+.dashboard-product_show {
+    height: auto;
+}
+
+.dashboard-product_grid {
+    background-color: white;
+}
+
+.dashboard-product_calumnName {
+    
+}
+
+.dashboard-product_text {
+    color: #3b3b3b;
+}

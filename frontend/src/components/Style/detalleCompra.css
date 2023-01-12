@@ -1,3 +1,7 @@
+.detalle-container_camp {
+    width: 50%;
+}
+
 .detalle-data_container {
     border: 2px solid #6a6a6a5b;
     border-radius: 10px;
@@ -96,4 +100,17 @@
 .total-font {
     font-size: xx-large;
     font-weight: 600;
+}
+
+
+@media (max-width: 992px) {
+
+    .detalle-container_all {
+        flex-direction: column-reverse;
+    }
+
+    .detalle-container_camp {
+        width: 100%;
+    }
+
 }
