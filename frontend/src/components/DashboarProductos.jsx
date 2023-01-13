@@ -1,7 +1,65 @@
-import React from 'react'
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
 import '../components/Style/dashboarProductos.css'
+import { Form, Formik, Field, ErrorMessage } from 'formik'
+import * as Yup from 'yup'
+
 
 export const DashboarProductos = ({ products }) => {
+
+  const [show, setShow] = useState();
+  const handleClose = () => setShow();
+  const handleShow = () => setShow(true);
+
+
+  const validation = Yup.object().shape({     // validaciones para usuario
+
+    name: Yup.string()
+      .required("Campo Obligatorio")
+      .min(5, "El campo no puede tener menos de 5 caracteres")
+      .max(50, "El campo no puede superar los 50 caracteres"),
+    image: Yup.string()
+      .typeError("Increse Url Valida")
+      .required('Campo Obligatorio')
+      .min(4, "Increse Url Valida"),
+    imageA: Yup.string()
+      .typeError("Increse Url Valida")
+      .min(4, "Increse Url Valida"),
+    imageB: Yup.string()
+      .typeError("Increse Url Valida")
+      .min(4, "Increse Url Valida"),
+    imageC: Yup.string()
+      .typeError("Increse Url Valida")
+      .min(4, "Increse Url Valida"),
+    description: Yup.string()
+      .required("Campo Obligatorio")
+      .min(4, "El campo debe tener mas de 4 caracteres")
+      .max(300, "el campo no puede tener mas de 300 caracteres"),
+    descuento: Yup.number()
+      .max(100, "el descuento no puede ser mayor al 100%")
+      .positive("el numero no puede ser negativo")
+      .typeError("ingrese números"),
+    price: Yup.number()
+      .required("Campo Obligatorio")
+      .typeError("ingrese números")
+      .positive("el numero no puede ser negativo"),
+    stock: Yup.number()
+      .required("Campo Obligatorio")
+      .typeError("ingrese números"),
+    destacado: Yup.boolean()
+
+  })
+
+  const sendToBack = async (data) => {
+    await fetch('http://localhost:3001/store', {
+      method: 'POST',
+      body: JSON.stringify(data)
+      }).then((response) => {
+        console.log(response)
+        return response.json();
+        });
+  }
 
   return (
     <div className='d-flex w-100 flex-column py-2 px-4 dashboard-products_container'>
@@ -9,7 +67,203 @@ export const DashboarProductos = ({ products }) => {
 
         <h3 className=''>PRODUCTOS</h3>
 
-        <button className='mx-3 py-2 px-3 dashboard-tittle_addProduct'>+ Añadir Nuevo</button>
+        <button onClick={handleShow}
+          className='mx-3 py-2 px-3 dashboard-tittle_addProduct'>+ Añadir Nuevo</button>
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title> Nuevo Producto </Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <Formik
+              initialValues={{
+                name: '',
+                image: '',
+                imageA: '',
+                imageB: '',
+                imageC: '',
+                description: '',
+                stock: 0,
+                price: 0,
+                destacado: false,
+                descuento: 0,  
+              }}
+              validationSchema={validation}
+              onSubmit={(values) => {
+                sendToBack(values)
+              }}
+            >
+              {({ touched, errors }) => (
+
+                <Form className='d-flex flex-column justify-content-center m-3 '>
+                  <label htmlFor="product-name">Nombre</label>
+                  <Field
+                    id="product-name"
+                    name="name"
+                    placeholder="Ingrese el Nombre del Producto"
+                    type="name"
+                    className={`w-100 px-2 detalle-data_field
+                        ${touched.name && errors.name ? "is-invalid" : ""}`}
+                  />
+
+                  <ErrorMessage
+                    component="div"
+                    name="name"
+                    className="invalid-feedback"
+                  />
+
+                  <label htmlFor="product-name" className='mt-2'>Imagen Princial</label>
+                  <Field
+                    id="product-image"
+                    name="image"
+                    placeholder="Ingrese Url de la imagen"
+                    type="url"
+                    className={`w-100 px-2 detalle-data_field
+                        ${touched.image && errors.image ? "is-invalid" : ""}`}
+                  />
+
+                  <ErrorMessage
+                    component="div"
+                    name="image"
+                    className="invalid-feedback"
+                  />
+
+                  <label htmlFor="product-name" className='mt-2'>Imagen 2 *</label>
+                  <Field
+                    id="product-imageA"
+                    name="imageA"
+                    placeholder="Ingrese Url de la imagen"
+                    type="url"
+                    className={`w-100 px-2 detalle-data_field
+                        ${touched.imageA && errors.imageA ? "is-invalid" : ""}`}
+                  />
+
+                  <ErrorMessage
+                    component="div"
+                    name="imageA"
+                    className="invalid-feedback"
+                  />
+
+                  <label htmlFor="product-name" className='mt-2'>Imagen 3 *</label>
+                  <Field
+                    id="product-imageB"
+                    name="imageB"
+                    placeholder="Ingrese Url de la imagen"
+                    type="url"
+                    className={`w-100 px-2 detalle-data_field
+                        ${touched.imageB && errors.imageB ? "is-invalid" : ""}`}
+                  />
+
+                  <ErrorMessage
+                    component="div"
+                    name="imageB"
+                    className="invalid-feedback"
+                  />
+
+                  <label htmlFor="product-name" className='mt-2'>Imagen 4 *</label>
+                  <Field
+                    id="product-imageC"
+                    name="imageC"
+                    placeholder="Ingrese Url de la imagen"
+                    type="url"
+                    className={`w-100 px-2 detalle-data_field
+                        ${touched.imageC && errors.imageC ? "is-invalid" : ""}`}
+                  />
+
+                  <ErrorMessage
+                    component="div"
+                    name="imageC"
+                    className="invalid-feedback"
+                  />
+
+                  <label htmlFor="product-description"className='mt-2'>Descripcion</label>
+                  <Field
+                    id="product-description"
+                    name="description"
+                    placeholder="Ingrese la Descripcion del Producto"
+                    type="description"
+                    className={`w-100 px-2 detalle-data_field
+                        ${touched.description && errors.description ? "is-invalid" : ""}`}
+                  />
+
+                  <ErrorMessage
+                    component="div"
+                    name="description"
+                    className="invalid-feedback"
+                  />
+
+                  <label htmlFor="product-descuento"className='mt-2'>Descuento *</label>
+                  <Field
+                    id="product-descuento"
+                    name="descuento"
+                    placeholder="Ingrese el porcentaje de descuento"
+                    type="descuento"
+                    className={`w-100 px-2 detalle-data_field
+                        ${touched.descuento && errors.descuento ? "is-invalid" : ""}`}
+                  />
+
+                  <ErrorMessage
+                    component="div"
+                    name="descuento"
+                    className="invalid-feedback"
+                  />
+
+                  <label htmlFor="product-price"className='mt-2'>Precio</label>
+                  <Field
+                    id="product-price"
+                    name="price"
+                    placeholder="Ingrese el Precio"
+                    type="price"
+                    className={`w-100 px-2 detalle-data_field
+                        ${touched.price && errors.price ? "is-invalid" : ""}`}
+                  />
+
+                  <ErrorMessage
+                    component="div"
+                    name="price"
+                    className="invalid-feedback"
+                  />
+
+                  <label htmlFor="product-stock" className='mt-2'>Stock</label>
+                  <Field
+                    id="product-stock"
+                    name="stock"
+                    placeholder="Ingrese el Stock"
+                    type="number"
+                    className={`w-100 px-2 detalle-data_field
+                        ${touched.stock && errors.stock ? "is-invalid" : ""}`}
+                  />
+
+                  <ErrorMessage
+                    component="div"
+                    name="stock"
+                    className="invalid-feedback"
+                  />
+
+                  <label htmlFor="product-destacado" className='mt-2'>
+                    <Field 
+                    className='mx-2' 
+                    type="checkbox" 
+                    name="checked" 
+                    id="product-destacado"
+                    value="destacado" />
+                    Destacado
+                  </label>
+
+                  <button className='my-2 btn align-self-end btn-submit' type="submit" /*onClick={handleClose}*/>Pasar al envio</button>
+                </Form>
+                
+              )}
+            </Formik>
+            <span>* campo no obligatorio</span>
+
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="primary" onClick={handleClose}>
+              Guardar
+            </Button>
+          </Modal.Footer>
+        </Modal>
 
       </div>
 
@@ -37,8 +291,8 @@ export const DashboarProductos = ({ products }) => {
                 <div className="col">
 
                   <div>
-                    <button> ASDF</button>
-                    <button> FDSA </button>
+                    <button> Eliminar </button>
+                    <button> Editar </button>
                   </div>
 
                 </div>
