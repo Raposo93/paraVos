@@ -1,7 +1,4 @@
 import React from 'react'
-import '../components/Style/dashboarProductos.css'
-
-export const DashboarCategorias = ({ categories }) => {
 
   return (
     <div className='d-flex w-100 flex-column py-2 px-4 dashboard-products_container'>
@@ -41,4 +38,3 @@ export const DashboarCategorias = ({ categories }) => {
       </div>
     </div>
   )
-}
