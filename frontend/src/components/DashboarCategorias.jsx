@@ -17,13 +17,12 @@ export const DashboarCategorias = ({ categories }) => {
         <div className="p-3 container dashboard-product_grid">
           <div className="row">
             <div className="col"> <p className='fw-bold dashboard-product_calumnName'> Imagen </p>  </div>
-            <div className="col"> <p className='fw-bold dashboard-product_calumnName'> Nombre</p>  </div>
-            
+            <div className="col"> <p className='fw-bold dashboard-product_calumnName'> Nombre </p>  </div>
             <div className="col"> <p className='fw-bold dashboard-product_calumnName'> </p>  </div>
             <div className="w-100 m-2 border-top"></div>
             {categories.map((category) => (
               <>
-                <div className='col'> <img className='img-thumbnail' src={category.image} alt="" size='10px' /> </div>
+                <div className='col'> <img className='img-thumbnail' src={category.image} alt="" /> </div>
                 <div className='col'> <p className='dashboard-product_text'>{category.nameCategory}</p></div>
                 <div className="col">
 
@@ -43,4 +42,3 @@ export const DashboarCategorias = ({ categories }) => {
     </div>
   )
 }
-

@@ -301,6 +301,10 @@ padding: 50px 0px 50px 110px;
 width: 33.33%;
 justify-content: space-between;
 background: #fff;
+@media screen and (max-width: 600px) {
+    padding: 35px 0px 35px 70px;
+    
+}
 
 //border-radius: 50px;
 

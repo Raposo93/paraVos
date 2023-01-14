@@ -55,8 +55,8 @@ export const Registro = () => {
   }
 
   return (
-    <main>
-      <div className="grid-containter">
+    <main className="main">
+      <div>
         <div>
           <Formik
             initialValues={{
@@ -116,15 +116,19 @@ export const Registro = () => {
                 className="formulario"
                 onSubmit={onSubmit}
               >
+
+                
+                <div className="form_completo">
+                <div className="form_N">
                 <div>
                   <h1>CREAR CUENTA</h1>
                   <label> Nombre </label> <br></br>
                   <input
-                    className="Register_name"
+                    className="prueba"
                     type="text"
                     id="nombre"
                     name="nombre"
-                    placeholder="Nombre"
+                    
                     value={values.nombre}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -137,11 +141,11 @@ export const Registro = () => {
                 <div>
                   <label> Apellido </label> <br></br>
                   <input
-                    className="Register_surname"
+                    className="prueba"
                     type="text"
                     id="apellido"
                     name="apellido"
-                    placeholder="Apellido"
+                    
                     value={values.apellido}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -150,15 +154,15 @@ export const Registro = () => {
                     <div className="error">{errors.apellido}</div>
                   )}
                 </div>
-
+                    
                 <div>
                   <label> Email </label> <br></br>
                   <input
-                    className="Register_email"
+                    className="prueba"
                     type="email"
                     id="email"
                     name="email"
-                    placeholder="Email"
+                    
                     value={values.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -171,11 +175,11 @@ export const Registro = () => {
                 <div>
                   <label> Contraseña </label> <br />
                   <input
-                    className="Register_password"
+                    className="prueba"
                     type="password"
                     id="contraseña"
                     name="contraseña"
-                    placeholder="Contraseña"
+                  
                     value={values.contraseña}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -188,11 +192,11 @@ export const Registro = () => {
                 <div>
                   <label> Repetir Contraseña</label> <br />
                   <input
-                    className="Repeat_password"
+                    className="prueba"
                     type="password"
                     id="Repetircontraseña"
                     name="Repetircontraseña"
-                    placeholder="Repetir Contraseña"
+                    
                     value={values.Repetircontraseña}
                     onChange={handleChange}
                     onBlur={handleBlur}
@@ -205,6 +209,8 @@ export const Registro = () => {
                 <button type="submit" className="btn-Registro">
                   CREAR CUENTA
                 </button>
+                </div>
+                </div>
                 <p>
                   ¿Ya tenes una cuenta? <b>Inicia Sesión</b>
                 </p>
