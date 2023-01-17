@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@700;900&family=Roboto:wght@100&display=swap');
 *{	
     padding: 0%;
     margin: 0%;
@@ -107,6 +106,9 @@ button {
 #enunciado_tienda {
 	margin-right: 15%;
 }
+#tienda {
+	height: 195px;
+}
 /* ------------- Con esta aplicacion en el texto, se rompe al achicarlo ------------- */
 .texto-primer-columna{
 	text-align: start;
@@ -115,7 +117,7 @@ button {
 }
 .lista_footer {
 	list-style: none;
-	margin-left: -35px;
+	margin-left: -45px;
 }
 .grid-containter {
 	margin-bottom: 25px;
@@ -204,6 +206,81 @@ button {
 
 }
 
+/*--------------------------Media Footer ----------------------------------------*/
+
+
+@media (max-width: 991px) {
+	.footer1{
+		height: 350px;
+	}
+	.grid-containter {
+		display: grid;
+		grid-template-columns: 33% 33% 33%;
+	}
+	.enunciados {
+		margin-top: 35px;
+	}
+	.part-one{
+		display: flex;
+		
+		
+		
+		
+	}
+	.texto-primer-columna{
+		
+		padding-left: 0%;
+		margin-bottom: 55px;
+		font-size: 15px;
+	}
+	.part-two  {
+		display: none;
+		
+	}
+	.part-three {
+		
+	}
+	/*----------Formulario Responsivo -----------------*/
+	.textarea, .email, .nombre, .btn-envio, .part-four {
+		width: 95%;
+	}
+	/*-----------------------------------*/
+	.part-four{
+		text-align: center;
+
+	}
+	.logo-footer{
+		width: 175px;
+		height: auto;
+		margin-top: 10px;
+		
+		
+	}
+	
+	.data-random {
+		display: none;
+	}
+}
+
+  
+
+
+
+
+@media (max-width: 600px) {
+	.part-one{
+		background-color: aqua;	
+	}
+	.texto-primer-columna{
+		
+		padding-left: 0%;
+		margin-bottom: 55px;
+		font-size: 12px;
+	}
+}
+
+
+
 /* ------------------Imagenes Barra Debajo Slide BORDES-------------------------- */
 #conteiner-pagos, #conteiner-envios, #conteiner-tienda{
     text-align: center;
@@ -215,7 +292,12 @@ button {
 #conteiner-tienda {
 	margin-top: 14px;
 }
-
+#envios {
+	margin-top: -15px;
+	margin-bottom: -6%;
+	width: 240px;
+	height: auto;
+}
 #conteiner-pagos{
     
 	border-left: none;
@@ -230,6 +312,10 @@ background-color: #F2F2F2;
 	border: 0.5px solid #6A6A6A;
 	height: 200px;
 	margin-top: 25px;
+}
+.imagen-informativa{
+	font-family: 'Roboto', sans-serif;;
+	
 }
 
 
@@ -292,36 +378,66 @@ background-color: #F2F2F2;
 		width: 150px;
 		height: 140px;
 		justify-content: flex-end;
-		margin-left: -15%;
+		margin-left: -15%
 		
+		
+	}
+	#envios {
+		margin-right: -10%;
+		margin-top: 0px;
+		margin-bottom: -18px;
+		width: 160px;
+		height: auto;
+	}
+	#tienda {
+		width: 145px;
+		height: 135px;
 	}
 	.imagen-informativa{
 		font-size:   18px ;
-		margin-left: -12%;
+		
 	}
 	.div-barra {
 		height: 120px;
+	}
+	#p_tienda {
+		margin-right: 50px;
 	}
 }
 
   
 
-@media (max-width: 850px) {
+@media (max-width: 780px) {
     .imagen-informativa 
 	{
 	
 		
 	}
 	.div-barra {
-		display: none;
+		height: 70px;
+	}
+	#tienda {
+		width: 85px;
+		height: 75px;
+	}
+	
+	#envios {
+		margin-right: 0%;
+		margin-top: 0px;
+		margin-bottom: -18px;
+		width: 100px;
+		height: auto;
 	}
 	.img-barra_info  { 
 		width: 95px;
 		height: 80px;
 	}
-	.imagen-informativa{
+	.imagen-informativa {
+		text-align: center;
 		font-size:   14px ;
-		
+	}
+	#p_tienda {
+		margin-right: 20px;
 	}
 }
 
@@ -334,18 +450,26 @@ background-color: #F2F2F2;
 		
 		
 	}
+	#tienda {
+		width: 85px;
+		height: 75px;
+	}
 	.img-barra_info  { 
-		width: 75px;
-		height: 60px;
+		width: 95px;
+		height: 80px;
 		
 		
 	}
 	.imagen-informativa{
-		font-size:   12px ;
+		font-size:   10px ;
+		
 		
 		
 	}
 	.div-barra {
-		display: none;
+		height: 70px;
+	}
+	#p_tienda {
+		margin-right: 25px;
 	}
 }

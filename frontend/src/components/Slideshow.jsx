@@ -160,7 +160,7 @@ export const Slideshow = () => {
                 </div>
                 <Imagen id="conteiner-tienda">
                     <img className="img-barra_info" id="tienda" src={imgTienda} />
-                    <p className="imagen-informativa">Retiro en tienda</p>
+                    <p className="imagen-informativa" id="p_tienda">Retiro en tienda</p>
                 </Imagen>
             </ContenedorIMG></>
 

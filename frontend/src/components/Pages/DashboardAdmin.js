@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BsCart } from 'react-icons/bs';
 import { FiUsers } from 'react-icons/fi'
 import { AiOutlineBars, AiOutlineRight } from 'react-icons/ai'
@@ -8,7 +8,30 @@ import '../Style/dashboardAdmin.css'
 
 export const DashboardAdmin = () => {
 
+   const [products, setProducts] = useState([]);
+   const [categories, setCategories] = useState([]);
+   const [loading, setLoading] = useState(false);
    const [item, setItem] = useState(1)
+   
+   const URL = "http://localhost:3001/";
+
+   const showData = async () => {
+     setLoading(true);
+ 
+     const responseProductos = await fetch(URL + "productos");
+     const productos = await responseProductos.json();
+ 
+    const responseCategorias = await fetch(URL + "categorias");
+     const categorias = await responseCategorias.json(); 
+ 
+     setProducts(productos.data);
+     setCategories(categorias.data)
+     setLoading(false);
+   }
+ 
+   useEffect(() => {
+     showData()
+   }, [])
 
   return (
     <div className='d-flex dashboard-main_container'>
@@ -46,14 +69,14 @@ export const DashboardAdmin = () => {
                 <AiOutlineRight size="1.5rem" color="#a6a6a0"/>
             </div>
         </div>
-        <div className='w-75'>  
+        <div className='overflow-auto overflowx-hiden'>  
 
-            <div className={`${ item == 1 ? "" : "d-none"} w-100 h-100`}>
-                <DashboarProductos/> 
+            <div className={`${ item == 1 ? "" : "d-none"} w-100`}>
+                <DashboarProductos products={products}/> 
             </div>
 
             <div className={`${ item == 2 ? "" : "d-none"} w-100 h-100`}>
-                <DashboarCategorias/> 
+                <DashboarCategorias  categories={categories}/> 
             </div>
 
             <div className={`${ item == 3 ? "" : "d-none"} w-100 h-100`}>
