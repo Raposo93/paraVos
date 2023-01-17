@@ -18,7 +18,7 @@ export const Footer = () => {
 
                     <div className="part-one">
                         <div className="texto-primer-columna">
-                            <h4 className="enunciados">Preguntas Frecuentes</h4>
+                            <h4 id="preg-frecuentes" className="enunciados">Preguntas Frecuentes</h4>
                             <ol>
                             <a href=""><li className="lista_footer">¿Quienes Somos?</li></a> 
                             <a href=""><li  className="lista_footer">¿Cuales son los medios de pago?</li></a> 
