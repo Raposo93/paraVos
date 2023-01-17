@@ -81,7 +81,7 @@ export const DashboardAdmin = () => {
             </div>
 
             <div className={`${ item == 2 ? "" : "d-none"} w-100 h-100`}>
-                <DashboarCategorias  categories={categories}/> 
+                <DashboarCategorias categories={categories} /> 
             </div>
 
             <div className={`${ item == 3 ? "" : "d-none"} w-100 h-100`}>
