@@ -6,6 +6,9 @@ import { Form, Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { FaTrashAlt } from 'react-icons/fa'
 import { TfiPencilAlt } from 'react-icons/tfi'
+import { FaTrashAlt } from 'react-icons/fa'
+import { TfiPencilAlt } from 'react-icons/tfi'
+
 
 
 export const DashboarCategorias = ({ categories }) => {

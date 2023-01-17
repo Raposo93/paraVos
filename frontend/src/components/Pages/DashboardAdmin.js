@@ -10,6 +10,7 @@ export const DashboardAdmin = () => {
 
    const [products, setProducts] = useState([]);
    const [categories, setCategories] = useState([]);
+   // const [User, setUser] = useState([]);
    const [loading, setLoading] = useState(false);
    const [item, setItem] = useState(1)
    
@@ -21,11 +22,15 @@ export const DashboardAdmin = () => {
      const responseProductos = await fetch(URL + "productos");
      const productos = await responseProductos.json();
  
-    const responseCategorias = await fetch(URL + "categorias");
+     const responseCategorias = await fetch(URL + "categorias");
      const categorias = await responseCategorias.json(); 
+
+     // const responseUsuarios = await fetch(URL + "user");
+     // const usuarios = await responseUsuarios.json(); 
  
      setProducts(productos.data);
      setCategories(categorias.data)
+     // setUser(usuarios.data)
      setLoading(false);
    }
  
@@ -69,7 +74,7 @@ export const DashboardAdmin = () => {
                 <AiOutlineRight size="1.5rem" color="#a6a6a0"/>
             </div>
         </div>
-        <div className='overflow-auto overflowx-hiden'>  
+        <div className='overflow-auto overflowx-hiden w-100'>  
 
             <div className={`${ item == 1 ? "" : "d-none"} w-100`}>
                 <DashboarProductos products={products}/> 
