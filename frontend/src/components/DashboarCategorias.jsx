@@ -1,4 +1,11 @@
-import React ,{useState}  from 'react';
+import React ,{useState}  ,{useState}  from 'react';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import '../components/Style/dashboarProductos.css';
+import { Form, Formik, Field, ErrorMessage } from 'formik';
+import * as Yup from 'yup';
+import { FaTrashAlt } from 'react-icons/fa'
+import { TfiPencilAlt } from 'react-icons/tfi';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import '../components/Style/dashboarProductos.css';
@@ -6,10 +13,7 @@ import { Form, Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { FaTrashAlt } from 'react-icons/fa'
 import { TfiPencilAlt } from 'react-icons/tfi'
-import { FaTrashAlt } from 'react-icons/fa'
-import { TfiPencilAlt } from 'react-icons/tfi'
-
-
+import '../components/Style/dashboarProductos.css'
 
 export const DashboarCategorias = ({ categories }) => {
   const [show, setShow] = useState(false);
