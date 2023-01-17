@@ -237,9 +237,6 @@ button {
 		display: none;
 		
 	}
-	.part-three {
-		
-	}
 	/*----------Formulario Responsivo -----------------*/
 	.textarea, .email, .nombre, .btn-envio, .part-four {
 		width: 95%;
@@ -408,9 +405,6 @@ background-color: #F2F2F2;
   
 
 @media (max-width: 780px) {
-    .imagen-informativa 
-	{
-	}
 	.div-barra {
 		height: 70px;
 	}
