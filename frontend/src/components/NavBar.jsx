@@ -24,13 +24,14 @@ export const NavBar = () => {
       <nav className="navbar px-4 navbar-expand-lg text-uppercase " >
 
         <Link className='main-img' to="/"  >
-          <img className='m-1' src={Logo} alt="Logo" width="auto" height="70"></img>
+          <img className='m-1' src={Logo} alt="Logo" height="70"></img>
         </Link>
 
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
 
+        
         <div class="collapse h4 navbar-collapse mt-3 " id="navbarTogglerDemo02">
           <ul className="navbar-nav me-auto  mb-lg-0">
             <li className="nav-item dropdown">
