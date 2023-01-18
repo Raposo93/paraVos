@@ -12,4 +12,6 @@ export { DashboarCategorias } from './DashboarCategorias'
 export { DashboarOrdenes } from './DashboarOrdenes'
 export { DashboarProductos } from './DashboarProductos'
 export { DashboarUsuarios } from './DashboarUsuarios'
+export { ModalProducts } from './ModalProducts'
+export { ModalCategories } from './ModalCategories'
 
