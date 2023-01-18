@@ -153,3 +153,55 @@
     }
 
 }
+
+@media (max-width: 600px) {
+    
+    .navbar-toggler {
+        margin-right: 8%;
+    }
+    .navbar {
+        margin-left: -15%;
+
+    }
+    .h4 {
+
+        text-align: end;
+        
+    }
+    .dropdown-menu{
+        margin-left: 200px;
+    }
+}
+
+@media (max-width: 360px) {
+    .h4 {
+
+        text-align: end;
+        
+    }
+    .navbar-box {
+        
+    }
+    /*------------- drop menu son las categorias ------*/
+    .dropdown-menu{
+        margin-left: 200px;
+    }
+    .dropdown-item {
+        
+    }
+    form{
+        margin-right: -50%;
+    }
+    .m-1 {
+        width: 200px;
+        height: auto;
+    }
+    .navbar-toggler {
+        margin-right: 0%;
+    }
+    .navbar {
+        
+        margin-left: -30%;
+
+    }
+}

@@ -18,11 +18,11 @@ export const Footer = () => {
 
                     <div className="part-one">
                         <div className="texto-primer-columna">
-                            <h4 className="enunciados">Preguntas Frecuentes</h4>
+                            <h4 id="preg-frecuentes" className="enunciados">Preguntas Frecuentes</h4>
                             <ol>
-                            <li className="lista_footer">Quienes Somos?</li>
-                            <li className="lista_footer">Cuales son los medios de pago?</li>
-                            <li className="lista_footer">Como realizar mi pedido?</li>
+                            <a href=""><li className="lista_footer">¿Quienes Somos?</li></a> 
+                            <a href=""><li  className="lista_footer">¿Cuales son los medios de pago?</li></a> 
+                            <a href=""><li className="lista_footer">¿Como realizar mi pedido?</li></a> 
                             </ol>
                         </div>
                         <div>

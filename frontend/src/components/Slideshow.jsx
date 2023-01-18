@@ -160,7 +160,7 @@ export const Slideshow = () => {
                 </div>
                 <Imagen id="conteiner-tienda">
                     <img className="img-barra_info" id="tienda" src={imgTienda} />
-                    <p className="imagen-informativa">Retiro en tienda</p>
+                    <p className="imagen-informativa" id="p_tienda">Retiro en tienda</p>
                 </Imagen>
             </ContenedorIMG></>
 
@@ -297,14 +297,15 @@ const Boton = styled.button`
 //------------------------- Barra Nueva ---------------------
 const Imagen = styled.div`
 
-padding: 50px 0px 50px 110px;
+
 width: 33.33%;
 justify-content: space-between;
 background: #fff;
-@media screen and (max-width: 600px) {
-    padding: 35px 0px 35px 70px;
+
+@media screen and (max-width: 850px) {
     
 }
+
 
 //border-radius: 50px;
 
