@@ -1,4 +1,4 @@
-import React ,{useState}  from 'react';
+import React ,{useState} from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import '../components/Style/dashboarProductos.css';
@@ -6,6 +6,8 @@ import { Form, Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import { FaTrashAlt } from 'react-icons/fa'
 import { TfiPencilAlt } from 'react-icons/tfi';
+import { ModalCategories } from './ModalCategories';
+
 
 export const DashboarCategorias = ({ categories }) => {
   const [show, setShow] = useState(false);
@@ -118,19 +120,16 @@ export const DashboarCategorias = ({ categories }) => {
         <div className="p-3 container dashboard-product_grid">
           <div className="row d-flex">
             <div className="col-1"> <p className='fw-bold dashboard-product_calumnName'> Imagen </p>  </div>
-            <div className="text-center col-8"> <p className='fw-bold dashboard-product_calumnName'> Nombre </p>  </div>
+            <div className="text-center col-10"> <p className='fw-bold dashboard-product_calumnName'> Nombre </p>  </div>
             <div className="col-1"> <p className='fw-bold dashboard-product_calumnName'> </p>  </div>
             <div className="w-100 m-2 border-top"></div>
             {categories.map((category) => (
               <>
                 <div className='col-1'> <img className='img-thumbnail' src={category.image} alt=""/> </div>
-                <div className='text-center align-self-center col-8'> <p className='dashboard-product_text'>{category.nameCategory}</p></div>
+                <div className='text-center align-self-center col-10'> <p className='dashboard-product_text'>{category.nameCategory}</p></div>
                 <div className="col-1">
 
-                  <div className='d-flex flex-column'>
-                    <TfiPencilAlt onClick={() => ""} className='mt-2 dashboard-icon' color='grey'  size={"1.5rem"}/>
-                    <FaTrashAlt  onClick={() => ""} className='mt-2 dashboard-icon' color='red' size={"1.5rem"}/>
-                  </div>
+                  <ModalCategories category={category} validation={validation} />
 
                 </div>
                 <div className="w-100 m-2 border-top"></div>

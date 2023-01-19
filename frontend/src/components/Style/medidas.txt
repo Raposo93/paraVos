@@ -1,4 +1,3 @@
-Pantalla 1366×768
-
+Pantalla 1366 × 768
 tablet  768 x 1024
 celular 360 x 720
