@@ -70,7 +70,7 @@ update: async (req, res) => {
 destroy: async (req, res) => {
     await db.User.destroy({
       where: {
-        id: req.params.user,
+        id: req.params.id,
       },
     });
     return res.json({ mensaje: "Se borró el usuario" });
