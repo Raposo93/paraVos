@@ -94,7 +94,7 @@ button {
 .enunciados{
 	padding: 0;
 	margin-top: 50px;
-	margin-left: -20px;
+	margin-left: -12px;
 	color: black;
 	font-family: 'Roboto', sans-serif;
 	font-weight: 500;
@@ -216,6 +216,7 @@ button {
 	.grid-containter {
 		display: grid;
 		grid-template-columns: 33% 33% 33%;
+		margin-left: 25px;
 	}
 	.enunciados {
 		margin-top: 35px;
@@ -264,7 +265,7 @@ button {
 
 
 
-@media (max-width: 600px) {
+@media (max-width: 780px) {
 	.footer1{
 			height: 300px;;
 	}
