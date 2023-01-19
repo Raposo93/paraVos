@@ -265,8 +265,12 @@ button {
 
 
 @media (max-width: 600px) {
-	.part-one{
-		background-color: aqua;	
+	.footer1{
+			height: 300px;;
+	}
+	.part-one h4 {
+		margin-top: 35px;
+		font-size: 16px ;
 	}
 	.texto-primer-columna{
 		
@@ -274,11 +278,77 @@ button {
 		margin-bottom: 55px;
 		font-size: 12px;
 	}
+	.part-three h2 {
+		font-size: 18px ;
+	}
+	.logo-footer {
+		width: 150px;
+	}
+	.part-four h2 {
+		font-size: 18px ;
+	}
 }
-@media (max-width: 360px) {
-    
+@media (max-width: 560px) {
+	.footer1 {
+		height: auto;
+	}
+    .grid-containter {
+		display: inline;
+	}
+	.texto-primer-columna {
+		text-align: center;
+		width: 100%;
+		margin-bottom: 0%;
+		border-bottom: rgb(155, 223, 54) 1px solid;
+	}
+	.part-three {
+		width: 100%;
+		display: block;
+	}
+	.formulario {
+		width: 70%;
+		text-align: center;
+		margin-left: 15%;
+	}
     .part-four {
-		display: none;
+		width: 100%;
+		border-top: rgb(155, 223, 54) 1px solid;
+		margin-top: 15px;
+		
+	}
+	.part-four h2 {
+		margin-top: 25px ;
+		margin-right: 0px;
+	}
+	.four-flex {
+		display: flex;
+		width: 80%;
+		margin-top: -5%;
+	
+	}
+	.insta-logo {
+		text-align: center;
+		width: 30%;
+		margin-top: 5px;
+	}
+	.logo-footer {
+		width: 80%;
+		justify-content: center;
+		margin-bottom: 15px;
+		margin-left: -25px;
+	}
+
+
+
+	@media (max-width: 400px){
+		.logo-footer {
+			width: 100%;
+		}
+		.insta-logo {
+			text-align: center;
+			width: 40%;
+			margin-top: 5px;
+		}
 	}
 }
 
