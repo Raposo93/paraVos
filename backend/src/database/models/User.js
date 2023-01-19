@@ -1,6 +1,12 @@
 module.exports = (sequelize, dataTypes) => {
   let alias = "User";
   const columns = {
+    id: {
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true,
+      type: dataTypes.INTEGER(11),
+    },
     _id: {
       allowNull: false,
       primaryKey: true,
