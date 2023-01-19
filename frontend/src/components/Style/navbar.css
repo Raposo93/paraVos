@@ -164,12 +164,14 @@
 
     }
     .h4 {
-
         text-align: end;
         
     }
     .dropdown-menu{
-        margin-left: 200px;
+        vertical-align:baseline;
+    }
+    .navbar-search, .lupa{
+        display: none;
     }
 }
 

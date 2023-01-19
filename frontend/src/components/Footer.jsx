@@ -20,9 +20,9 @@ export const Footer = () => {
                         <div className="texto-primer-columna">
                             <h4 id="preg-frecuentes" className="enunciados">Preguntas Frecuentes</h4>
                             <ol>
-                            <a href=""><li className="lista_footer">¿Quienes Somos?</li></a> 
-                            <a href=""><li  className="lista_footer">¿Cuales son los medios de pago?</li></a> 
-                            <a href=""><li className="lista_footer">¿Como realizar mi pedido?</li></a> 
+                                <a href=""><li className="lista_footer">¿Quienes Somos?</li></a>
+                                <a href=""><li className="lista_footer">¿Cuales son los medios de pago?</li></a>
+                                <a href=""><li className="lista_footer">¿Como realizar mi pedido?</li></a>
                             </ol>
                         </div>
                         <div>
@@ -42,7 +42,7 @@ export const Footer = () => {
                         <h2 className="enunciados">CONTACTO</h2>
                         <div>
                             <Formik
-                            
+
 
                                 // -------------- Valores iniciales del formulario --------------
 
@@ -93,7 +93,7 @@ export const Footer = () => {
 
 
                                 {({ values, errors, touched, handleSubmit, handleChange, handleBlur }) => (
-                                    <form   className="formulario" >
+                                    <form className="formulario" >
                                         <div>
 
                                             <input className="nombre"
@@ -144,8 +144,8 @@ export const Footer = () => {
 
                                         <button type="submit" className="btn-envio"> Enviar </button>
                                         {formularioEnviado && <p className="exito">Formulario enviado con exito!</p>}
-                                        
-                                       
+
+
                                     </form>
                                 )}
 
@@ -166,12 +166,15 @@ export const Footer = () => {
 
 
                     <div className="part-four">
-                        <h2 className="enunciados">Seguinos</h2>
-                        <a href="https://www.instagram.com/para_vos_creaciones/" >
-                            <img className="insta-logo" src={logoInstagram} />
-                        </a>
-                        <div>
-                            <img className="logo-footer" src={logo} />
+                    <h2 className="enunciados">Seguinos</h2>
+                        <div className="four-flex">
+                            
+                            <a href="https://www.instagram.com/para_vos_creaciones/" >
+                                <img className="insta-logo" src={logoInstagram} />
+                            </a>
+                            <div>
+                                <img className="logo-footer" src={logo} />
+                            </div>
                         </div>
                     </div>
                 </div>
