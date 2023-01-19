@@ -99,7 +99,7 @@ export const Registro = () => {
               }
               //--------- Validacion Apellido -----------
               if (!valores.contraseña) {
-                errores.contraseña = "Por favor, ingresa una contraseña";
+                errores.contraseña = "Por favor, ingresa una contraseña. Esta debe contener Mayúsculas, minúsculas y un caracter Númerico";
               } else if (
                 /^(?=.\d)(?=.[a-z])(?=.[A-Z]).$/.test(valores.contraseña)
               ) {
