@@ -1,11 +1,7 @@
 import React from 'react'
-import { useState } from 'react'
-import { IoIosArrowBack, IoIosArrowDown } from 'react-icons/io'
-
+import { DashboarOrderList } from './DashboarOrderList'
 
 export const DashboarOrdenes = () => {
-
-  const [showProduct, setShowProduct] = useState()
 
   const ordenes = [
     {
@@ -22,7 +18,7 @@ export const DashboarOrdenes = () => {
         country: "",
       },
       checked: false,
-      cost: 2500,
+      total: 2500,
       products: [
         {
           img: " :D ",
@@ -31,7 +27,7 @@ export const DashboarOrdenes = () => {
           cost: 1000
         },
         {
-          img: " D= ",
+          img: "http://test1",
           name: " Producto 2",
           quantity: 1,
           cost: 1500
@@ -55,7 +51,7 @@ export const DashboarOrdenes = () => {
       cost: 1500,
       products: [
         {
-          img: " D= ",
+          img: "http://test2",
           name: " Producto 2",
           quantity: 1,
           cost: 1500
@@ -79,15 +75,9 @@ export const DashboarOrdenes = () => {
             <div className="col"> <p className='fw-bold dashboard-product_calumnName'> Compra </p> </div>
             <div className="w-100 m-2 border-top"></div>
             {ordenes.map((orden) => (
-              <>
-                <div className='col'> <p className='dashboard-product_text'> {orden.date}  </p></div>
-                <div className='col'> <p className='dashboard-product_text'> {orden.user.name}  </p></div>
-                <div className='col'> <p className='dashboard-product_text'> {orden.send.type}  </p></div>
-                <div className='col'> <p className='dashboard-product_text'> {orden.checked}  </p></div>
-                <div className='col'> <p className='dashboard-product_text'> $ {orden.cost} {showProduct? <IoIosArrowDown onClick={() => setShowProduct()}/> : <IoIosArrowBack onClick={() => setShowProduct(true)}/>} </p></div>
-                
-                <div className="w-100 m-2 border-top"></div>
-              </>
+
+              <DashboarOrderList orden={orden} />
+              
             ))}
           </div>
         </div>
