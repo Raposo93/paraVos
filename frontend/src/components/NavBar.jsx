@@ -27,12 +27,12 @@ export const NavBar = () => {
           <img className='m-1' src={Logo} alt="Logo" height="70"></img>
         </Link>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
         </button>
 
         
-        <div class="collapse h4 navbar-collapse mt-3 " id="navbarTogglerDemo02">
+        <div className="collapse h4 navbar-collapse mt-3 " id="navbarTogglerDemo02">
           <ul className="navbar-nav me-auto  mb-lg-0">
             <li className="nav-item dropdown">
               <Link className="nav-link flex-fill  mx-4 dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
