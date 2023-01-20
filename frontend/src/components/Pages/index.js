@@ -7,3 +7,7 @@ export { PagError } from "./PagError"
 export { RecuperarContraseña } from "./RecuperarContraseña"
 export { DetalleCompra } from "./DetalleCompra"
 export { DashboardAdmin } from "./DashboardAdmin"
+export { MediosDePago } from './MediosDePago'
+export { QuienesSomos } from './QuienesSomos'
+export { RealizarPedidos } from './RealizarPedidos' 
+ 
