@@ -55,7 +55,7 @@ export const Carrito = () => {
         
             <div className='carrito-container d-flex flex-column justify-content-around align-items-center'>
                 <div className='carrito-title w-100 h-25 d-flex justify-content-center align-items-center'>
-                    <h3 className='d-inline'>carrito</h3> <FaShoppingCart className='mx-2' size={'2.5em'} />
+                    <h3 className='d-inline'>CARRITO</h3> <FaShoppingCart className='mx-2' size={'2.5em'} />
                 </div>
 
                 <div className='h-100 overflow-auto'>
