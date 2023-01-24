@@ -48,7 +48,7 @@ export const DashboarOrderList = ({ orden }) => {
 
                             <p>{product.name} x{product.quantity} </p>
                         </div>
-                        <p>{product.cost}</p>
+                        <p>$ {product.cost}</p>
                     </div>
                 )
 

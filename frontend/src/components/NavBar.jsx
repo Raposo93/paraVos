@@ -1,11 +1,14 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { bootstrap } from "bootstrap"
 import Logo from "../img/logo.png"
 import './Style/navbar.css'
-import { FaUserAlt } from 'react-icons/fa'
+import Container from 'react-bootstrap/Container';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import Form from 'react-bootstrap/Form';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import Button from 'react-bootstrap/Button';
 import { FaShoppingCart } from 'react-icons/fa'
-import { BsSearch } from 'react-icons/bs'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { changeCategory } from '../reducers/categoryReducer'
@@ -14,72 +17,64 @@ import { Carrito } from '../components'
 
 export const NavBar = () => {
 
-  const [user, setUser] = useState("");
   const [showCart, setShowCart] = useState(false)
+  const [value, setValue] = useState("")
+
+  const hangleInputChange = ({target}) => {
+    setValue(target.value)    
+  }
 
   const dispatch = useDispatch()
 
   return (
-    <>
-      <nav className="navbar px-4 navbar-expand-lg text-uppercase " >
+    <div>
 
-        <Link className='main-img' to="/"  >
+    <Navbar className='navbar-main' expand="lg">
+      <Container className='navbar-container'>
+        <Navbar.Brand href="#home">
+        <Link className='main-img ' to="/"  >
           <img className='m-1' src={Logo} alt="Logo" height="70"></img>
         </Link>
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        
-        <div className="collapse h4 navbar-collapse mt-3 " id="navbarTogglerDemo02">
-          <ul className="navbar-nav me-auto  mb-lg-0">
-            <li className="nav-item dropdown">
-              <Link className="nav-link flex-fill  mx-4 dropdown-toggle" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Categorias
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto navbar-nav">
+            <NavDropdown  title="CATEGORIAS" id="basic-nav-dropdown">
+             
+              <Link onClick={() => { dispatch(changeCategory("Hogar")) }}
+                    className="navbar-dropdown dropdown-item px-2" to={"/categorias"}
+                    >LINEA HOGAR
               </Link>
-              <ul className="dropdown-menu navbar-box">
-                <li><Link
-                  onClick={() => { dispatch(changeCategory("Hogar")) }}
-                  className="dropdown-item px-2" to={"/categorias"}>LINEA HOGAR</Link></li>
-                <li><Link
-                  onClick={() => { dispatch(changeCategory("Linea Bebe")) }}
-                  className="dropdown-item px-2" to={"/categorias"}>LINEA BEBÉ</Link></li> {/*Filtrar*/}
-                <li><Link
-                  onClick={() => { dispatch(changeCategory("Accesorio")) }}
-                  className="dropdown-item px-2" to={"/categorias"}>ACCESORIOS</Link></li>
-                <li><Link
-                  onClick={() => { dispatch(changeCategory("Todos")) }}
-                  className="dropdown-item px-2" to={"/categorias"}>TODOS LOS PRODUCTOS</Link></li>
-              </ul>
-            </li>
-          </ul>
+              <Link onClick={() => { dispatch(changeCategory("Linea Bebe")) }}
+                    className="navbar-dropdown dropdown-item px-2" to={"/categorias"}
+                    >LINEA BEBÉ
+              </Link>
+              <Link onClick={() => { dispatch(changeCategory("Accesorio")) }}
+                    className="navbar-dropdown dropdown-item px-2" to={"/categorias"}
+                    >ACCESORIOS
+              </Link>
+              <Link onClick={() => { dispatch(changeCategory("Todos")) }}
+                    className="navbar-dropdown dropdown-item px-2" to={"/categorias"}
+                    >TODOS LOS PRODUCTOS
+              </Link>
 
-          <form className="d-flex container-fluid p-2" role="text">
-            <input className="form-control navbar-search position-absolute mt-1 " type="text" placeholder="Buscar" />
-            <button className="btn lupa" type="submit"><BsSearch size={'1.3em'} />{/*Busqueda*/}</button>
-          </form>
+            </NavDropdown>
+          </Nav>
 
-          <div className='d-flex justify-content-center icon-container'>
+          <Form className="d-flex">
+            <Form.Control
+              type="search"
+              placeholder="Buscar Producto"
+              className="me-2"
+              aria-label="Search"
+              value={value}
+              onChange={hangleInputChange}
+            />           
+          </Form>
 
-
-            <ul className="navbar-nav me-auto  mb-lg-0">
-              <li className="nav-item dropdown">
-                <Link className="nav-link flex-fill" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <FaUserAlt className='btn nav-btn' size={'3.5em'}
-                    onClick={() => console.log("usuario")}
-                  />{/*Usuario*/}
-                </Link>
-                <ul className="dropdown-menu navbar-box icon-box">
-                  <li><Link className="dropdown-item " to={"/login"}>INICIAR SESIÓN</Link></li> {/*inicio de sesión*/}
-                  <li><Link className="dropdown-item " to={"/registro"}>CREAR CUENTA</Link></li>
-                </ul>
-              </li>
-
-              <li className="nav-item dropdown">
-
-                <Link className="nav-link flex-fill" to="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <FaShoppingCart onClick={() => setShowCart(true)} className='btn nav-btn' size={'3.5em'} />
+          <Link role="button" aria-expanded="false">
+                  <FaShoppingCart onClick={() => setShowCart(true)} className='btn navbar-cart' size={'3.5em'}/>
                 </Link>
 
                 <ul className={`${showCart ? "" : "d-none"} icon-box`}>
@@ -93,19 +88,16 @@ export const NavBar = () => {
                     </li> {/*carrito*/}
 
                   </div>
-                  
+
                 </ul>
 
-              </li>
+        </Navbar.Collapse>
 
-            </ul>
+      </Container>
+    </Navbar>
 
-          </div>
 
-        </div>
-
-      </nav>
-    </>
+    </div>
   )
 }
 
