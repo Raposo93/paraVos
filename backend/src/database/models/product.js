@@ -2,10 +2,10 @@ module.exports = (sequelize, dataTypes) => {
   let alias = "Products";
   let columns = {
     id: {
+      type: dataTypes.INTEGER(11),
       allowNull: false,
       autoIncrement: true,
       primaryKey: true,
-      type: dataTypes.INTEGER(11),
     },
     name: {
       type: dataTypes.STRING(50),
@@ -17,15 +17,15 @@ module.exports = (sequelize, dataTypes) => {
     },
     imageA: {
       type: dataTypes.STRING(100),
-      allowNull: false,
+      allowNull: true,
     },
     imageB: {
       type: dataTypes.STRING(100),
-      allowNull: false,
+      allowNull: true,
     },
     imageC: {
       type: dataTypes.STRING(100),
-      allowNull: false,
+      allowNull: true,
     },
     description: {
       type: dataTypes.TEXT(200),
@@ -49,7 +49,7 @@ module.exports = (sequelize, dataTypes) => {
     },
     descuento: {
       type: dataTypes.STRING(50),
-      allowNull: false,
+      allowNull: true,
     },
 
   };

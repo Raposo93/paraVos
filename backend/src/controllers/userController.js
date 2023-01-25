@@ -29,26 +29,26 @@ getUsers: (req, res) => {
       return res.status(200).json(respuesta);
     });
 },
-//  //Creo al usuario
-// store: async (req, res) => {
-//     try {
-//       const { firstname, lastname, address_mail, password, rol_user, photo_perfil, phone_number} = req.body;
-//       const resDetail = await Users.create({
-//         firstname,
-//         lastname,
-//         address_mail,
-//         password,
-//         google_id, 
-//         rol_user, 
-//         photo_perfil, 
-//         phone_number
+ //Creo al usuario
+store: async (req, res) => {
+    try {
+      const { firstname, lastname, address_mail, password, rol_user, photo_perfil, phone_number} = req.body;
+      const resDetail = await Users.create({
+        firstname,
+        lastname,
+        address_mail,
+        password,
+        google_id, 
+        rol_user, 
+        photo_perfil, 
+        phone_number
 
-//       });
-//       res.send({ data: resDetail });
-//     } catch (e) {
-//       httpError(res, e);
-//     }
-// },
+      });
+      res.send({ data: resDetail });
+    } catch (e) {
+      httpError(res, e);
+    }
+},
 //Edito los datos del usuario
 update: async (req, res) => {
     await db.User.update(
