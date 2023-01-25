@@ -11,12 +11,31 @@ const userRegisterDTO = require("../dto/user-register.dto");
 const userUpdateDataDTO = require("../dto/user-update-data.dto");
 const userUpdateEmailDTO = require("../dto/user-update-email.dto");
 const userUpdatePasswordDTO = require("../dto/user-update-password.dto");
+const userController = require("../controllers/userController")
 
 const userRouter = Router();
 
 userRouter.post("/register", userRegisterDTO, userRegisterController);
 userRouter.post("/login", userLoginDTO, userLoginController);
 userRouter.get("/profile", userJWTDTO, userProfileController);
+
+//endpoints de usuarios
+
+//traigo a todos los usuarios
+userRouter.get("/getUsers", userController.getUsers);
+
+//Mostrar un usuario en particular
+userRouter.get("/:id", userController.show);
+
+// //Creo a un usuario
+// userRouter.post("/store", userController.store);
+
+//Edito a un usuario
+userRouter.patch("/:id/update",userController.update);
+
+//Elimino a un usuario
+userRouter.delete("/:id/destroy", userController.destroy);
+
 
 userRouter.patch(
   "/update-data",

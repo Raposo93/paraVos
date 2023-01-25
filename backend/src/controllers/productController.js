@@ -107,15 +107,6 @@ const controller = {
     });
   },
 
-  //Destrucción del producto
-  destroy: async (req, res) => {
-    await db.Products.destroy({
-      where: {
-        id: req.params.id,
-      },
-    });
-    return res.json({ mensaje: "Se borró el producto" });
-  },
 };
 
 module.exports = controller;

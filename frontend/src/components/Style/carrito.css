@@ -33,3 +33,14 @@
     z-index: 100;
 
 }
+
+
+@media (max-width: 991px) {
+    .carrito-container {
+        left: 20px;
+        top: 20px;
+        height: 70vh;
+        width: 90vw;
+    }
+
+}

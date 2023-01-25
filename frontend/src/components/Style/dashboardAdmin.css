@@ -29,3 +29,7 @@
 .dashboard-item_category:hover {
     background-color: #d5e5c2a9;
 }
+
+.dashboard-icon {
+    cursor: pointer;
+}

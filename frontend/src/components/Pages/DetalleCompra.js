@@ -82,8 +82,8 @@ export const DetalleCompra = () => {
       .required("campo requerido"),
     })
 
-    const sendToBack = () => {
-      fetch('http://localhost:3001/checkout', {
+    const sendToBack =async() => {
+     await fetch('http://localhost:3001/checkout', {
         method: 'POST',
         body: JSON.stringify(totalData)
         }).then((response) => {
