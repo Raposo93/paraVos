@@ -27,8 +27,8 @@ userRouter.get("/getUsers", userController.getUsers);
 //Mostrar un usuario en particular
 userRouter.get("/:id", userController.show);
 
-// //Creo a un usuario
-// userRouter.post("/store", userController.store);
+ //Creo a un usuario
+userRouter.post("/store", userController.store);
 
 //Edito a un usuario
 userRouter.patch("/:id/update",userController.update);
