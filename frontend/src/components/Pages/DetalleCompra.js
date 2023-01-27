@@ -413,6 +413,12 @@ export const DetalleCompra = () => {
       
                 
                 </div>
+
+                <div className='d-flex justify-content-end size-90'>  
+                <a href="https://wa.me/543804561153?text=Quisiera%20contactar%20contigo%20por%20tus%20productos" target="_blank">    
+                          <button onClick={()=> (console.log("retira en tienda"), setShowSend(), setShowPay(true))}
+                          className='mb-2 px-4 btn align-self-end btn-submit'>Finalizar Compra</button></a>
+                        </div>
             </div>
         </div>
 

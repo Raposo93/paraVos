@@ -12,7 +12,6 @@ const cors = require('cors');
 const corsOptions = require('./database/config/corsOptions');
 
 
-
 // ************ express() - (don't touch) ************
 const app = express();
 require("dotenv").config();

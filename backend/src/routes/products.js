@@ -55,7 +55,7 @@ router.get("/", productController.search);
 router.get("/:id", productController.show);
 
 //Ruta para crear un producto
-router.post("/store",upload.single(), validations, productController.store);
+router.post("/store",upload.single(), productController.store);
 
 //Ruta para editar parcialmente un producto
 router.put("/:id/update", productController.update);

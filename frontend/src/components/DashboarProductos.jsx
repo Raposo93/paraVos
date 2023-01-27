@@ -15,11 +15,16 @@ export const DashboarProductos = ({ products }) => {
   const sendToBack = async (data) => {
     await fetch('http://localhost:3001/productos/store', {
       method: 'POST',
-      body: JSON.stringify(data)
+      body: data,
+      headers:{
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      }
     }).then((response) => {
       console.log(response)
       return response.json();
     });
+
   }
 
   const validation = Yup.object().shape({     // validaciones para usuario
@@ -90,8 +95,23 @@ export const DashboarProductos = ({ products }) => {
                 descuento: 0,
               }}
               validationSchema={validation}
-              onSubmit={(values) => {
-                sendToBack(values)
+              onSubmit={async (values) => {
+                let data = JSON.stringify({
+                  data: ` {
+                      name:${values.name},
+                      image:${values.image},
+                      imageA:${values.imageA},
+                      imageB:${values.imageB},
+                      imageC:${values.imageC},
+                      description:${values.description},
+                      stock: ${values.stock},
+                      price: ${values.price},
+                      destacado: ${values.destacado},
+                      descuento: ${values.descuento},
+                    })
+                  }`
+                })
+                sendToBack(data)
               }}
             >
               {({ touched, errors }) => (

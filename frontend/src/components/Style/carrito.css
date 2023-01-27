@@ -1,8 +1,8 @@
 .carrito-container {
     position: fixed;
     font-size: medium;
-    right: 0;
-    top: 0px;
+    right: 15px;
+    top: 15px;
     height: 70vh;
     width: 30vw;
     background-color: white;
@@ -34,13 +34,31 @@
 
 }
 
+.cart-btn {
+    width: 95%;
+}
+
 
 @media (max-width: 991px) {
     .carrito-container {
         left: 20px;
         top: 20px;
         height: 70vh;
+        width: 95vw;
+    }
+
+}
+
+@media (max-width: 560px) {
+    .carrito-container {
         width: 90vw;
+    }
+
+}
+
+@media (max-width: 390px) {
+    .carrito-container {
+        width: 85vw;
     }
 
 }

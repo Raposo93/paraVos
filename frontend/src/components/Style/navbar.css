@@ -15,10 +15,12 @@
 
 .navbar-dropdown {
     background: #BFE393;
+    margin: 0;
+    padding: 0;
 }
 
 .navbar-dropdown:hover {
-    color: #3b3b3b83;
+    color: rgba(0, 0, 0, 0.842);
     background: #bfe39359;
 }
 

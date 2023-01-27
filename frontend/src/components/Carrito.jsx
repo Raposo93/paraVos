@@ -120,7 +120,7 @@ export const Carrito = () => {
                     </div>
                     <Link className={`${ objectFilter.length === 0? "d-none" : "" } w-100`} to={"/detallecompra"}
                     onClick={ () => (dispatch(addItems(objectFilter)))}>
-                        <button className='w-100 btn btn-outline-dark me-2 text-uppercase m-2'>realizar pedido</button>
+                        <button className='cart-btn btn btn-outline-dark me-2 text-uppercase m-2'>realizar pedido</button>
                     </Link>
                 </div>
             </div>
