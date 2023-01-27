@@ -15,11 +15,17 @@ export const DashboarProductos = ({ products }) => {
   const sendToBack = async (data) => {
     await fetch('http://localhost:3001/productos/store', {
       method: 'POST',
-      body: JSON.stringify(data)
-    }).then((response) => {
-      console.log(response)
-      return response.json();
+      body: JSON.stringify(data),
+      headers:{
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      }
+    })
+    .then((r)=> r.json())
+    .then((data)=>{
+      console.log(data) 
     });
+     
   }
 
   const validation = Yup.object().shape({     // validaciones para usuario
