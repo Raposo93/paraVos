@@ -33,26 +33,16 @@ const controller = {
     });
   },
   //Creo al producto
-  store: async (req, res) => {
-    try {
-      const { name, image, imageA, imageB, imageC, description, stock, price, destacado, descuento} = req.body;
-      const resDetail = await Products.create({
-        name,
-        image,
-        imageA,
-        imageB,
-        imageC,
-        description,
-        stock,
-        price,
-        destacado,
-        descuento
-
-      });
-      res.send({ data: resDetail });
-    } catch (e) {
-      httpError(res, e);
-    }
+  store: (req, res) => {
+    db.Products
+    .create(req.body)
+    .then (product => {
+      return res.status(200).json({
+        data:product,
+        status: 200,
+        create:'ok'
+      })
+    })
   },
   //Edición del Producto
   update: async (req, res) => {

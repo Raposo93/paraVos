@@ -23,8 +23,7 @@ const validations = [
       .exists()
       .notEmpty()
       .withMessage("Tienes que ponerle un nombre")
-      .isLength({ min: 5 })
-      .withMessage("Tiene que tener 5 caracteres como minimo"),
+      .isLength({ min: 5 }),
     check("image")
       .notEmpty()
       .withMessage("Tienes que subir una imagen"),
@@ -32,12 +31,16 @@ const validations = [
       .notEmpty()
       .withMessage("Tienes que ponerle una descripción")
       .isLength({ min: 5 })
-      .withMessage("Tiene que tener 3 caracteres como minimo"),
+      .withMessage("Tiene que tener 5 caracteres como minimo"),
     check("stock")
     .isNumeric(),
     check("price")
       .notEmpty()
-      .withMessage("Tienes que ponerle un precio"),
+      .withMessage("Tienes que ponerle un precio")
+      .isNumeric(),
+    check("categoryId")
+      .notEmpty()
+      .isNumeric(),
     (req, res, next) => {
       validateResult(req, res, next)
     }
