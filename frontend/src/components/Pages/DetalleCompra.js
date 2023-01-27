@@ -82,7 +82,7 @@ export const DetalleCompra = () => {
       .required("campo requerido"),
     })
 
-    const sendToBack =async() => {
+    const sendToBack = async () => {
      await fetch('http://localhost:3001/checkout', {
         method: 'POST',
         body: JSON.stringify(totalData)
@@ -392,7 +392,7 @@ export const DetalleCompra = () => {
                         adress: sendAdress,
                         products: showItems,
                       }),
-    sendToBack()
+                sendToBack()
                       )}     // estos son los items que el back necesita. 
                       className={`btn size-90 btn-sending d-flex justify-content-start m-2 align-items-center 
                       ${paid? `selected`: ""}`}> 
@@ -415,7 +415,11 @@ export const DetalleCompra = () => {
                 </div>
 
                 <div className='d-flex justify-content-end size-90'>  
-                <a href="https://wa.me/543804561153?text=Quisiera%20contactar%20contigo%20por%20tus%20productos" target="_blank">    
+                <a href={`https://wa.me/543804561153?text=${`mi nombre es ${sendUser.firstName} y quisiera contactar contigo por:
+                ${showItems.map((i) => " " + i.name + " " + i.stock + " unidad/es")}
+                
+                
+                `}`} target="_blank">    
                           <button onClick={()=> (console.log("retira en tienda"), setShowSend(), setShowPay(true))}
                           className='mb-2 px-4 btn align-self-end btn-submit'>Finalizar Compra</button></a>
                         </div>

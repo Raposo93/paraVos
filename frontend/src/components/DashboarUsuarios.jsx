@@ -47,9 +47,13 @@ export const DashboarUsuarios = () => {
   })
 
   const sendToBack = async (data) => {
-    await fetch('http://localhost:3001/categorias/store', {
+    await fetch('http://localhost:3001/user/store', {
       method: 'POST',
-      body: JSON.stringify(data)
+      body: JSON.stringify(data),
+      headers:{
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      }
     }).then((response) => {
       console.log(response)
       return response.json();
@@ -79,7 +83,7 @@ export const DashboarUsuarios = () => {
               }}
               validationSchema={validation}
               onSubmit={(values) => {
-                console.log(values)
+                sendToBack(values)
               }}
             >
               {({ touched, errors }) => (

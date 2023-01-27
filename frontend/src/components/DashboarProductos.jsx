@@ -1,3 +1,5 @@
+
+
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
@@ -11,12 +13,13 @@ export const DashboarProductos = ({ products }) => {
   const [showNewItem, setShowNewItem] = useState();
   const newItemClose = () => setShowNewItem();
   const newItemShow = () => setShowNewItem(true);
+  const [newProduct, setNewProduct] = useState({})
 
-  const sendToBack = async (data) => {
+  const sendToBack = async () => {
     await fetch('http://localhost:3001/productos/store', {
       method: 'POST',
-      body: data,
-      headers:{
+      body: newProduct,
+      headers: {
         "Content-Type": "application/json",
         "Accept": "application/json",
       }
@@ -88,6 +91,7 @@ export const DashboarProductos = ({ products }) => {
                 imageA: '',
                 imageB: '',
                 imageC: '',
+                categoryId: 0,
                 description: '',
                 stock: 0,
                 price: 0,
@@ -95,23 +99,10 @@ export const DashboarProductos = ({ products }) => {
                 descuento: 0,
               }}
               validationSchema={validation}
-              onSubmit={async (values) => {
-                let data = JSON.stringify({
-                  data: ` {
-                      name:${values.name},
-                      image:${values.image},
-                      imageA:${values.imageA},
-                      imageB:${values.imageB},
-                      imageC:${values.imageC},
-                      description:${values.description},
-                      stock: ${values.stock},
-                      price: ${values.price},
-                      destacado: ${values.destacado},
-                      descuento: ${values.descuento},
-                    })
-                  }`
-                })
-                sendToBack(data)
+              onSubmit={(values) => {
+                let data = JSON.stringify(values)
+                setNewProduct(data),
+                  sendToBack(newProduct)
               }}
             >
               {({ touched, errors }) => (
@@ -196,6 +187,13 @@ export const DashboarProductos = ({ products }) => {
                     name="imageC"
                     className="invalid-feedback"
                   />
+
+                  <label htmlFor="product-categoryId" className='mt-2'>Categoria</label>
+                  <Field component="select" name="categoryId" placeholder="Seleccione una Categoria">
+                    <option value={1}>Hogar</option>
+                    <option value={2}>Bebe</option>
+                    <option value={3}>Accesorio</option>
+                  </Field>
 
                   <label htmlFor="product-description" className='mt-2'>Descripcion</label>
                   <Field
