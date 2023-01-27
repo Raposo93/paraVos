@@ -1,0 +1,30 @@
+.pasos_pedido {
+    list-style: none;
+    margin-top: 15px;
+    position: relative;
+    left: 50%;
+
+}
+.contenedor_pasos_pedido {
+
+   width: 50%;
+}
+.img_realizar-pedido {
+    margin-left: 15px;
+    position: relative;
+   left: 75%;
+}
+.boton {
+    position: relative;
+    color: #687D6A;
+    background-color: white;
+    left: 44%;
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    color: rgb();
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}
