@@ -1,27 +1,27 @@
 .pasos_pedido {
     list-style: none;
     margin-top: 15px;
-    position: relative;
+
 
 }
 .contenedor_pasos_pedido {
-    margin-left: 30%;
+    margin-left: 27%;
    width: 50%;
 }
 .h2-pedido {
-    position: relative;
+
     margin: 5%;
     color: #687D6A;
-    margin-left: 30%;
+    margin-left: 35%;
 }
 .img_realizar-pedido {
-    position: relative;
+    margin-left: 25%;
+    
 }
 .boton {
-    position: relative;
     color: #687D6A;
     background-color: white;
-    margin-left: 49%;
+    margin-left: 46%;
 
     width: 150px;
     height: 40px;
@@ -35,8 +35,8 @@
 
 /*-----------------MEDIA---------------------*/
 
-@media (max-width: 780px) {
+@media (max-width: 991px) {
     .img_realizar-pedido {
-        position: relative;
+
     }
 }
