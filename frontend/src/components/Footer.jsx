@@ -4,6 +4,9 @@ import logoInstagram from './../img/Icono instagram normal.png'
 import ubicacion from './../img/ubi.png'
 import datarandom from './../img/datafiscal.png'
 import { Formik } from "formik";
+import { Link } from "react-router-dom"
+
+
 
 // -------------- SOLUCIONAR CSS --------------
 import './Style/footer.css'
@@ -19,10 +22,10 @@ export const Footer = () => {
                     <div className="part-one">
                         <div className="texto-primer-columna">
                             <h4 id="preg-frecuentes" className="enunciados">Preguntas Frecuentes</h4>
-                            <ol>
-                                <a href=""><li className="lista_footer">¿Quienes Somos?</li></a>
-                                <a href=""><li className="lista_footer">¿Cuales son los medios de pago?</li></a>
-                                <a href=""><li className="lista_footer">¿Como realizar mi pedido?</li></a>
+                            <ol className="ol-preguntas">
+                                <Link to="/QuienesSomos" ><li className="lista_footer">¿Quienes Somos?</li></Link>
+                                <Link to="/MediosDePago"><li className="lista_footer">¿Cuales son los medios de pago?</li></Link>
+                                <Link to="/RealizarPedidos"><li className="lista_footer">¿Como realizar mi pedido?</li></Link>
                             </ol>
                         </div>
                         <div>

@@ -1,10 +1,12 @@
 import React from 'react';
 import compras from '../../img/tuto_compras.png'
 import '../Style/realizarpedidos.css'
+import { Link } from "react-router-dom"
 
 export const RealizarPedidos = () => {
   return (
-    <div>
+    <main>
+      <h2 className='h2-pedido'> COMO REALIZAR MI PEDIDO </h2>
       <div className='contenedor_pasos_pedido'>
         <img className='img_realizar-pedido' src={compras}></img>
       <ol>
@@ -17,7 +19,7 @@ export const RealizarPedidos = () => {
         <li className='pasos_pedido'> 7 - Serás redirigido al Whatsapp, donde podras coordinar el pago y si es necesario el envio</li>
       </ol>
       </div>
-      <button className='boton'> VOLVER</button>
-    </div>
+     <Link to="/"> <button className='boton'> VOLVER</button> </Link>
+    </main>
   )
 }
