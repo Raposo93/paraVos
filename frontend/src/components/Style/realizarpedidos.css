@@ -2,23 +2,27 @@
     list-style: none;
     margin-top: 15px;
     position: relative;
-    left: 50%;
 
 }
 .contenedor_pasos_pedido {
-
+    margin-left: 30%;
    width: 50%;
 }
-.img_realizar-pedido {
-    margin-left: 15px;
+.h2-pedido {
     position: relative;
-   left: 75%;
+    margin: 5%;
+    color: #687D6A;
+    margin-left: 30%;
+}
+.img_realizar-pedido {
+    position: relative;
 }
 .boton {
     position: relative;
     color: #687D6A;
     background-color: white;
-    left: 44%;
+    margin-left: 49%;
+
     width: 150px;
     height: 40px;
     border-radius: 10px;
@@ -27,4 +31,12 @@
     font-size: 20px;
     margin-top: 20px;
     margin-bottom: 40px;
+}
+
+/*-----------------MEDIA---------------------*/
+
+@media (max-width: 780px) {
+    .img_realizar-pedido {
+        position: relative;
+    }
 }
