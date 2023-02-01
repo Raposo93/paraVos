@@ -108,7 +108,8 @@ button {
 	margin-bottom: 7%;
 }
 #enunciado_tienda {
-	margin-right: 15%;
+	margin-right: 25%;
+	margin-left: -15%;
 }
 #tienda {
 	height: 195px;
@@ -163,6 +164,7 @@ a:link {
 .ubi-tienda{
 	width: 30px;
 	margin-right: 10px ;
+	display: none;
 	
 	
 }
@@ -236,7 +238,7 @@ a:link {
 	}
 	.part-one{
 		display: flex;
-		
+		margin-left: 10%;
 		
 		
 		
@@ -280,8 +282,12 @@ a:link {
 
 @media (max-width: 780px) {
 	.footer1{
-			height: 300px;;
+			height: 300px;
+			
 	}
+	
+
+		
 	.part-one h4 {
 		margin-top: 35px;
 		font-size: 16px ;
@@ -301,20 +307,30 @@ a:link {
 	.part-four h2 {
 		font-size: 18px ;
 	}
+	.part-three {
+		
+	}
+	.part-four {
+		margin-left: 5%;
+	}
 }
 
-@media (max-width: 560px) {
+@media (max-width: 750px) {
 	.footer1 {
 		height: auto;
 	}
     .grid-containter {
 		display: inline;
 	}
+	.part-one {
+		margin-left: -8%;
+	}
 	.texto-primer-columna {
 		text-align: center;
 		width: 100%;
 		margin-bottom: 0%;
 		border-bottom: rgb(155, 223, 54) 1px solid;
+		
 	}
 	.part-three {
 		width: 100%;
@@ -329,6 +345,7 @@ a:link {
 		width: 100%;
 		border-top: rgb(155, 223, 54) 1px solid;
 		margin-top: 15px;
+			margin-left: 0%;
 		
 	}
 	.part-four h2 {

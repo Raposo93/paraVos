@@ -35,7 +35,16 @@ export const Footer = () => {
 
                     <div id="enunciado_tienda" className="part-two">
                         <h2 className="enunciados">Nuestra Tienda</h2>
-                        <p className="p_ubi-tienda"><img className="ubi-tienda" src={ubicacion} />Lorem Ipsum</p>
+                        <img className="ubi-tienda" src={ubicacion} /><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55607.979188894!2d-66.89088255839586!3d-29.414217581107046!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9427da4ab5352927%3A0x3c0d39d87857c2ce!2sPlaza%2025%20de%20Mayo!5e0!3m2!1ses!2sar!4v1675231583979!5m2!1ses!2sar" 
+                        width="250" 
+                        height="auto" 
+                        style= {{border: '2px solid black;'}}
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+
+                        </iframe>
+                        
                         <div>
 
                         </div>
@@ -169,9 +178,9 @@ export const Footer = () => {
 
 
                     <div className="part-four">
-                    <h2 className="enunciados">Seguinos</h2>
+                        <h2 className="enunciados">Seguinos</h2>
                         <div className="four-flex">
-                            
+
                             <a href="https://www.instagram.com/para_vos_creaciones/" >
                                 <img className="insta-logo" src={logoInstagram} />
                             </a>
