@@ -1,0 +1,30 @@
+.h2_medios-de-pago{
+    text-align: center;
+    margin: 2%;
+}
+
+.img-credit_card{
+    width: 300px;
+    position: relative;
+    left: 40%;
+}
+.text-pagos{
+    text-align: center;
+}
+#p_segundo {
+    margin-top: -20px;
+}
+.boton_mp {
+    color: #687D6A;
+    background-color: white;
+    margin-left: 45%;
+
+    width: 150px;
+    height: 40px;
+    border-radius: 10px;
+    color: rgb();
+    font-weight: 500;
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 40px;
+}

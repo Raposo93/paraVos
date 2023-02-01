@@ -12,7 +12,7 @@ const {
 
 const RegisterDTOSchema = Type.Object(
   {
-    _id: idDTOSchema,
+    //_id: idDTOSchema,
     firstname: firstnameDTOSchema,
     lastname: lastnameDTOSchema,
     address_mail: address_mailDTOSchema,
@@ -43,8 +43,8 @@ const validateSchema = ajv.compile(RegisterDTOSchema);
 
 const userRegisterDTO = (req, res, next) => {
   const isDTOValid = validateSchema(req.body);
-
-  if (!isDTOValid)
+ // console.log(req.body)
+  if (!isDTOValid) 
     return res
       .status(400)
       .send({ errors: validateSchema.errors.map((error) => error.message) });
