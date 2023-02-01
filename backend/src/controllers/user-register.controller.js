@@ -13,7 +13,7 @@ const userRegisterController = async (req, res) => {
     photo_perfil,
     phone_number,
   } = req.body;
-
+  console.log('NO FUNCIONA', req.body)
   const existingUserByEmail = await db.User.findOne({
     where: { address_mail },
   });
